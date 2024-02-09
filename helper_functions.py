@@ -219,6 +219,8 @@ def export_od_annotations_to_yolo(df, output_dir, classes):
         # Get the boxes
         boxes = df_image[df_image['label'] != 'Beschriftung']
 
+        # Delete file ending
+        image = image.split('.')[0]
         # Write the annotations to a file
         file_name = f'{image}.txt'
         with open(os.path.join(output_dir, file_name), 'w') as file:
@@ -259,6 +261,8 @@ def export_ocr_annotations_to_yolo(df, output_dir, connections):
         # Get the boxes
         boxes = df_image[df_image['label'] == 'Beschriftung']
 
+        # Delete file ending
+        image = image.split('.')[0]
         # Write the annotations to a file
         file_name = f'{image}.txt'
         with open(os.path.join(output_dir, file_name), 'w') as file:

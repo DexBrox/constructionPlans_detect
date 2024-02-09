@@ -22,9 +22,9 @@ if __name__ == '__main__':
     # ---------------------------------------------------------------------------------------------------
     # Visualize the annotations (OD and OCR togehter)
     # ---------------------------------------------------------------------------------------------------
-    visualize_annotations(df, image_dir='data/images', output_dir='output_angles', mode='angle')
-    visualize_annotations(df, image_dir='data/images', output_dir='output_corners', mode='corners')
-    visualize_scaled_annotations(df, image_dir='data/images', output_dir='output_scaled')
+    visualize_annotations(df, image_dir='data/images', output_dir='vis_angles', mode='angle')
+    visualize_annotations(df, image_dir='data/images', output_dir='vis_corners', mode='corners')
+    visualize_scaled_annotations(df, image_dir='data/images', output_dir='vis_scaled')
 
     # ---------------------------------------------------------------------------------------------------
     # Export the scaled coordinates of the non text Labels to YOLO OBB format
@@ -33,11 +33,11 @@ if __name__ == '__main__':
     classes = {'Schraube': '0',
                'Waermedaemmung': '1'}
     
-    export_od_annotations_to_yolo(df, output_dir='output_od', classes=classes)
+    export_od_annotations_to_yolo(df, output_dir='result_od', classes=classes)
 
     # ---------------------------------------------------------------------------------------------------
     # Export the scaled coordinates of the text Labels to YOLO OBB format
     # ---------------------------------------------------------------------------------------------------
-    export_ocr_annotations_to_yolo(df, output_dir='output_ocr', connections=classes)
+    export_ocr_annotations_to_yolo(df, output_dir='result_ocr', connections=classes)
 
             
