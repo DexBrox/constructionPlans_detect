@@ -30,14 +30,38 @@ if __name__ == '__main__':
     # Export the scaled coordinates of the non text Labels to YOLO OBB format
     # ---------------------------------------------------------------------------------------------------
     # Define the classes
-    classes = {'Schraube': '0',
-               'Waermedaemmung': '1'}
+    classes = {'Rohbau': '0',
+               'Kunststoff': '1',
+               'Dämmung' : '2',
+               'Dübel' : '3',
+               'Schraube' : '4',
+               'Alublech' : '5',
+               'Stahlblech' : '6',
+               'Beschriftung': '7',
+               'Folie' : '8',
+               'PfostenRiegel': '9',
+               'Konsole' : '10',
+               'Edelstahl' : '11',
+               'Glas' : '12',
+               'Dichtung' : '13',
+               'Holz' : '14',
+               'Systemprofil' : '15',}
     
     export_od_annotations_to_yolo(df, output_dir='result_od', classes=classes)
 
     # ---------------------------------------------------------------------------------------------------
     # Export the scaled coordinates of the text Labels to YOLO OBB format
     # ---------------------------------------------------------------------------------------------------
-    export_ocr_annotations_to_yolo(df, output_dir='result_ocr', connections=classes)
+    connections = {'Schraube': '0',
+               'Dübel': '1',
+               'Dämmung' : '2',
+               'Alublech' : '3',
+               'Stahlblech' : '4',
+               'Kunststoff' : '5',
+               'PfostenRiegel' : '6',
+               'Folie': '7',
+               'Allgemein' : '8',
+               'Konsole' : '9'}
+    export_ocr_annotations_to_yolo(df, output_dir='result_ocr', connections=connections)
 
             
