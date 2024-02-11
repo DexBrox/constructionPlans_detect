@@ -131,7 +131,7 @@ def visualize_annotations(df, image_dir, output_dir, mode='angle'):
 
             if mode == 'angle':
                 # Create the rectangle
-                rect = Rectangle((xtl, ytl), xbr - xtl, ybr - ytl, linewidth=0.5, edgecolor='r', facecolor='none')
+                rect = Rectangle((xtl, ytl), xbr - xtl, ybr - ytl, linewidth=0.5, edgecolor='b', facecolor='none')
 
                 # Create the rotation transformation
                 rotation = Affine2D().rotate_deg_around(center_x, center_y, angle)
@@ -143,18 +143,18 @@ def visualize_annotations(df, image_dir, output_dir, mode='angle'):
                 ax.add_patch(rect)
 
                 # Add Text and Rotate the text around the center of the rectangle
-                ax.text(center_x-30, center_y-30, row['text'], fontsize=3, color='r', rotation=-angle, rotation_mode='anchor')
+                ax.text(center_x-30, center_y-30, row['text'], fontsize=3, color='b', rotation=-angle, rotation_mode='anchor')
 
 
             if mode == 'corners':
                 # Create a polygon from the corners
-                polygon = plt.Polygon([c1, c2, c3, c4], linewidth=0.5, closed=True, fill=None, edgecolor='b')
+                polygon = plt.Polygon([c1, c2, c3, c4], linewidth=0.5, closed=True, fill=None, edgecolor='r')
 
                 # Add the polygon to the plot
                 ax.add_patch(polygon)
 
                 # Add Text and Rotate the text around the center of the rectangle
-                ax.text(center_x-30, center_y-30, row['text'], fontsize=3, color='b', rotation=-angle, rotation_mode='anchor')
+                ax.text(center_x-30, center_y-30, row['text'], fontsize=3, color='r', rotation=-angle, rotation_mode='anchor')
 
 
         # Save the image

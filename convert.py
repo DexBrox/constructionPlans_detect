@@ -18,16 +18,15 @@ if __name__ == '__main__':
     # Read the annotations from the CVAT XML file
     # ---------------------------------------------------------------------------------------------------
     df = read_annotations_xml(annotation_file='data/annotations.xml')
+    
     # save dataframe as markdown table
     df.to_markdown('data/annotations.md')
-
 
     # ---------------------------------------------------------------------------------------------------
     # Visualize the annotations (OD and OCR togehter)
     # ---------------------------------------------------------------------------------------------------
-    visualize_annotations(df, image_dir='data/images', output_dir='vis_angles', mode='angle')
     visualize_annotations(df, image_dir='data/images', output_dir='vis_corners', mode='corners')
-    visualize_scaled_annotations(df, image_dir='data/images', output_dir='vis_scaled')
+    #visualize_scaled_annotations(df, image_dir='data/images', output_dir='vis_scaled')
 
     # ---------------------------------------------------------------------------------------------------
     # Export the scaled coordinates of the non text Labels to YOLO OBB format
