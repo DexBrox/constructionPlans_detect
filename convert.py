@@ -9,7 +9,12 @@ The calculated scaled corner points are then exported to the YOLO OBB format.
 @Project: SMARTPlan
 '''
 
-from helper_functions import read_annotations_xml, visualize_annotations, visualize_scaled_annotations, export_od_annotations_to_yolo, export_ocr_annotations_to_yolo
+from helper_functions import *
+import pandas as pd
+import os
+import cv2
+import matplotlib.pyplot as plt
+import shutil
 
 
 if __name__ == '__main__':
@@ -63,5 +68,14 @@ if __name__ == '__main__':
                'Allgemein' : '8',
                'Konsole' : '9'}
     export_ocr_annotations_to_yolo(df, output_dir='result_ocr', connections=connections)
+
+    # ---------------------------------------------------------------------------------------------------
+    # Read the created YOLO OBB files and visualize the annotations for verification
+    # ---------------------------------------------------------------------------------------------------
+    visualize_yolo_annotations(yolo_dir='result_ocr', output_dir='vis_yolo')
+
+            
+
+        
 
             

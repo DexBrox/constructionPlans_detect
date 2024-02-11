@@ -279,3 +279,59 @@ def export_ocr_annotations_to_yolo(df, output_dir, connections):
                 y4 = box['c4_scaled'][1]
 
                 file.write(f'{connection} {x1} {y1} {x2} {y2} {x3} {y3} {x4} {y4}\n')
+
+
+def visualize_yolo_annotations(yolo_dir, output_dir):  
+    '''
+    This function reads the YOLO OBB files and visualizes the annotations for verification.
+
+    Args:
+    yolo_dir (str): The directory containing the YOLO OBB files.
+    output_dir (str): The directory to save the images.
+    '''  
+    # Delete and create the output directory
+    if os.path.exists(output_dir):
+        shutil.rmtree(output_dir)
+    os.makedirs(output_dir)
+
+    # Loop through the YOLO OBB files
+    for file in tqdm(os.listdir(yolo_dir)):
+        df_yolo = pd.read_csv(os.path.join(yolo_dir, file), header=None, sep=' ', names=['label', 'c1x', 'c1y', 'c2x', 'c2y', 'c3x', 'c3y', 'c4x', 'c4y'])
+
+        # Take according image from the data directiry
+        image_file = file.split('.')[0] + '.png'
+        image_path = os.path.join('data/images', image_file)
+        image = cv2.imread(image_path)
+
+        # Plot the image
+        fig, ax = plt.subplots(1)
+        ax.axis('off')
+        ax.imshow(image)
+
+        # Scale the coordinates back to the original image size
+        img_width, img_height = image.shape[1], image.shape[0]
+
+        df_yolo['c1x'] = df_yolo['c1x'] * img_width
+        df_yolo['c1y'] = df_yolo['c1y'] * img_height
+        df_yolo['c2x'] = df_yolo['c2x'] * img_width
+        df_yolo['c2y'] = df_yolo['c2y'] * img_height
+        df_yolo['c3x'] = df_yolo['c3x'] * img_width
+        df_yolo['c3y'] = df_yolo['c3y'] * img_height
+        df_yolo['c4x'] = df_yolo['c4x'] * img_width
+        df_yolo['c4y'] = df_yolo['c4y'] * img_height
+
+        # Visualize the annotations
+        for index, row in df_yolo.iterrows():
+            c1 = (int(row['c1x']), int(row['c1y']))
+            c2 = (int(row['c2x']), int(row['c2y']))
+            c3 = (int(row['c3x']), int(row['c3y']))
+            c4 = (int(row['c4x']), int(row['c4y']))
+
+            # Create Polygon
+            polygon = plt.Polygon([c1, c2, c3, c4], edgecolor='r', facecolor='none')
+
+            # Add Polygon to the plot
+            ax.add_patch(polygon)
+        
+        # Save the image
+        plt.savefig(os.path.join('vis_yolo', image_file), bbox_inches='tight', pad_inches=0)
