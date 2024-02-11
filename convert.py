@@ -10,11 +10,6 @@ The calculated scaled corner points are then exported to the YOLO OBB format.
 '''
 
 from helper_functions import *
-import pandas as pd
-import os
-import cv2
-import matplotlib.pyplot as plt
-import shutil
 
 
 if __name__ == '__main__':
@@ -23,6 +18,9 @@ if __name__ == '__main__':
     # Read the annotations from the CVAT XML file
     # ---------------------------------------------------------------------------------------------------
     df = read_annotations_xml(annotation_file='data/annotations.xml')
+    # save dataframe as markdown table
+    df.to_markdown('data/annotations.md')
+
 
     # ---------------------------------------------------------------------------------------------------
     # Visualize the annotations (OD and OCR togehter)
@@ -35,6 +33,9 @@ if __name__ == '__main__':
     # Export the scaled coordinates of the non text Labels to YOLO OBB format
     # ---------------------------------------------------------------------------------------------------
     # Define the classes
+    '''
+    Röwaplan Original Classes:
+
     classes = {'Rohbau': '0',
                'Kunststoff': '1',
                'Dämmung' : '2',
@@ -51,12 +52,17 @@ if __name__ == '__main__':
                'Dichtung' : '13',
                'Holz' : '14',
                'Systemprofil' : '15',}
-    
+    '''
+
+    classes = {'Schraube': '0',
+               'Waermedaemmung': '1'}
     export_od_annotations_to_yolo(df, output_dir='result_od', classes=classes)
 
     # ---------------------------------------------------------------------------------------------------
     # Export the scaled coordinates of the text Labels to YOLO OBB format
     # ---------------------------------------------------------------------------------------------------
+    '''
+    Röwaplan Original Connections:
     connections = {'Schraube': '0',
                'Dübel': '1',
                'Dämmung' : '2',
@@ -67,12 +73,17 @@ if __name__ == '__main__':
                'Folie': '7',
                'Allgemein' : '8',
                'Konsole' : '9'}
+    '''
+
+    connections = {'Schraube': '0',
+                'Waermedaemmung': '1',
+                'None': '3'}
     export_ocr_annotations_to_yolo(df, output_dir='result_ocr', connections=connections)
 
     # ---------------------------------------------------------------------------------------------------
     # Read the created YOLO OBB files and visualize the annotations for verification
     # ---------------------------------------------------------------------------------------------------
-    visualize_yolo_annotations(yolo_dir='result_ocr', output_dir='vis_yolo')
+    visualize_yolo_annotations(yolo_dir='result_od', output_dir='vis_yolo')
 
             
 

@@ -23,7 +23,7 @@ def read_annotations_xml(annotation_file):
     images = root.findall('image')
 
     # Create empty pandas dataframe
-    df = pd.DataFrame(columns=['image', 'label', 'connection', 'tl', 'br', 'rotation', 'c1', 'c2', 'c3', 'c4', 'c1_scaled', 'c2_scaled', 'c3_scaled', 'c4_scaled'])
+    df = pd.DataFrame(columns=['image', 'label', 'connection', 'text', 'tl', 'br', 'rotation', 'c1', 'c2', 'c3', 'c4', 'c1_scaled', 'c2_scaled', 'c3_scaled', 'c4_scaled'])
 
     # Loop through the images
     for image in images:
@@ -56,17 +56,24 @@ def read_annotations_xml(annotation_file):
             # Scale the corners to the image size
             corners_scaled = corners / [img_width, img_height]
 
+            # Set the text to None if not available
+            text = 'None'
+            connection = 'None'
+
             # Get the correct class to which the Beschriftung belongs
             if label == 'Beschriftung':
+                # Get the text
+                text = box.find("attribute[@name='Text']").text
+                # Loop through the attributes to find the connection
                 for classes in box.findall('attribute'):
+                    # Extract the connection
                     if classes.text == 'true':
                         connection = classes.attrib['name']
-            else:
-                connection = 'None'
 
             # Append to the dataframe
             df = pd.concat([df if not df.empty else None, 
-                            pd.DataFrame({'image' : image_name, 'label': [label], 'connection' : [connection], 'tl': [(xtl, ytl)], 'br': [(xbr, ybr)], 'rotation': [rotation], 
+                            pd.DataFrame({'image' : image_name, 'label': [label], 'connection' : [connection], 'text' : [text], 
+                                          'tl': [(xtl, ytl)], 'br': [(xbr, ybr)], 'rotation': [rotation], 
                                           'c1' : [(corners[0][0], corners[0][1])], 
                                           'c2' : [(corners[1][0], corners[1][1])], 
                                           'c3' : [(corners[2][0], corners[2][1])], 
@@ -119,12 +126,10 @@ def visualize_annotations(df, image_dir, output_dir, mode='angle'):
             c2 = row['c2']
             c3 = row['c3']
             c4 = row['c4']
+            center_x = (xtl + xbr) / 2
+            center_y = (ytl + ybr) / 2
 
             if mode == 'angle':
-                # Calculate the center of the rectangle
-                center_x = (xtl + xbr) / 2
-                center_y = (ytl + ybr) / 2
-
                 # Create the rectangle
                 rect = Rectangle((xtl, ytl), xbr - xtl, ybr - ytl, linewidth=0.5, edgecolor='r', facecolor='none')
 
@@ -137,12 +142,20 @@ def visualize_annotations(df, image_dir, output_dir, mode='angle'):
                 # Add the rectangle to the plot and color it blue
                 ax.add_patch(rect)
 
+                # Add Text and Rotate the text around the center of the rectangle
+                ax.text(center_x-30, center_y-30, row['text'], fontsize=3, color='r', rotation=-angle, rotation_mode='anchor')
+
+
             if mode == 'corners':
                 # Create a polygon from the corners
                 polygon = plt.Polygon([c1, c2, c3, c4], linewidth=0.5, closed=True, fill=None, edgecolor='b')
 
                 # Add the polygon to the plot
                 ax.add_patch(polygon)
+
+                # Add Text and Rotate the text around the center of the rectangle
+                ax.text(center_x-30, center_y-30, row['text'], fontsize=3, color='b', rotation=-angle, rotation_mode='anchor')
+
 
         # Save the image
         plt.savefig(os.path.join(output_dir, image), bbox_inches='tight', dpi=300)
@@ -192,6 +205,16 @@ def visualize_scaled_annotations(df, image_dir, output_dir):
 
             # Add the polygon to the plot
             ax.add_patch(polygon)
+
+            # Add the corresponding text and rotate it around the center of the rectangle
+            xtl = row['tl'][0]
+            ytl = row['tl'][1]
+            xbr = row['br'][0]
+            ybr = row['br'][1]
+            center_x = (xtl + xbr) / 2
+            center_y = (ytl + ybr) / 2
+            angle = row['rotation']
+            ax.text(center_x-30, center_y-30, row['text'], fontsize=3, color='g', rotation=-angle, rotation_mode='anchor')
 
         # Save the image
         plt.savefig(os.path.join(output_dir, image), bbox_inches='tight', dpi=300)
@@ -268,6 +291,7 @@ def export_ocr_annotations_to_yolo(df, output_dir, connections):
         with open(os.path.join(output_dir, file_name), 'w') as file:
             for index, box in boxes.iterrows():
                 connection = connections[box['connection']]
+                text = box['text'] if str(box['text']) != 'None' else ''
 
                 x1 = box['c1_scaled'][0]
                 y1 = box['c1_scaled'][1]
@@ -278,7 +302,7 @@ def export_ocr_annotations_to_yolo(df, output_dir, connections):
                 x4 = box['c4_scaled'][0]
                 y4 = box['c4_scaled'][1]
 
-                file.write(f'{connection} {x1} {y1} {x2} {y2} {x3} {y3} {x4} {y4}\n')
+                file.write(f'{connection} {x1} {y1} {x2} {y2} {x3} {y3} {x4} {y4} "{text}"\n')
 
 
 def visualize_yolo_annotations(yolo_dir, output_dir):  
