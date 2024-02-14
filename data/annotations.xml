@@ -3,80 +3,52 @@
   <version>1.1</version>
   <meta>
     <job>
-      <id>548941</id>
-      <size>1</size>
+      <id>1</id>
+      <size>53</size>
       <mode>annotation</mode>
       <overlap>0</overlap>
       <bugtracker></bugtracker>
-      <created>2024-02-02 14:40:47.012148+00:00</created>
-      <updated>2024-02-02 16:25:53.809213+00:00</updated>
+      <created>2024-02-09 09:17:31.756156+00:00</created>
+      <updated>2024-02-14 14:53:48.323627+00:00</updated>
       <subset>default</subset>
       <start_frame>0</start_frame>
-      <stop_frame>0</stop_frame>
+      <stop_frame>52</stop_frame>
       <frame_filter></frame_filter>
       <segments>
         <segment>
-          <id>549830</id>
+          <id>1</id>
           <start>0</start>
-          <stop>0</stop>
-          <url>https://app.cvat.ai/api/jobs/548941</url>
+          <stop>52</stop>
+          <url>http://localhost:8080/api/jobs/1</url>
         </segment>
       </segments>
-      <assignee></assignee>
+      <owner>
+        <username>tkapler</username>
+        <email>theokapler@web.de</email>
+      </owner>
+      <assignee>
+        <username>tkapler</username>
+        <email>theokapler@web.de</email>
+      </assignee>
       <labels>
-        <label>
-          <name>Rohbau</name>
-          <color>#b0d3b0</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
-        <label>
-          <name>Kunststoff</name>
-          <color>#c15794</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
-        <label>
-          <name>Dämmung</name>
-          <color>#858b4b</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
-        <label>
-          <name>Dübel</name>
-          <color>#56c679</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
         <label>
           <name>Schraube</name>
           <color>#038afe</color>
-          <type>any</type>
+          <type>rectangle</type>
           <attributes>
           </attributes>
         </label>
         <label>
-          <name>Alublech</name>
-          <color>#1fd790</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
-        <label>
-          <name>Stahlblech</name>
-          <color>#68ea3b</color>
-          <type>any</type>
+          <name>Waermedaemmung</name>
+          <color>#fa3253</color>
+          <type>rectangle</type>
           <attributes>
           </attributes>
         </label>
         <label>
           <name>Beschriftung</name>
-          <color>#746708</color>
-          <type>any</type>
+          <color>#03d76a</color>
+          <type>rectangle</type>
           <attributes>
             <attribute>
               <name>Schraube</name>
@@ -86,524 +58,562 @@
               <values>false</values>
             </attribute>
             <attribute>
-              <name>Dübel</name>
+              <name>Waermedaemmung</name>
               <mutable>False</mutable>
               <input_type>checkbox</input_type>
               <default_value>false</default_value>
               <values>false</values>
             </attribute>
             <attribute>
-              <name>Dämmung</name>
+              <name>Text</name>
               <mutable>False</mutable>
-              <input_type>checkbox</input_type>
-              <default_value>false</default_value>
-              <values>false</values>
+              <input_type>text</input_type>
+              <default_value></default_value>
+              <values></values>
             </attribute>
-            <attribute>
-              <name>Alublech</name>
-              <mutable>False</mutable>
-              <input_type>checkbox</input_type>
-              <default_value>false</default_value>
-              <values>false</values>
-            </attribute>
-            <attribute>
-              <name>Stahlblech</name>
-              <mutable>False</mutable>
-              <input_type>checkbox</input_type>
-              <default_value>false</default_value>
-              <values>false</values>
-            </attribute>
-            <attribute>
-              <name>Kunststoff</name>
-              <mutable>False</mutable>
-              <input_type>checkbox</input_type>
-              <default_value>false</default_value>
-              <values>false</values>
-            </attribute>
-            <attribute>
-              <name>PfostenRiegel</name>
-              <mutable>False</mutable>
-              <input_type>checkbox</input_type>
-              <default_value>false</default_value>
-              <values>false</values>
-            </attribute>
-            <attribute>
-              <name>Folie</name>
-              <mutable>False</mutable>
-              <input_type>checkbox</input_type>
-              <default_value>false</default_value>
-              <values>false</values>
-            </attribute>
-            <attribute>
-              <name>Allgemein</name>
-              <mutable>False</mutable>
-              <input_type>checkbox</input_type>
-              <default_value>false</default_value>
-              <values>false</values>
-            </attribute>
-            <attribute>
-              <name>Konsole</name>
-              <mutable>False</mutable>
-              <input_type>checkbox</input_type>
-              <default_value>false</default_value>
-              <values>false</values>
-            </attribute>
-          </attributes>
-        </label>
-        <label>
-          <name>Folie</name>
-          <color>#ef4a20</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
-        <label>
-          <name>PfostenRiegel</name>
-          <color>#e0a1b5</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
-        <label>
-          <name>Konsole</name>
-          <color>#da687d</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
-        <label>
-          <name>Edelstahl</name>
-          <color>#57c3d7</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
-        <label>
-          <name>Glas</name>
-          <color>#82f45f</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
-        <label>
-          <name>Dichtung</name>
-          <color>#262963</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
-        <label>
-          <name>Holz</name>
-          <color>#6facdf</color>
-          <type>any</type>
-          <attributes>
-          </attributes>
-        </label>
-        <label>
-          <name>Systemprofil</name>
-          <color>#7b200c</color>
-          <type>any</type>
-          <attributes>
           </attributes>
         </label>
       </labels>
     </job>
-    <dumped>2024-02-02 16:46:33.466284+00:00</dumped>
+    <dumped>2024-02-14 14:54:00.710688+00:00</dumped>
   </meta>
-  <image id="0" name="Attika_Vertikal (1).png" width="2381" height="1683">
-    <box label="Rohbau" source="manual" occluded="0" xtl="1163.11" ytl="839.35" xbr="1668.75" ybr="1631.00" z_order="0">
-    </box>
-    <box label="Dämmung" source="manual" occluded="0" xtl="1114.37" ytl="674.16" xbr="1670.81" ybr="824.71" z_order="0" group_id="1">
-    </box>
-    <box label="Schraube" source="manual" occluded="0" xtl="1941.38" ytl="670.96" xbr="2005.27" ybr="706.95" z_order="0">
-    </box>
-    <polygon label="Dämmung" source="manual" occluded="0" points="974.72,828.41;1095.57,828.59;1100.81,832.77;1101.85,851.96;1088.25,859.80;1087.38,874.80;1093.83,882.12;1103.25,885.44;1112.66,879.86;1126.27,865.38;1137.60,863.12;1153.47,867.48;1160.10,881.78;1159.75,1629.72;973.50,1627.80" z_order="0">
-    </polygon>
-    <box label="Schraube" source="manual" occluded="0" xtl="851.01" ytl="682.52" xbr="876.61" ybr="737.62" z_order="0">
-    </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1263.40" ytl="232.05" xbr="1710.21" ybr="271.68" z_order="0" group_id="1">
-      <attribute name="Kunststoff">false</attribute>
+  <image id="0" name="1.png" width="3509" height="2481">
+    <box label="Beschriftung" source="manual" occluded="0" xtl="305.55" ytl="2390.77" xbr="3196.94" ybr="2443.63" z_order="0">
+      <attribute name="Waermedaemmung">false</attribute>
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">true</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Text">Der Inhalt dieser Zeichnung bleibt unser geistiges Eigentum. Jede Verwendung, insbesondere die Weitergabe, Vervielfältigung, Veröffentlichung und Zurverfügungstellung bedarf unserer ausdrücklichen Zustimmung.</attribute>
     </box>
-    <box label="Dämmung" source="manual" occluded="0" xtl="1670.91" ytl="674.44" xbr="1925.45" ybr="1627.94" z_order="0" group_id="2">
-    </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="2044.43" ytl="1293.60" xbr="2378.73" ybr="1410.21" z_order="0" group_id="2">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2783.54" ytl="544.12" xbr="3172.17" ybr="606.30" z_order="0">
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">Alu-Unterkonstruktion</attribute>
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">true</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
     </box>
-    <box label="Rohbau" source="manual" occluded="0" xtl="1163.24" ytl="839.31" xbr="1668.92" ybr="1628.43" z_order="0">
-    </box>
-    <box label="Kunststoff" source="manual" occluded="0" xtl="653.53" ytl="680.87" xbr="762.88" ybr="730.77" z_order="0">
-    </box>
-    <box label="Kunststoff" source="manual" occluded="0" xtl="661.39" ytl="792.77" xbr="756.92" ybr="873.23" z_order="0">
-    </box>
-    <box label="Dämmung" source="manual" occluded="0" xtl="654.46" ytl="555.62" xbr="832.55" ybr="680.98" z_order="0">
-    </box>
-    <box label="Dämmung" source="manual" occluded="0" xtl="884.68" ytl="674.23" xbr="1114.30" ybr="697.37" z_order="0">
-    </box>
-    <box label="Dämmung" source="manual" occluded="0" xtl="839.84" ytl="571.17" xbr="857.20" ybr="694.12" z_order="0">
-    </box>
-    <box label="Dämmung" source="manual" occluded="0" xtl="763.46" ytl="826.21" xbr="974.87" ybr="863.70" z_order="0">
-    </box>
-    <box label="Dämmung" source="manual" occluded="0" xtl="661.64" ytl="872.97" xbr="964.53" ybr="1627.57" z_order="0">
-    </box>
-    <box label="Dübel" source="manual" occluded="0" xtl="1099.48" ytl="1322.95" xbr="1293.88" ybr="1365.04" z_order="0" group_id="3">
-    </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1208.53" ytl="1365.99" xbr="1406.48" ybr="1450.00" z_order="0" group_id="3">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2790.23" ytl="222.18" xbr="3412.03" ybr="279.17" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">true</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">ALPHATON-Ziegelfassade</attribute>
     </box>
-    <box label="Kunststoff" source="manual" occluded="0" xtl="857.78" ytl="610.43" xbr="1924.40" ybr="673.63" z_order="0" group_id="5">
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2790.23" ytl="302.49" xbr="3215.13" ybr="359.49" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">Querformat- Ausführung</attribute>
     </box>
-    <box label="Schraube" source="manual" occluded="0" xtl="994.00" ytl="1277.21" xbr="1023.24" ybr="1313.95" z_order="0" group_id="4">
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2787.64" ytl="359.49" xbr="3090.77" ybr="419.08" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">2.7.3a M1:1 (V)</attribute>
     </box>
-    <box label="Schraube" source="manual" occluded="0" xtl="991.75" ytl="1375.44" xbr="1025.49" ybr="1413.68" z_order="0" group_id="4">
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2785.05" ytl="416.49" xbr="3023.41" ybr="465.72" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">Fensterbank</attribute>
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1206.68" ytl="1467.12" xbr="1365.40" ybr="1532.70" z_order="0" group_id="4">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2787.64" ytl="468.31" xbr="2987.13" ybr="522.71" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">aus Metall</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="815.53" ytl="1081.98" xbr="998.97" ybr="1137.94" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">O-HALTER</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="846.62" ytl="1228.10" xbr="977.20" ybr="1280.95" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">ACHSE</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="585.47" ytl="1529.36" xbr="865.28" ybr="1591.86" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">UK TRAGPROFIL</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1309.87" ytl="1280.95" xbr="1418.68" ybr="1327.59" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">TRAG-</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1303.65" ytl="1324.17" xbr="1431.12" ybr="1368.01" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">PROFIL</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1760.68" ytl="1691.35" xbr="1968.98" ybr="1737.98" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">FESTPUNKT</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="3296.43" ytl="71.44" xbr="3467.43" ybr="121.19" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">AL-DH-35</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="3277.78" ytl="121.19" xbr="3464.32" ybr="177.15" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">17.05.2012</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2217.60" ytl="1834.26" xbr="2469.43" ybr="1884.00" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">GEMÄẞ STATIK</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2177.18" ytl="2039.45" xbr="2307.76" ybr="2089.20" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">THERM.</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2177.18" ytl="2098.52" xbr="2441.45" ybr="2157.60" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">TRENNELEMENT</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1303.55" ytl="1849.80" xbr="1359.51" ybr="1896.44" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">30</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1141.88" ytl="1849.80" xbr="1188.51" ybr="1893.33" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">10</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="980.21" ytl="1849.80" xbr="1026.84" ybr="1890.22" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">30</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1260.02" ytl="2070.54" xbr="1319.09" ybr="2120.29" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">40</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1797.72" ytl="1887.96" xbr="2028.52" ybr="1926.13" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">WANDHALTER</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1676.63" ytl="1175.15" xbr="1710.83" ybr="1221.78" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">X</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1623.78" ytl="861.14" xbr="1676.63" ybr="926.43" rotation="353.50" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">5°</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="232.58" ytl="1801.66" xbr="624.23" ybr="1851.40" rotation="270.60" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">ACHSMAẞ = MAX. 400</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="543.13" ytl="1953.90" xbr="1043.36" ybr="2003.64" rotation="270.60" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">ALPAHTON - ZIEGELPLATTE</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="698.41" ytl="1361.70" xbr="757.04" ybr="1411.45" rotation="270.60" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">25</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="770.12" ytl="1283.84" xbr="816.04" ybr="1333.59" rotation="270.60" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">6</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2541.11" ytl="1361.87" xbr="2749.31" ybr="1411.61" rotation="270.60" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">NACH STATIK</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1046.47" ytl="762.05" xbr="1400.58" ybr="813.83" rotation="353.80" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">ALU-FENSTERBANK</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1706.17" ytl="1295.78" xbr="2023.29" ybr="1345.52" z_order="0" group_id="2">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">true</attribute>
+      <attribute name="Text">WÄRMEDÄMMUNG</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2214.49" ytl="1619.74" xbr="2338.85" ybr="1666.37" z_order="0" group_id="4">
       <attribute name="Schraube">true</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">DÜBEL</attribute>
     </box>
-    <box label="Alublech" source="manual" occluded="0" xtl="645.85" ytl="789.75" xbr="661.53" ybr="1629.56" z_order="0">
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1499.42" ytl="1377.23" xbr="1701.50" ybr="1426.98" z_order="0" group_id="3">
+      <attribute name="Schraube">true</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">BOHRSCHR.</attribute>
     </box>
-    <box label="Dübel" source="manual" occluded="0" xtl="1490.22" ytl="1068.04" xbr="1711.57" ybr="1112.31" z_order="0">
+    <box label="Schraube" source="manual" occluded="0" xtl="2046.12" ytl="1298.30" xbr="2437.19" ybr="1410.49" z_order="0">
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1265.51" ytl="197.00" xbr="1668.17" ybr="228.50" z_order="0" group_id="5">
-      <attribute name="Kunststoff">true</attribute>
+    <box label="Waermedaemmung" source="manual" occluded="0" xtl="1453.12" ytl="1024.76" xbr="2110.23" ybr="2399.89" z_order="0" group_id="2">
+    </box>
+    <box label="Schraube" source="manual" occluded="0" xtl="1988.43" ytl="1676.54" xbr="2584.64" ybr="1823.99" z_order="0" group_id="4">
+    </box>
+    <box label="Schraube" source="manual" occluded="0" xtl="1385.81" ytl="1407.28" xbr="1558.90" ybr="1490.62" z_order="0" group_id="3">
+    </box>
+    <box label="Schraube" source="manual" occluded="0" xtl="1389.01" ytl="1077.12" xbr="1555.69" ybr="1160.47" z_order="0">
+    </box>
+    <box label="Schraube" source="manual" occluded="0" xtl="2280.12" ytl="772.61" xbr="2430.78" ybr="852.74" z_order="0">
+    </box>
+  </image>
+  <image id="1" name="10.png" width="3509" height="2481">
+  </image>
+  <image id="2" name="11.png" width="3509" height="2481">
+  </image>
+  <image id="3" name="12.png" width="3509" height="2481">
+  </image>
+  <image id="4" name="13.png" width="2481" height="3509">
+  </image>
+  <image id="5" name="14.png" width="2481" height="3509">
+  </image>
+  <image id="6" name="15.png" width="4961" height="3509">
+  </image>
+  <image id="7" name="16.png" width="4961" height="3508">
+  </image>
+  <image id="8" name="17.png" width="4961" height="3509">
+  </image>
+  <image id="9" name="18.png" width="4961" height="3509">
+  </image>
+  <image id="10" name="19.png" width="4961" height="3509">
+  </image>
+  <image id="11" name="2.png" width="3509" height="2481">
+    <box label="Beschriftung" source="manual" occluded="0" xtl="793.75" ytl="1177.85" xbr="966.48" ybr="1221.03" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">O-HALTER</attribute>
     </box>
-    <polygon label="Alublech" source="manual" occluded="0" points="650.24,731.00;650.84,583.95;648.13,579.12;641.50,577.92;612.87,578.82;613.18,584.85;646.02,584.55;646.62,731.00" z_order="0">
-    </polygon>
-    <polygon label="Alublech" source="manual" occluded="0" points="1937.72,570.41;1979.31,570.41;1989.07,579.81;1988.35,1627.17;1979.31,1627.90;1980.83,583.43;1979.49,578.76;1937.65,578.04" z_order="0" group_id="6">
-    </polygon>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="2039.64" ytl="913.99" xbr="2259.19" ybr="1029.17" z_order="0" group_id="6">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1013.98" ytl="1367.84" xbr="1130.56" ybr="1413.18" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">true</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">TRAG-</attribute>
     </box>
-    <polygon label="Stahlblech" source="manual" occluded="0" points="756.31,793.08;762.64,793.08;763.24,863.59;966.95,863.59;973.88,869.62;973.28,1627.49;964.54,1627.19;964.84,870.22;756.92,870.52" z_order="0">
-    </polygon>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1474.79" ytl="400.71" xbr="1746.41" ybr="471.42" z_order="0" group_id="10">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1013.98" ytl="1408.86" xbr="1137.04" ybr="1452.05" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">true</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">PROFIL</attribute>
     </box>
-    <box label="Kunststoff" source="manual" occluded="0" xtl="1166.54" ytl="570.98" xbr="1670.52" ybr="604.31" z_order="0">
-    </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="2024.99" ytl="1424.45" xbr="2374.18" ybr="1599.99" z_order="0">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="564.89" ytl="1372.16" xbr="679.32" ybr="1408.86" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">true</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">ACHSE</attribute>
     </box>
-    <box label="Konsole" source="manual" occluded="0" xtl="1685.10" ytl="989.26" xbr="1940.51" ybr="1194.80" z_order="0" group_id="13">
-    </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="2054.21" ytl="1207.56" xbr="2280.49" ybr="1272.49" z_order="0" group_id="13">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1359.42" ytl="1266.37" xbr="1402.82" ybr="1305.23" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">true</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">X</attribute>
     </box>
-    <box label="Kunststoff" source="manual" occluded="0" xtl="1670.53" ytl="989.53" xbr="1685.47" ybr="1192.91" z_order="0">
-    </box>
-    <box label="Konsole" source="manual" occluded="0" xtl="974.07" ytl="1217.48" xbr="1159.88" ybr="1472.36" z_order="0" group_id="15">
-    </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1204.88" ytl="1550.84" xbr="1408.88" ybr="1588.79" z_order="0" group_id="15">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1519.19" ytl="1560.00" xbr="1719.98" ybr="1607.50" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">true</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">FESTPUNKT</attribute>
     </box>
-    <polygon label="PfostenRiegel" source="manual" occluded="0" points="596.37,697.96;646.25,696.58;646.25,732.73;764.31,729.99;764.31,696.58;1110.71,698.41;1110.71,825.63;763.39,826.54;762.48,792.68;645.79,790.85;645.33,824.71;599.57,825.63;594.54,821.96;594.54,703.45" z_order="0" group_id="18">
-    </polygon>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="404.42" ytl="787.69" xbr="508.04" ybr="833.24" z_order="0" group_id="18">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1920.77" ytl="1773.74" xbr="2166.91" ybr="1829.88" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">true</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">GEMÄẞ STATIK</attribute>
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="408.98" ytl="843.49" xbr="501.21" ybr="876.51" z_order="0" group_id="18">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1884.07" ytl="1924.88" xbr="2015.77" ybr="1976.69" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">true</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">THERM.</attribute>
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1170.74" ytl="845.76" xbr="1316.48" ybr="877.65" z_order="0" group_id="18">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1890.55" ytl="1987.49" xbr="2151.79" ybr="2034.99" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">true</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">TRENNELEMENT</attribute>
     </box>
-    <box label="Schraube" source="manual" occluded="0" xtl="598.73" ytl="746.31" xbr="786.73" ybr="776.82" z_order="0">
-    </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="251.58" ytl="927.33" xbr="511.31" ybr="1132.75" z_order="0">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1497.60" ytl="2162.37" xbr="1739.41" ybr="2203.39" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">true</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">WANDHALTER</attribute>
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="178.22" ytl="434.55" xbr="452.86" ybr="562.99" z_order="0">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="301.49" ytl="1609.66" xbr="580.01" ybr="1657.15" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">true</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">UK TRAGPROFIL</attribute>
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="43.30" ytl="77.73" xbr="489.29" ybr="336.80" z_order="0">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="685.80" ytl="1929.19" xbr="733.30" ybr="1968.06" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">true</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">30</attribute>
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="654.89" ytl="72.81" xbr="959.87" ybr="266.29" z_order="0">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="847.73" ytl="1929.19" xbr="895.44" ybr="1972.38" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">true</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">10</attribute>
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="658.23" ytl="387.23" xbr="909.87" ybr="424.80" z_order="0">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1009.66" ytl="1929.19" xbr="1063.63" ybr="1970.22" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">true</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">30</attribute>
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="697.48" ytl="486.35" xbr="808.97" ybr="520.36" z_order="0">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="970.79" ytl="2140.78" xbr="1029.09" ybr="2179.64" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">true</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">40</attribute>
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="2015.89" ytl="673.89" xbr="2047.46" ybr="789.66" z_order="0">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="288.54" ytl="2397.71" xbr="3188.13" ybr="2438.73" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">true</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">Der Inhalt dieser Zeichnung bleibt unser geistiges Eigentum. Jede Verwendung, insbesondere die Weitergabe, Vervielfältigung, Veröffentlichung und Zurverfügungstellung bedarf unserer ausdrücklichen Zustimmung.</attribute>
     </box>
-    <polygon label="Folie" source="manual" occluded="0" points="650.38,731.26;653.99,731.26;654.63,555.66;861.63,555.87;863.12,596.31;868.76,604.19;879.29,606.96;1925.96,606.74;1924.79,730.41;1928.52,730.09;1927.77,605.47;1924.90,602.91;876.31,602.70;868.01,596.85;867.69,554.91;862.90,551.40;652.08,552.68;651.12,554.06" z_order="0" group_id="17">
-    </polygon>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1270.87" ytl="164.40" xbr="1552.02" ybr="193.50" z_order="0" group_id="17">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="570.84" ytl="222.75" xbr="602.08" ybr="257.73" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">true</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">8</attribute>
     </box>
-    <polygon label="Folie" source="manual" occluded="0" points="831.51,698.27;836.08,697.95;837.04,566.83;844.49,560.13;853.22,560.77;857.90,567.26;858.43,605.68;863.33,609.62;1924.36,609.83;1924.68,606.64;864.61,605.68;863.01,604.40;862.80,565.66;854.18,557.47;841.94,556.09;832.57,563.43" z_order="0">
-    </polygon>
-    <polygon label="Alublech" source="manual" occluded="0" points="587.40,636.90;594.90,636.80;595.10,463.50;599.50,459.80;2082.15,537.71;2086.30,539.00;2087.08,712.40;2093.83,712.14;2094.09,537.96;2087.86,530.96;597.70,453.60;590.90,456.70;588.30,465.30" z_order="0" group_id="8">
-    </polygon>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1271.33" ytl="94.77" xbr="1607.09" ybr="125.46" z_order="0" group_id="8">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="667.05" ytl="221.50" xbr="715.78" ybr="253.99" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">true</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">18</attribute>
     </box>
-    <polygon label="Alublech" source="manual" occluded="0" points="595.46,632.11;608.68,632.41;608.07,475.59;610.78,473.48;805.91,483.85;1160.86,570.67;1679.10,571.42;1893.01,542.88;2067.26,549.94;2074.02,554.45;2073.87,692.04;2086.03,691.74;2086.03,550.69;2078.82,539.73;2074.32,538.07;1900.97,528.61;1671.74,558.80;1168.22,559.10;807.56,471.38;604.62,461.77;599.06,465.97;595.46,474.38" z_order="0" group_id="9">
-    </polygon>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1273.73" ytl="130.50" xbr="1380.95" ybr="160.86" z_order="0" group_id="9">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1458.74" ytl="1372.16" xbr="1767.70" ybr="1415.34" z_order="0" group_id="6">
+      <attribute name="Waermedaemmung">true</attribute>
+      <attribute name="Text">WÄRMEDÄMMUNG</attribute>
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">true</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
     </box>
-    <polygon label="Alublech" source="manual" occluded="0" points="631.07,639.04;631.07,647.84;590.80,647.84;581.15,641.55;578.63,637.36;579.47,454.47;582.41,448.18;589.96,444.40;2091.65,522.01;2097.52,525.36;2101.71,533.33;2101.71,716.22;2099.20,722.51;2094.16,725.45;2083.68,722.09;2058.51,695.66;2064.38,689.79;2089.13,715.80;2092.90,716.22;2093.74,714.12;2094.16,536.27;2087.87,530.39;593.31,451.12;588.28,453.21;587.44,456.99;587.02,638.62;589.96,640.71" z_order="0" group_id="10">
-    </polygon>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1264.69" ytl="52.02" xbr="1551.63" ybr="89.60" z_order="0" group_id="10">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1191.02" ytl="1456.36" xbr="1391.81" ybr="1499.54" z_order="0" group_id="7">
+      <attribute name="Schraube">true</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">BOHRSCHR.</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1578.77" ytl="602.46" xbr="1939.66" ybr="647.92" rotation="352.90" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">true</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">FENSTERBANKPLATTE</attribute>
     </box>
-    <polygon label="Folie" source="manual" occluded="0" points="903.28,824.80;1096.53,825.23;1104.30,830.56;1105.46,851.01;1102.58,855.33;1091.63,863.68;1091.20,874.34;1100.42,881.54;1109.34,879.38;1125.04,860.08;1141.46,858.35;1151.68,861.81;1164.35,877.65;1164.50,1630.19;1160.03,1630.19;1160.75,881.39;1150.67,865.41;1139.87,863.39;1129.22,862.96;1111.79,880.38;1101.86,885.14;1092.64,880.96;1087.02,873.04;1087.74,862.96;1100.99,851.44;1101.86,835.02;1094.66,828.54;903.14,828.26" z_order="0">
-    </polygon>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="1184.43" ytl="1201.77" xbr="1429.66" ybr="1312.18" z_order="0">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1420.42" ytl="643.20" xbr="1476.06" ybr="688.66" rotation="352.90" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">true</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">A</attribute>
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="2339.48" ytl="696.06" xbr="2368.01" ybr="824.45" z_order="0">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="61.76" ytl="1867.99" xbr="430.24" ybr="1915.49" rotation="270.80" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">false</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">true</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">ACHSMAẞ = MAX. 400</attribute>
     </box>
-    <box label="Beschriftung" source="manual" occluded="0" xtl="452.73" ytl="632.53" xbr="536.69" ybr="668.20" z_order="0" group_id="18">
-      <attribute name="Kunststoff">false</attribute>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="263.64" ytl="1962.87" xbr="762.57" ybr="2016.62" rotation="270.80" z_order="0">
       <attribute name="Schraube">false</attribute>
-      <attribute name="Dübel">false</attribute>
-      <attribute name="Dämmung">false</attribute>
-      <attribute name="Alublech">false</attribute>
-      <attribute name="Stahlblech">false</attribute>
-      <attribute name="PfostenRiegel">true</attribute>
-      <attribute name="Folie">false</attribute>
-      <attribute name="Allgemein">false</attribute>
-      <attribute name="Konsole">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">ALPHATON - ZIEGELPLATTE</attribute>
     </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="311.19" ytl="1002.18" xbr="368.55" ybr="1055.93" rotation="270.80" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">48</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="309.81" ytl="1242.98" xbr="363.76" ybr="1296.73" rotation="270.80" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">12</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="460.55" ytl="1368.97" xbr="511.53" ybr="1422.71" rotation="270.80" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">6</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="690.64" ytl="566.77" xbr="747.70" ybr="620.52" rotation="270.80" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">9</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1007.73" ytl="492.27" xbr="1052.59" ybr="546.02" rotation="270.80" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">8</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="996.87" ytl="565.21" xbr="1057.02" ybr="618.96" rotation="270.80" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">10</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2271.90" ytl="1381.35" xbr="2503.10" ybr="1435.09" rotation="270.80" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">NACH STATIK</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="387.54" ytl="1446.80" xbr="441.49" ybr="1500.55" rotation="270.80" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">25</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1920.77" ytl="1581.59" xbr="2041.68" ybr="1633.41" z_order="0" group_id="8">
+      <attribute name="Schraube">true</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">DÜBEL</attribute>
+    </box>
+    <box label="Schraube" source="manual" occluded="0" xtl="1100.23" ytl="1495.33" xbr="1263.96" ybr="1574.68" z_order="0" group_id="7">
+    </box>
+    <box label="Schraube" source="manual" occluded="0" xtl="549.85" ytl="395.12" xbr="623.62" ybr="735.17" z_order="0">
+    </box>
+    <box label="Schraube" source="manual" occluded="0" xtl="1573.44" ytl="807.70" xbr="1659.60" ybr="1140.75" rotation="354.10" z_order="0">
+    </box>
+    <box label="Schraube" source="manual" occluded="0" xtl="970.91" ytl="868.73" xbr="1056.98" ybr="1203.10" rotation="354.10" z_order="0">
+    </box>
+    <box label="Schraube" source="manual" occluded="0" xtl="1098.43" ytl="1169.86" xbr="1263.96" ybr="1248.84" z_order="0">
+    </box>
+    <box label="Schraube" source="manual" occluded="0" xtl="1696.55" ytl="1647.97" xbr="2288.78" ybr="1778.41" z_order="0" group_id="8">
+    </box>
+    <box label="Schraube" source="manual" occluded="0" xtl="2295.83" ytl="857.09" xbr="2429.10" ybr="933.10" z_order="0">
+    </box>
+    <box label="Waermedaemmung" source="manual" occluded="0" xtl="1159.78" ytl="1044.63" xbr="1816.49" ybr="2399.43" z_order="0" group_id="6">
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="3291.77" ytl="74.58" xbr="3458.01" ybr="126.39" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text"></attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="3283.13" ytl="119.92" xbr="3453.69" ybr="173.89" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">17.05.2012</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2786.55" ytl="219.23" xbr="3412.67" ybr="284.00" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">ALPHTON - Ziegelfassade</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2788.71" ytl="299.12" xbr="3216.20" ybr="355.25" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">Querformat- Ausführung</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2782.23" ytl="355.25" xbr="3097.45" ybr="407.07" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">2.7.3b M 1:1 (V)</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2784.39" ytl="409.23" xbr="3026.20" ybr="456.73" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">Fensterbank</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2791.08" ytl="461.04" xbr="3095.29" ybr="510.70" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">aus Ziegelplatten</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="2784.39" ytl="534.45" xbr="3168.92" ybr="592.75" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">Alu-Unterkonstruktion</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1569.22" ytl="563.74" xbr="1930.11" ybr="604.88" rotation="352.90" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">MOEDING-</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1058.24" ytl="937.22" xbr="1352.14" ybr="978.36" rotation="353.00" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">KRALLENHALTER</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="1459.09" ytl="1006.22" xbr="1514.74" ybr="1051.68" rotation="352.90" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">A</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="161.15" ytl="217.07" xbr="405.13" ybr="273.21" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">SCHNITT A-A</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="223.77" ytl="381.16" xbr="510.92" ybr="437.30" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">KRALLENHALTER</attribute>
+    </box>
+    <box label="Beschriftung" source="manual" occluded="0" xtl="506.60" ytl="1238.30" xbr="633.98" ybr="1283.64" z_order="0">
+      <attribute name="Schraube">false</attribute>
+      <attribute name="Waermedaemmung">false</attribute>
+      <attribute name="Text">BLECH</attribute>
+    </box>
+  </image>
+  <image id="12" name="20.png" width="4961" height="3509">
+  </image>
+  <image id="13" name="21.png" width="4961" height="3509">
+  </image>
+  <image id="14" name="22.png" width="4961" height="3509">
+  </image>
+  <image id="15" name="23.png" width="4961" height="3509">
+  </image>
+  <image id="16" name="24.png" width="4961" height="3509">
+  </image>
+  <image id="17" name="25.png" width="4961" height="3509">
+  </image>
+  <image id="18" name="26.png" width="4961" height="3509">
+  </image>
+  <image id="19" name="27.png" width="4961" height="3509">
+  </image>
+  <image id="20" name="28.png" width="2481" height="3509">
+  </image>
+  <image id="21" name="29.png" width="4961" height="3509">
+  </image>
+  <image id="22" name="3.png" width="3509" height="2481">
+  </image>
+  <image id="23" name="30.png" width="4961" height="3509">
+  </image>
+  <image id="24" name="31.png" width="4961" height="3509">
+  </image>
+  <image id="25" name="32.png" width="2481" height="3509">
+  </image>
+  <image id="26" name="33.png" width="4961" height="3509">
+  </image>
+  <image id="27" name="34.png" width="4961" height="3509">
+  </image>
+  <image id="28" name="35.png" width="3509" height="4961">
+  </image>
+  <image id="29" name="36.png" width="3509" height="4961">
+  </image>
+  <image id="30" name="37.png" width="4961" height="3509">
+  </image>
+  <image id="31" name="38.png" width="3509" height="4961">
+  </image>
+  <image id="32" name="39.png" width="4961" height="3509">
+  </image>
+  <image id="33" name="4.png" width="3509" height="2481">
+  </image>
+  <image id="34" name="40.png" width="4961" height="3509">
+  </image>
+  <image id="35" name="41.png" width="4961" height="3509">
+  </image>
+  <image id="36" name="42.png" width="4961" height="3509">
+  </image>
+  <image id="37" name="43.png" width="2481" height="3509">
+  </image>
+  <image id="38" name="44.png" width="4961" height="3509">
+  </image>
+  <image id="39" name="45.png" width="4961" height="3509">
+  </image>
+  <image id="40" name="46.png" width="4961" height="3509">
+  </image>
+  <image id="41" name="47.png" width="4961" height="3509">
+  </image>
+  <image id="42" name="48.png" width="3509" height="4961">
+  </image>
+  <image id="43" name="49.png" width="4961" height="3509">
+  </image>
+  <image id="44" name="5.png" width="3509" height="2481">
+  </image>
+  <image id="45" name="50.png" width="4961" height="3509">
+  </image>
+  <image id="46" name="51.png" width="2481" height="3509">
+  </image>
+  <image id="47" name="52.png" width="4961" height="3509">
+  </image>
+  <image id="48" name="53.png" width="4961" height="3509">
+  </image>
+  <image id="49" name="6.png" width="3509" height="2481">
+  </image>
+  <image id="50" name="7.png" width="3509" height="2481">
+  </image>
+  <image id="51" name="8.png" width="3509" height="2480">
+  </image>
+  <image id="52" name="9.png" width="3509" height="2481">
   </image>
 </annotations>

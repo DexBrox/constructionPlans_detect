@@ -64,7 +64,7 @@ def read_annotations_xml(annotation_file):
             # Get the correct class to which the Beschriftung belongs
             if label == 'Beschriftung':
                 # Get the text
-                #text = box.find("attribute[@name='Text']").text
+                text = box.find("attribute[@name='Text']").text
                 # Loop through the attributes to find the connection
                 for classes in box.findall('attribute'):
                     # Extract the connection
@@ -291,7 +291,7 @@ def export_ocr_annotations_to_yolo(df, output_dir, connections):
         file_name = f'{image}.txt'
         with open(os.path.join(output_dir, file_name), 'w') as file:
             for index, box in boxes.iterrows():
-                connection = connections[box['connection']]
+                connection = connections[str(box['connection'])]
                 text = box['text'] if str(box['text']) != 'None' else ''
 
                 x1 = box['c1_scaled'][0]
