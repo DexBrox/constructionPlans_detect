@@ -23,7 +23,7 @@ def read_annotations_xml(annotation_file):
     images = root.findall('image')
 
     # Create empty pandas dataframe
-    df = pd.DataFrame(columns=['image', 'label', 'connection', 'text', 'tl', 'br', 'rotation', 'c1', 'c2', 'c3', 'c4', 'c1_scaled', 'c2_scaled', 'c3_scaled', 'c4_scaled'])
+    df = pd.DataFrame(columns=['image', 'label', 'connection', 'group_id', 'text', 'tl', 'br', 'rotation', 'c1', 'c2', 'c3', 'c4', 'c1_scaled', 'c2_scaled', 'c3_scaled', 'c4_scaled'])
 
     # Loop through the images
     for image in images:
@@ -43,6 +43,7 @@ def read_annotations_xml(annotation_file):
             xbr = float(box.attrib['xbr'])
             ybr = float(box.attrib['ybr'])
             rotation = float(box.attrib['rotation']) if 'rotation' in box.attrib else 0
+            group_id = box.attrib['group_id'] if 'group_id' in box.attrib else None
 
             # Calculate corner points of the rotated rectangle around the center
             center_x = (xtl + xbr) / 2
@@ -57,13 +58,13 @@ def read_annotations_xml(annotation_file):
             corners_scaled = corners / [img_width, img_height]
 
             # Set the text to None if not available
-            text = 'None'
-            connection = 'None'
+            text = None
+            connection = None
 
             # Get the correct class to which the Beschriftung belongs
             if label == 'Beschriftung':
                 # Get the text
-                text = box.find("attribute[@name='Text']").text
+                #text = box.find("attribute[@name='Text']").text
                 # Loop through the attributes to find the connection
                 for classes in box.findall('attribute'):
                     # Extract the connection
@@ -72,7 +73,7 @@ def read_annotations_xml(annotation_file):
 
             # Append to the dataframe
             df = pd.concat([df if not df.empty else None, 
-                            pd.DataFrame({'image' : image_name, 'label': [label], 'connection' : [connection], 'text' : [text], 
+                            pd.DataFrame({'image' : image_name, 'label': [label], 'connection' : [connection], 'group_id' : [group_id], 'text' : [text], 
                                           'tl': [(xtl, ytl)], 'br': [(xbr, ybr)], 'rotation': [rotation], 
                                           'c1' : [(corners[0][0], corners[0][1])], 
                                           'c2' : [(corners[1][0], corners[1][1])], 
@@ -81,7 +82,7 @@ def read_annotations_xml(annotation_file):
                                           'c1_scaled' : [(corners_scaled[0][0], corners_scaled[0][1])],
                                           'c2_scaled' : [(corners_scaled[1][0], corners_scaled[1][1])],
                                           'c3_scaled' : [(corners_scaled[2][0], corners_scaled[2][1])],
-                                          'c4_scaled' : [(corners_scaled[3][0], corners_scaled[3][1])]})])
+                                          'c4_scaled' : [(corners_scaled[3][0], corners_scaled[3][1])]})], ignore_index=True)
             
     return df
 
