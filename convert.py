@@ -25,8 +25,8 @@ if __name__ == '__main__':
     # ---------------------------------------------------------------------------------------------------
     # Visualize the annotations (OD and OCR togehter)
     # ---------------------------------------------------------------------------------------------------
-    visualize_annotations(df, image_dir='data/images', output_dir='vis_corners', mode='corners')
-    visualize_scaled_annotations(df, image_dir='data/images', output_dir='vis_scaled')
+    #visualize_annotations(df, image_dir='data/images', output_dir='vis_corners', mode='corners')
+    #visualize_scaled_annotations(df, image_dir='data/images', output_dir='vis_scaled')
 
     # ---------------------------------------------------------------------------------------------------
     # Export the scaled coordinates of the non text Labels to YOLO OBB format
@@ -52,11 +52,11 @@ if __name__ == '__main__':
                'Systemprofil' : '15'}
     '''
     # Test Classes:
-
     classes = {'Schraube': '0',
                'Waermedaemmung': '1'}
 
-    export_od_annotations_to_yolo(df, output_dir='result_od', classes=classes)
+    export_od_annotations_to_yolo(df, output_dir='labels_od', classes=classes)
+
     # ---------------------------------------------------------------------------------------------------
     # Export the scaled coordinates of the text Labels to YOLO OBB format
     # ---------------------------------------------------------------------------------------------------
@@ -79,12 +79,13 @@ if __name__ == '__main__':
                 'Waermedaemmung': '1',
                 'None': '3'}
         
-    export_ocr_annotations_to_yolo(df, output_dir='result_ocr', connections=connections)
+    export_ocr_annotations_to_yolo(df, output_dir='labels_ocr', connections=connections)
 
     # ---------------------------------------------------------------------------------------------------
     # Read the created YOLO OBB files and visualize the annotations for verification
     # ---------------------------------------------------------------------------------------------------
-    visualize_yolo_annotations(yolo_dir='result_od', output_dir='vis_yolo')
+    visualize_yolo_annotations(yolo_dir='labels_od', output_dir='visualizations_od', mode='od')
+    visualize_yolo_annotations(yolo_dir='labels_ocr', output_dir='visualizations_ocr', mode='ocr')
 
             
 

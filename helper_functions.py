@@ -73,7 +73,7 @@ def read_annotations_xml(annotation_file):
 
             # Append to the dataframe
             df = pd.concat([df if not df.empty else None, 
-                            pd.DataFrame({'image' : image_name, 'label': [label], 'connection' : [connection], 'group_id' : [group_id], 'text' : [text], 
+                            pd.DataFrame({'image' : image_name, 'image_width' : img_width, 'image_height' : img_height, 'label': [label], 'connection' : [connection], 'group_id' : [group_id], 'text' : [text], 
                                           'tl': [(xtl, ytl)], 'br': [(xbr, ybr)], 'rotation': [rotation], 
                                           'c1' : [(corners[0][0], corners[0][1])], 
                                           'c2' : [(corners[1][0], corners[1][1])], 
@@ -306,13 +306,14 @@ def export_ocr_annotations_to_yolo(df, output_dir, connections):
                 file.write(f'{connection} {x1} {y1} {x2} {y2} {x3} {y3} {x4} {y4} "{text}"\n')
 
 
-def visualize_yolo_annotations(yolo_dir, output_dir):  
+def visualize_yolo_annotations(yolo_dir, output_dir, mode):  
     '''
     This function reads the YOLO OBB files and visualizes the annotations for verification.
 
     Args:
     yolo_dir (str): The directory containing the YOLO OBB files.
     output_dir (str): The directory to save the images.
+    mode (str): Either od or ocr.
     '''  
     # Delete and create the output directory
     if os.path.exists(output_dir):
@@ -321,8 +322,11 @@ def visualize_yolo_annotations(yolo_dir, output_dir):
 
     # Loop through the YOLO OBB files
     for file in tqdm(os.listdir(yolo_dir)):
-        df_yolo = pd.read_csv(os.path.join(yolo_dir, file), header=None, sep=' ', names=['label', 'c1x', 'c1y', 'c2x', 'c2y', 'c3x', 'c3y', 'c4x', 'c4y'])
+        if mode == 'od':
+            df_yolo = pd.read_csv(os.path.join(yolo_dir, file), header=None, sep=' ', names=['label', 'c1x', 'c1y', 'c2x', 'c2y', 'c3x', 'c3y', 'c4x', 'c4y'])
 
+        if mode == 'ocr':
+            df_yolo = pd.read_csv(os.path.join(yolo_dir, file), header=None, sep=' ', names=['label', 'c1x', 'c1y', 'c2x', 'c2y', 'c3x', 'c3y', 'c4x', 'c4y', 'text'])
         # Take according image from the data directiry
         image_file = file.split('.')[0] + '.png'
         image_path = os.path.join('data/images', image_file)
@@ -359,4 +363,4 @@ def visualize_yolo_annotations(yolo_dir, output_dir):
             ax.add_patch(polygon)
         
         # Save the image
-        plt.savefig(os.path.join('vis_yolo', image_file), bbox_inches='tight', pad_inches=0)
+        plt.savefig(os.path.join(output_dir, image_file), bbox_inches='tight', pad_inches=0, dpi=300)
