@@ -57,9 +57,6 @@ for image_path in tqdm(image_files, desc="Processing Images"):
         # print(image_path)
         # print(text)
 
-
-
-
 print('Ende')
 
 
