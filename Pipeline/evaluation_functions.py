@@ -1,14 +1,12 @@
 import glob
 import os
 
-def process_images(image_folder, model, img_folder, txt_folder):
-    image_files = glob.glob(f'{image_folder}/*.jpg')
-    for image in image_files:
-        results = model.predict([image], conf=0.15)
-        save_results(results, image, img_folder, txt_folder)
+def process_images(image, model):
+    results = model.predict([image], conf=0.15)
+    return results
 
-def save_results(results, image_path, img_folder, txt_folder):
-    base_filename = os.path.basename(image_path)
+def save_results(results, image, img_folder, txt_folder):
+    base_filename = os.path.basename(image)
     name, ext = os.path.splitext(base_filename)
     new_filename = f"{name}_d{ext}"
     new_filename_txt = f"{name}.txt"
@@ -16,8 +14,8 @@ def save_results(results, image_path, img_folder, txt_folder):
     txt_path_full = os.path.join(txt_folder, new_filename_txt)
 
     for result in results:
-        result.save(img_path_full, font_size=25)
-        result.save_txt(txt_path_full)
+            result.save(img_path_full, font_size=25)
+            result.save_txt(txt_path_full)
 
 def filter_text_files(txt_folder, target_folder):
     txt_files = glob.glob(f'{txt_folder}/*.txt')

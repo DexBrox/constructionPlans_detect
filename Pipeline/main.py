@@ -1,28 +1,36 @@
-from ultralytics import YOLO
 import os
 
-from Pipeline.helper_functions.evaluation_functions import *
+from ultralytics import YOLO
+from evaluation_functions import *
 
-image_folder = '/workspace/datasets/Roewaplan/images/test'
+image_path = '/workspace/datasets/Roewaplan/images/test'
 model_path = '/workspace/main_folder/models/best.pt'
-results_folder = '/workspace/Pipeline/results'
+results_path = '/workspace/main_folder/results'
 
 # Model laden
 model = YOLO(model_path).to('cuda:1')
 
 # Verzeichnisse für Ergebnisse erstellen
-img_folder = os.path.join(results_folder, 'images')
-txt_folder = os.path.join(results_folder, 'labels')
-target_folder = os.path.join(results_folder, 'labels_beschriftung')
+img_folder = os.path.join(results_path, 'images')
+txt_folder = os.path.join(results_path, 'labels')
+target_folder = os.path.join(results_path, 'labels_beschriftung')
 os.makedirs(img_folder, exist_ok=True)
 os.makedirs(txt_folder, exist_ok=True)
 os.makedirs(target_folder, exist_ok=True)
 
-# YOLO Modell auf Bilder anwenden
-process_images(image_folder, model, img_folder, txt_folder)
+# Durchlaufen aller Bilder
+image_files = glob.glob(f'{image_path}/*.jpg')
+for image in image_files:
+    # YOLO Modell auf Bilder anwenden
+    results = process_images(image, model)
 
-# Textdateien filtern und speichern
-filter_text_files(txt_folder, target_folder)
+    save_results(results, image, img_folder, txt_folder)
+
+    # Textdateien filtern und speichern
+    filter_text_files(txt_folder, target_folder)
+
+
+
 
 
 
