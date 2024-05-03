@@ -5,6 +5,7 @@ def process_images(image, model):
     results = model.predict([image], conf=0.15)
     return results
 
+
 def save_results(results, image, img_folder, txt_folder):
     base_filename = os.path.basename(image)
     name, ext = os.path.splitext(base_filename)
@@ -14,18 +15,27 @@ def save_results(results, image, img_folder, txt_folder):
     txt_path_full = os.path.join(txt_folder, new_filename_txt)
 
     for result in results:
-            result.save(img_path_full, font_size=25)
-            result.save_txt(txt_path_full)
+        result.save(img_path_full, font_size=25)
+        result.save_txt(txt_path_full)
 
-def filter_text_files(txt_folder, target_folder):
-    txt_files = glob.glob(f'{txt_folder}/*.txt')
-    for file_path in txt_files:
-        with open(file_path, 'r') as file:
-            lines = file.readlines()
+    # Liste erzeugen mit Klasse und Koordinaten
+    result_cls = result.obb.cls
+    result_txt = result.obb.xyxyxyxyn
 
-        filtered_lines = [line for line in lines if line.strip().split()[0] == '7']
-        base_name = os.path.basename(file_path)
-        new_file_path = os.path.join(target_folder, base_name)
+    data_list = []
 
-        with open(new_file_path, 'w') as new_file:
-            new_file.writelines(filtered_lines)
+    for cls, txt in zip(result_cls.tolist(), result_txt):
+        class_name = int(cls) 
+        coordinates = txt.squeeze(0).tolist()
+        row = [class_name] + coordinates
+        data_list.append(row)
+
+    return data_list
+
+
+def filter_text_files(data_list, target_class=7):
+    data_list_filtered = [row for row in data_list if row[0] == target_class]
+
+    print(data_list_filtered)
+    return data_list_filtered
+
