@@ -2,20 +2,18 @@ from comet_ml import Experiment
 from ultralytics import YOLO
 import os
 import glob
-import torch
 
 # Eigene Trainings- oder Evaluierungskonfiguration
 toggle = 't'  # 't' für Training, 'e' für Nutzung des trainierten Modells
 img_path = 'img'  # Verzeichnis zum Speichern der Ergebnisbilder
 txt_path = 'txt'  # Verzeichnis zum Speichern der Ergebnistextdateien
-class_name = 'Beschriftung'  # Klassenname für ausgewählte Boundingboxen
 
 # YOLOv9-Trainingskonfiguration
 config = {
     'model': 'yolov8x-obb.pt',
     'data': 'Roewaplan.yaml',
     'dropout': 0.3,
-    'epochs': 1000,
+    'epochs': 100,
     'patience': 1000,
     'batch_size': 12,
     'img_size': 1280,
@@ -127,7 +125,6 @@ for image in image_files:
         result.save(img_path_full, font_size=25)
         result.save_txt(txt_path_full)
 
-# test to delete
 
 
 
