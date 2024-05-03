@@ -1,7 +1,7 @@
 import os
 
 from ultralytics import YOLO
-from evaluation_functions import *
+from Pipeline.detect_evaluation_functions import *
 
 image_path = '/workspace/datasets/Roewaplan/images/test'
 model_path = '/workspace/main_folder/models/best.pt'
@@ -27,6 +27,7 @@ for image in image_files:
 
     # Textdateien filtern und speichern
     filter_text_files(data_list)
+
 
 
 
