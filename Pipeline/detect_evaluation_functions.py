@@ -36,6 +36,5 @@ def save_results(results, image, img_folder, txt_folder):
 def filter_text_files(data_list, target_class=7):
     data_list_filtered = [row for row in data_list if row[0] == target_class]
 
-    print(data_list_filtered)
     return data_list_filtered
 
