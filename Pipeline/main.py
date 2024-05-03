@@ -4,7 +4,7 @@ import os
 from Pipeline.helper_functions.evaluation_functions import *
 
 image_folder = '/workspace/datasets/Roewaplan/images/test'
-model_path = '/workspace/weights/best.pt'
+model_path = '/workspace/main_folder/models/best.pt'
 results_folder = '/workspace/Pipeline/results'
 
 # Model laden
