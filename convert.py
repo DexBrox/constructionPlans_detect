@@ -32,7 +32,7 @@ if __name__ == '__main__':
     # Export the scaled coordinates of the non text Labels to YOLO OBB format
     # ---------------------------------------------------------------------------------------------------
     # Define the classes
-    '''
+    
     # Röwaplan Original Classes:
     classes = {'Rohbau': '0',
                'Kunststoff': '1',
@@ -50,17 +50,18 @@ if __name__ == '__main__':
                'Dichtung' : '13',
                'Holz' : '14',
                'Systemprofil' : '15'}
+    
     '''
     # Test Classes:
     classes = {'Schraube': '0',
                'Waermedaemmung': '1'}
+    '''
 
     export_od_annotations_to_yolo(df, output_dir='labels_od', classes=classes)
 
     # ---------------------------------------------------------------------------------------------------
     # Export the scaled coordinates of the text Labels to YOLO OBB format
     # ---------------------------------------------------------------------------------------------------
-    '''
     # Röwaplan Original Connections:
     connections = {'Schraube': '0',
                'Dübel': '1',
@@ -71,14 +72,18 @@ if __name__ == '__main__':
                'PfostenRiegel' : '6',
                'Folie': '7',
                'Allgemein' : '8',
-               'Konsole' : '9'}
-    '''
-    # Test Connections:
+               'Konsole' : '9',
+               'Glas' : '10',
+               'Dichtung' : '11',
+               'Systemprofil' : '12',
+               'None' : '13'}
     
+    # Test Connections:
+    '''
     connections = {'Schraube': '0',
                 'Waermedaemmung': '1',
                 'None': '3'}
-        
+    '''  
     export_ocr_annotations_to_yolo(df, output_dir='labels_ocr', connections=connections)
 
     # ---------------------------------------------------------------------------------------------------
