@@ -10,18 +10,17 @@ txt_path = 'txt'  # Verzeichnis zum Speichern der Ergebnistextdateien
 
 # YOLOv9-Trainingskonfiguration
 config = {
-    'model': 'yolov8x-obb.pt',
+    'model': '/workspace/main_folder/models/yolov8x-obb.pt',
     'data': 'Roewaplan.yaml',
     'dropout': 0.3,
-    'epochs': 100,
+    'epochs': 25,
     'patience': 1000,
-    'batch_size': 12,
+    'batch_size': 1,
     'img_size': 1280,
     'save': True,
     'pretrained': True,
     'optimizer': 'auto',
     'project': '/workspace/Yolov8/results/train',
-    'gpus': [1]
 }
 
 # Konfiguration für Datenanreicherung
@@ -73,7 +72,7 @@ if toggle == 't':
         pretrained=config['pretrained'],
         optimizer=config['optimizer'],
         project=config['project'],
-        device=config['gpus'],
+        device=1,
 
         hsv_h=conifg_aug['hsv_h'],
         hsv_s=conifg_aug['hsv_s'],
@@ -98,7 +97,7 @@ if toggle == 't':
 
 elif toggle == 'e':
     # Verwenden des trainierten Modells
-    model = YOLO('/workspace/Yolov8/results/train/train2/weights/best.pt').to('cuda:1')
+    model = YOLO('/workspace/Yolov8/results/train/train2/weights/best.pt')
 
 else:
     print("Ungültiger Wert für 'toggle'")
