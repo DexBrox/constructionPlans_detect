@@ -1,19 +1,34 @@
-from comet_ml import Experiment
+import wandb
+import random
+
+# start a new wandb run to track this script
+wandb.init(
+    # set the wandb project where this run will be logged
+    project="Masterarbeit",
+)
+
 from ultralytics import YOLO
 import os
 import glob
+import torch
+
+# Anzahl der verfügbaren CUDA-GPUs abrufen
+num_cuda_devices = torch.cuda.device_count()
+print("Anzahl der verfügbaren CUDA-GPUs:", num_cuda_devices)
+print (torch.cuda.is_available())
+device = 'cuda:0' 
 
 # Eigene Trainings- oder Evaluierungskonfiguration
 toggle = 't'  # 't' für Training, 'e' für Nutzung des trainierten Modells
 img_path = 'img'  # Verzeichnis zum Speichern der Ergebnisbilder
 txt_path = 'txt'  # Verzeichnis zum Speichern der Ergebnistextdateien
 
-# YOLOv9-Trainingskonfiguration
+# YOLOv8-Trainingskonfiguration
 config = {
     'model': '/workspace/main_folder/models/yolov8x-obb.pt',
     'data': 'Roewaplan.yaml',
     'dropout': 0.3,
-    'epochs': 25,
+    'epochs': 1000,
     'patience': 1000,
     'batch_size': 1,
     'img_size': 1280,
@@ -49,15 +64,8 @@ image_files = glob.glob('/workspace/datasets/Roewaplan/images/test/*.jpg')
 
 # Trainings- oder Evaluierungsprozess
 if toggle == 't':
-    # Initialisierung des Comet.ml-Experiments
-    experiment = Experiment(
-        api_key="viszV9FPLMuKII1Gy7fwSBNyT",
-        project_name="general",
-        workspace="dexbrox"
-)
-
     # Initialisieren des YOLO-Modells und Verschieben auf GPU
-    model = YOLO(config['model']).to('cuda:1')
+    model = YOLO(config['model']).to(device)
 
     # Trainieren des Modells
     model.train(
@@ -72,7 +80,6 @@ if toggle == 't':
         pretrained=config['pretrained'],
         optimizer=config['optimizer'],
         project=config['project'],
-        device=1,
 
         hsv_h=conifg_aug['hsv_h'],
         hsv_s=conifg_aug['hsv_s'],
@@ -90,7 +97,8 @@ if toggle == 't':
         copy_paste=conifg_aug['copy_paste'],
         auto_augment=conifg_aug['auto_augment'],
         erasing=conifg_aug['erasing'],
-        crop_fraction=conifg_aug['crop_fraction']
+        crop_fraction=conifg_aug['crop_fraction'],
+        device=device
     )
 
     model.export(format='onnx')
