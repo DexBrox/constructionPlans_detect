@@ -1,3 +1,4 @@
+# Paths
 path: /workspace/datasets/Roewaplan
 train: images/train
 val: images/val
