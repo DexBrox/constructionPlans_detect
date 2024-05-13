@@ -160,6 +160,7 @@ def visualize_annotations(df, image_dir, output_dir, mode='angle'):
 
         # Save the image
         plt.savefig(os.path.join(output_dir, image), bbox_inches='tight', dpi=300)
+        plt.close()
 
 
 def visualize_scaled_annotations(df, image_dir, output_dir):    
@@ -219,6 +220,7 @@ def visualize_scaled_annotations(df, image_dir, output_dir):
 
         # Save the image
         plt.savefig(os.path.join(output_dir, image), bbox_inches='tight', dpi=300)
+        plt.close()
 
 
 def export_od_annotations_to_yolo(df, output_dir, classes):
@@ -364,3 +366,4 @@ def visualize_yolo_annotations(yolo_dir, output_dir, mode):
         
         # Save the image
         plt.savefig(os.path.join(output_dir, image_file), bbox_inches='tight', pad_inches=0, dpi=300)
+        plt.close()
