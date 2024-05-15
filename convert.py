@@ -75,8 +75,8 @@ if __name__ == '__main__':
     # ---------------------------------------------------------------------------------------------------
     # Read the created YOLO OBB files and visualize the annotations for verification
     # ---------------------------------------------------------------------------------------------------
-    #visualize_yolo_annotations(yolo_dir='labels_od', output_dir='visualizations_od', mode='od')
-    #visualize_yolo_annotations(yolo_dir='labels_ocr', output_dir='visualizations_ocr', mode='ocr')
+    visualize_yolo_annotations(yolo_dir='labels_od', output_dir='visualizations_od', mode='od')
+    visualize_yolo_annotations(yolo_dir='labels_ocr', output_dir='visualizations_ocr', mode='ocr')
 
             
 
