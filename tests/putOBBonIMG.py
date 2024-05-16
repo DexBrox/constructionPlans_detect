@@ -12,8 +12,8 @@ def draw_bounding_boxes(image, texts, points_list, output_folder, base_name):
         # Konvertieren normierter Koordinaten in Pixelkoordinaten
         points = np.array([(x * width, y * height) for x, y in zip(points_float[::2], points_float[1::2])], np.int32)
         
-        cv2.polylines(image, [points], isClosed=True, color=(0, 255, 0), thickness=2)
-        cv2.putText(image, text, tuple(points[0]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+        cv2.polylines(image, [points], isClosed=True, color=(0, 255, 0), thickness=2)  # Helles Grün für Linien
+        cv2.putText(image, text, tuple(points[0]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)  # Helles Rot für Text
 
     output_path = os.path.join(output_folder, f"{base_name}_obb.jpg")
     cv2.imwrite(output_path, image)
@@ -41,3 +41,5 @@ for image_path in glob.glob(os.path.join(image_folder, '*.jpg')):
         points_list = [' '.join(line.split()[1:]) for line in lines]
 
         draw_bounding_boxes(image, texts, points_list, output_folder, name)
+
+        print('one img done')

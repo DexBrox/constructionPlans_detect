@@ -15,7 +15,7 @@ dataset_path = '/workspace/datasets/Roewaplan/images/test'
 model_path = '/workspace/main_folder/models/best.pt'
 results_path = '/workspace/Pipeline/results'
 
-model = YOLO(model_path).to('cuda:1')
+model = YOLO(model_path).to('cuda:0')
 img_folder = os.path.join(results_path, 'images')
 txt_folder = os.path.join(results_path, 'labels')
 os.makedirs(img_folder, exist_ok=True)
@@ -42,12 +42,16 @@ for image_path in tqdm(image_files, desc="Processing Images"):
         y1, y2, y3, y4 = xy1[1]*height, xy2[1]*height, xy3[1]*height, xy4[1]*height
         buffer = 0.01
         x_min, y_min, x_max, y_max = min(x1, x2, x3, x4)*(1-buffer), min(y1, y2, y3, y4)*(1-buffer), max(x1, x2, x3, x4)*(1+buffer), max(y1, y2, y3, y4)*(1+buffer)
+
+        # Crop the image
         cropped_image = image.crop((x_min, y_min, x_max, y_max))
 
         # OCR with pytesseract
         conf = 0.01
         config = '--oem 3 --psm 6 -l deu'
         text = pytesseract.image_to_string(cropped_image, config=config, output_type=pytesseract.Output.STRING)
+
+        # Text in einzelne Zeilen aufteilen und in einen String umwandeln
         text_lines = text.split('\n')
         text_single_line = ' '.join(text_lines)
 

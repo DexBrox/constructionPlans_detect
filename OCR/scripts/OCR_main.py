@@ -4,11 +4,11 @@ import warnings
 
 start = timeit.default_timer()
 
-from pdf_to_image import convert_pdf_to_images
-from text_recognition_eo import process_image_easyocr
-from text_recognition_tess import process_image_tess
-from text_recognition_hybrid import process_image_hy
-from image_processing import draw_bounding_boxes, gen_out, save_results
+from OCR_pdf_to_image import convert_pdf_to_images
+from OCR_text_recognition_eo import process_image_easyocr
+from OCR_text_recognition_tess import process_image_tess
+from OCR_text_recognition_hybrid import process_image_hy
+from OCR_image_processing import draw_bounding_boxes, gen_out, save_results
 
 warnings.filterwarnings("ignore", message="There is an imbalance between your GPUs.*") 
 os.environ["CUDA_VISIBLE_DEVICES"] = "1"

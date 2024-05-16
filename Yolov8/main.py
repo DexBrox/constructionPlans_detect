@@ -1,10 +1,11 @@
 import wandb
-import random
+from wandb.integration.ultralytics import add_wandb_callback
 
 # start a new wandb run to track this script
 wandb.init(
     # set the wandb project where this run will be logged
     project="Masterarbeit",
+    job_type="training"
 )
 
 from ultralytics import YOLO
@@ -16,7 +17,7 @@ import torch
 num_cuda_devices = torch.cuda.device_count()
 print("Anzahl der verfügbaren CUDA-GPUs:", num_cuda_devices)
 print (torch.cuda.is_available())
-device = 'cuda:0' 
+device = 'cuda:1' 
 
 # Eigene Trainings- oder Evaluierungskonfiguration
 toggle = 't'  # 't' für Training, 'e' für Nutzung des trainierten Modells
@@ -64,6 +65,8 @@ image_files = glob.glob('/workspace/datasets/Roewaplan/images/test/*.jpg')
 
 # Trainings- oder Evaluierungsprozess
 if toggle == 't':
+    add_wandb_callback(model=config['model'], enable_model_checkpointing=True)
+
     # Initialisieren des YOLO-Modells und Verschieben auf GPU
     model = YOLO(config['model']).to(device)
 
@@ -98,9 +101,11 @@ if toggle == 't':
         auto_augment=conifg_aug['auto_augment'],
         erasing=conifg_aug['erasing'],
         crop_fraction=conifg_aug['crop_fraction'],
-        device=device
+        device=device,
+        metrics='all',
     )
 
+    model.val()
     model.export(format='onnx')
 
 elif toggle == 'e':

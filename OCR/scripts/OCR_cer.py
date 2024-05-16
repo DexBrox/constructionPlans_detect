@@ -1,6 +1,6 @@
 import timeit
 from Levenshtein import distance as lv_distance
-from evaluate import *
+from OCR_evaluate import *
 
 
 def calculate_cer(sum_data):
