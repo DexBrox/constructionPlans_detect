@@ -1,0 +1,1182 @@
+2024-05-17 16:45:43,511 INFO    StreamThr :6790 [internal.py:wandb_internal():85] W&B internal server running at pid: 6790, started at: 2024-05-17 16:45:43.509853
+2024-05-17 16:45:43,514 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status
+2024-05-17 16:45:43,516 INFO    WriterThread:6790 [datastore.py:open_for_write():87] open: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/run-scymvmt5.wandb
+2024-05-17 16:45:43,520 DEBUG   SenderThread:6790 [sender.py:send():378] send: header
+2024-05-17 16:45:43,520 DEBUG   SenderThread:6790 [sender.py:send():378] send: run
+2024-05-17 16:45:43,916 INFO    SenderThread:6790 [dir_watcher.py:__init__():211] watching files in: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files
+2024-05-17 16:45:43,917 INFO    SenderThread:6790 [sender.py:_start_run_threads():1123] run started: scymvmt5 with start time 1715964343.508708
+2024-05-17 16:45:43,925 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: check_version
+2024-05-17 16:45:43,926 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: check_version
+2024-05-17 16:45:44,039 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: run_start
+2024-05-17 16:45:44,072 DEBUG   HandlerThread:6790 [system_info.py:__init__():26] System info init
+2024-05-17 16:45:44,072 DEBUG   HandlerThread:6790 [system_info.py:__init__():41] System info init done
+2024-05-17 16:45:44,072 INFO    HandlerThread:6790 [system_monitor.py:start():194] Starting system monitor
+2024-05-17 16:45:44,073 INFO    SystemMonitor:6790 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-05-17 16:45:44,073 INFO    HandlerThread:6790 [system_monitor.py:probe():214] Collecting system info
+2024-05-17 16:45:44,074 INFO    SystemMonitor:6790 [interfaces.py:start():188] Started cpu monitoring
+2024-05-17 16:45:44,075 INFO    SystemMonitor:6790 [interfaces.py:start():188] Started disk monitoring
+2024-05-17 16:45:44,077 INFO    SystemMonitor:6790 [interfaces.py:start():188] Started gpu monitoring
+2024-05-17 16:45:44,078 INFO    SystemMonitor:6790 [interfaces.py:start():188] Started memory monitoring
+2024-05-17 16:45:44,081 INFO    SystemMonitor:6790 [interfaces.py:start():188] Started network monitoring
+2024-05-17 16:45:44,175 DEBUG   HandlerThread:6790 [system_info.py:probe():150] Probing system
+2024-05-17 16:45:44,178 DEBUG   HandlerThread:6790 [system_info.py:_probe_git():135] Probing git
+2024-05-17 16:45:44,185 ERROR   HandlerThread:6790 [gitlib.py:root():92] git root error: Cmd('git') failed due to: exit code(128)
+  cmdline: git rev-parse --show-toplevel
+  stderr: 'fatal: detected dubious ownership in repository at '/workspace'
+To add an exception for this directory, call:
+
+	git config --global --add safe.directory /workspace'
+2024-05-17 16:45:44,185 DEBUG   HandlerThread:6790 [system_info.py:_probe_git():143] Probing git done
+2024-05-17 16:45:44,185 DEBUG   HandlerThread:6790 [system_info.py:probe():198] Probing system done
+2024-05-17 16:45:44,185 DEBUG   HandlerThread:6790 [system_monitor.py:probe():223] {'os': 'Linux-5.15.0-91-generic-x86_64-with-glibc2.31', 'python': '3.10.13', 'heartbeatAt': '2024-05-17T16:45:44.175614', 'startedAt': '2024-05-17T16:45:43.501554', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/workspace/Yolov8/main_semi.py', 'codePathLocal': 'main_semi.py', 'codePath': 'main_semi.py', 'git': {'remote': 'git@github.com:DexBrox/constructionPlans_detect.git', 'commit': None}, 'email': None, 'root': '/workspace/Yolov8', 'host': 'b691e0a551a3', 'username': 'root', 'executable': '/opt/conda/bin/python3', 'cpu_count': 64, 'cpu_count_logical': 128, 'cpu_freq': {'current': 1.5422109375, 'min': 1500.0, 'max': 2500.0}, 'cpu_freq_per_core': [{'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.493, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.988, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 3.347, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 2.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 2.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}, {'current': 1.5, 'min': 1500.0, 'max': 2500.0}], 'disk': {'/': {'total': 873.6416664123535, 'used': 431.95921325683594}}, 'gpu': 'NVIDIA A100-PCIE-40GB', 'gpu_count': 4, 'gpu_devices': [{'name': 'NVIDIA A100-PCIE-40GB', 'memory_total': 42949672960}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA GeForce RTX 3090', 'memory_total': 25769803776}, {'name': 'NVIDIA A100-PCIE-40GB', 'memory_total': 42949672960}], 'memory': {'total': 1007.7156600952148}}
+2024-05-17 16:45:44,185 INFO    HandlerThread:6790 [system_monitor.py:probe():224] Finished collecting system info
+2024-05-17 16:45:44,185 INFO    HandlerThread:6790 [system_monitor.py:probe():227] Publishing system info
+2024-05-17 16:45:44,186 DEBUG   HandlerThread:6790 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2024-05-17 16:45:44,919 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_created():271] file/dir created: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/conda-environment.yaml
+2024-05-17 16:45:50,713 DEBUG   HandlerThread:6790 [system_info.py:_save_conda():222] Saving conda packages done
+2024-05-17 16:45:50,716 INFO    HandlerThread:6790 [system_monitor.py:probe():229] Finished publishing system info
+2024-05-17 16:45:50,724 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:45:50,724 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: keepalive
+2024-05-17 16:45:50,725 DEBUG   SenderThread:6790 [sender.py:send():378] send: files
+2024-05-17 16:45:50,725 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-metadata.json with policy now
+2024-05-17 16:45:50,887 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: python_packages
+2024-05-17 16:45:50,888 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: python_packages
+2024-05-17 16:45:50,889 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:45:50,890 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:45:50,919 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/conda-environment.yaml
+2024-05-17 16:45:50,920 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_created():271] file/dir created: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-metadata.json
+2024-05-17 16:45:50,920 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_created():271] file/dir created: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/requirements.txt
+2024-05-17 16:45:51,147 DEBUG   SenderThread:6790 [sender.py:send():378] send: telemetry
+2024-05-17 16:45:51,328 INFO    wandb-upload_0:6790 [upload_job.py:push():130] Uploaded file /tmp/tmp_3dr1k_vwandb/4gqqchc9-wandb-metadata.json
+2024-05-17 16:45:52,530 DEBUG   SenderThread:6790 [sender.py:send():378] send: telemetry
+2024-05-17 16:45:53,921 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_created():271] file/dir created: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:45:54,943 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:45:55,922 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:45:57,139 DEBUG   SenderThread:6790 [sender.py:send():378] send: telemetry
+2024-05-17 16:45:57,190 DEBUG   SenderThread:6790 [sender.py:send():378] send: telemetry
+2024-05-17 16:45:57,922 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:45:59,924 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:00,472 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:00,989 DEBUG   SenderThread:6790 [sender.py:send():378] send: telemetry
+2024-05-17 16:46:02,573 DEBUG   SenderThread:6790 [sender.py:send():378] send: telemetry
+2024-05-17 16:46:02,738 DEBUG   SenderThread:6790 [sender.py:send():378] send: telemetry
+2024-05-17 16:46:02,803 DEBUG   SenderThread:6790 [sender.py:send():378] send: telemetry
+2024-05-17 16:46:03,925 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:04,926 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:05,634 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:05,903 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:46:05,903 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:46:07,927 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:09,928 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:10,954 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:14,931 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:15,932 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:16,057 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:16,932 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/config.yaml
+2024-05-17 16:46:16,932 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:17,132 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:17,132 DEBUG   SenderThread:6790 [sender.py:send():378] send: telemetry
+2024-05-17 16:46:17,132 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:18,361 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:18,700 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:18,700 DEBUG   SenderThread:6790 [sender.py:send():378] send: files
+2024-05-17 16:46:18,701 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file media/images/labels_1_b94aa2bdf1c3d1821791.jpg with policy now
+2024-05-17 16:46:18,725 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:18,725 DEBUG   SenderThread:6790 [sender.py:send():378] send: files
+2024-05-17 16:46:18,725 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file media/images/train_batch1_1_00b1b74524aa790ce124.jpg with policy now
+2024-05-17 16:46:18,744 DEBUG   SenderThread:6790 [sender.py:send():378] send: files
+2024-05-17 16:46:18,744 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file media/images/train_batch0_1_3d817b7c594161550885.jpg with policy now
+2024-05-17 16:46:18,745 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:18,762 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:18,762 DEBUG   SenderThread:6790 [sender.py:send():378] send: files
+2024-05-17 16:46:18,763 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file media/images/train_batch2_1_d1322a08c27d18e30779.jpg with policy now
+2024-05-17 16:46:18,933 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:18,934 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_created():271] file/dir created: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/media/images/train_batch2_1_d1322a08c27d18e30779.jpg
+2024-05-17 16:46:18,934 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_created():271] file/dir created: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/media/images/labels_1_b94aa2bdf1c3d1821791.jpg
+2024-05-17 16:46:18,935 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_created():271] file/dir created: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/media/images/train_batch1_1_00b1b74524aa790ce124.jpg
+2024-05-17 16:46:18,935 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_created():271] file/dir created: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/media/images/train_batch0_1_3d817b7c594161550885.jpg
+2024-05-17 16:46:18,935 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_created():271] file/dir created: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/media/images
+2024-05-17 16:46:18,935 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_created():271] file/dir created: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/media
+2024-05-17 16:46:18,981 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:19,368 INFO    wandb-upload_0:6790 [upload_job.py:push():130] Uploaded file /tmp/tmp_3dr1k_vwandb/wxl52drr-media/images/labels_1_b94aa2bdf1c3d1821791.jpg
+2024-05-17 16:46:19,425 INFO    wandb-upload_1:6790 [upload_job.py:push():130] Uploaded file /tmp/tmp_3dr1k_vwandb/4whq52gf-media/images/train_batch1_1_00b1b74524aa790ce124.jpg
+2024-05-17 16:46:19,504 INFO    wandb-upload_3:6790 [upload_job.py:push():130] Uploaded file /tmp/tmp_3dr1k_vwandb/b6nhkynu-media/images/train_batch2_1_d1322a08c27d18e30779.jpg
+2024-05-17 16:46:19,727 INFO    wandb-upload_2:6790 [upload_job.py:push():130] Uploaded file /tmp/tmp_3dr1k_vwandb/g6zasgts-media/images/train_batch0_1_3d817b7c594161550885.jpg
+2024-05-17 16:46:19,934 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:20,236 INFO    wandb-upload_0:6790 [upload_job.py:push():130] Uploaded file /tmp/tmp_3dr1k_vwandb/679v7xji-media/images/labels_1_b94aa2bdf1c3d1821791.jpg
+2024-05-17 16:46:20,286 INFO    wandb-upload_1:6790 [upload_job.py:push():130] Uploaded file /tmp/tmp_3dr1k_vwandb/k3hbwcof-media/images/train_batch1_1_00b1b74524aa790ce124.jpg
+2024-05-17 16:46:20,507 INFO    wandb-upload_3:6790 [upload_job.py:push():130] Uploaded file /tmp/tmp_3dr1k_vwandb/1n7f14vf-media/images/train_batch0_1_3d817b7c594161550885.jpg
+2024-05-17 16:46:20,886 INFO    wandb-upload_2:6790 [upload_job.py:push():130] Uploaded file /tmp/tmp_3dr1k_vwandb/07d89yut-media/images/train_batch2_1_d1322a08c27d18e30779.jpg
+2024-05-17 16:46:20,889 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:46:20,889 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:46:20,924 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:20,928 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:20,935 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:21,093 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:21,094 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:21,101 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:21,339 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:21,665 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:21,936 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:21,936 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_created():271] file/dir created: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:22,936 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:23,356 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:23,358 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:23,359 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:23,360 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:23,360 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:23,899 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:23,937 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:23,938 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:24,938 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:25,380 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:25,382 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:25,382 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:25,383 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:25,384 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:25,939 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:25,940 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:26,140 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:26,445 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:26,940 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:27,182 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:27,183 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:27,184 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:27,184 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:27,185 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:27,941 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:27,941 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:27,975 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:28,941 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:29,417 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:29,418 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:29,419 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:29,420 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:29,420 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:29,942 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:29,943 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:30,269 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:30,943 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:31,595 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:31,944 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:32,153 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:32,154 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:32,155 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:32,156 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:32,156 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:32,636 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:32,945 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:32,945 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:33,945 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:34,401 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:34,401 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:34,402 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:34,403 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:34,403 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:34,889 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:34,946 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:34,947 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:35,889 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:46:35,890 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:46:35,947 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:36,537 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:36,538 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:36,539 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:36,540 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:36,540 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:36,674 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:36,948 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:36,949 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:37,071 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:37,949 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:38,189 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:38,191 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:38,192 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:38,192 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:38,193 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:38,949 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:38,950 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:38,998 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:39,950 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:40,184 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:40,185 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:40,186 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:40,186 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:40,187 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:40,767 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:40,951 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:40,951 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:41,701 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:41,851 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:41,852 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:41,853 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:41,854 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:41,855 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:41,952 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:41,952 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:42,597 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:42,953 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:43,813 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:43,815 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:43,815 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:43,816 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:43,816 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:43,953 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:43,954 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:44,081 DEBUG   SystemMonitor:6790 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-05-17 16:46:44,086 DEBUG   SenderThread:6790 [sender.py:send():378] send: stats
+2024-05-17 16:46:44,954 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:45,803 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:45,955 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:46,765 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:46,955 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:47,041 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:47,043 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:47,106 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:47,106 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:47,107 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:47,956 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:47,957 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/config.yaml
+2024-05-17 16:46:47,957 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:48,957 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:49,238 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:49,958 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:50,889 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:46:50,890 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:46:50,959 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:51,349 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:51,351 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:51,959 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:51,970 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:51,970 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:51,972 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:52,149 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:52,829 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:52,960 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:52,961 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:53,961 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:54,477 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:54,478 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:54,479 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:54,480 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:54,480 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:54,962 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:54,962 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:55,827 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:55,963 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:56,964 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:57,165 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:46:57,165 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:57,166 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:57,167 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:46:57,167 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:46:57,168 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:46:57,964 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:46:57,965 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:58,655 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:46:58,965 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:46:59,966 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:00,375 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:00,376 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:00,377 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:00,377 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:00,378 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:00,967 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:00,967 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:01,968 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:02,522 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:47:02,603 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:02,968 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:03,969 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:04,293 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:04,294 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:04,295 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:04,296 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:04,296 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:04,970 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:04,970 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:05,889 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:47:05,890 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:47:05,970 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:06,026 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:06,974 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:07,277 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:07,278 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:07,278 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:07,279 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:07,280 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:07,794 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:47:07,975 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:07,975 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:08,976 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:09,965 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:09,976 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:10,977 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:11,815 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:11,816 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:11,817 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:11,818 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:11,819 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:11,978 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:11,978 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:12,979 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:12,989 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:47:13,979 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:14,091 DEBUG   SenderThread:6790 [sender.py:send():378] send: stats
+2024-05-17 16:47:14,095 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:14,980 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:15,757 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:15,758 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:15,758 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:15,759 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:15,760 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:15,981 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:15,981 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:16,981 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:17,510 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:17,982 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:18,003 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:47:18,764 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:18,765 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:18,766 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:18,767 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:18,767 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:18,983 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:18,983 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:19,983 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:20,889 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:47:20,890 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:47:20,984 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:21,606 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:21,985 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:22,985 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:23,004 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:47:23,294 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:23,294 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:23,295 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:23,296 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:23,296 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:23,986 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:23,986 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:24,987 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:25,550 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:25,987 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:26,988 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:27,219 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:27,220 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:27,815 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:27,816 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:27,817 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:27,989 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:27,989 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:28,462 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:47:28,989 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:29,546 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:29,990 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:30,990 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:31,438 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:31,440 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:31,440 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:31,441 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:31,442 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:31,991 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:31,991 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:32,992 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:33,639 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:47:33,670 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:33,993 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:34,909 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:34,911 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:34,912 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:34,912 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:34,913 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:34,993 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:34,994 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:35,890 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:47:35,890 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:47:35,994 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:36,637 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:36,995 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:37,996 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:38,140 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:38,141 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:38,142 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:38,142 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:38,143 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:38,997 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:38,997 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:39,600 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:47:39,602 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:40,834 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:40,836 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:40,836 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:40,837 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:40,838 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:40,998 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:40,999 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:42,571 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:43,000 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:44,095 DEBUG   SenderThread:6790 [sender.py:send():378] send: stats
+2024-05-17 16:47:44,272 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:44,273 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:44,274 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:44,275 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:44,275 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:44,965 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:47:45,001 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:45,002 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:46,092 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:47,003 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:47,768 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:47,769 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:47,770 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:47,771 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:47,772 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:48,004 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:49,004 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:49,615 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:50,138 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:47:50,890 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:47:50,890 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:47:50,908 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:50,909 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:51,006 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:51,037 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:51,038 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:51,039 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:52,007 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:53,008 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:53,132 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:54,952 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:54,953 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:54,954 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:54,954 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:54,955 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:55,009 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:55,010 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:55,466 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:47:57,011 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:47:57,228 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:58,972 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:58,974 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:47:58,974 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:47:58,975 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:47:58,975 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:47:59,012 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:47:59,013 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:00,757 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:00,811 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:01,014 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:02,431 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:02,432 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:02,433 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:02,434 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:02,434 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:03,015 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:03,016 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:04,268 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:05,017 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:05,609 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:05,610 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:05,611 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:05,611 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:05,612 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:05,890 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:48:05,891 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:48:06,018 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:06,085 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:07,019 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:07,716 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:09,020 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:09,295 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:09,297 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:09,297 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:09,298 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:09,299 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:10,021 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:11,022 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:11,269 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:11,818 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:13,023 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:13,354 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:13,356 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:13,356 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:13,357 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:13,357 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:14,024 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:14,099 DEBUG   SenderThread:6790 [sender.py:send():378] send: stats
+2024-05-17 16:48:14,828 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:15,025 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:16,385 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:16,927 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:16,928 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:16,930 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:16,930 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:16,931 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:17,026 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:17,026 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:19,027 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:19,124 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:20,055 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:20,057 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:20,057 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:20,058 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:20,059 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:20,890 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:48:20,891 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:48:21,029 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:21,029 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:21,631 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:22,546 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:23,030 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:23,789 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:23,790 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:23,791 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:23,791 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:23,792 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:24,031 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:25,032 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:25,664 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:26,695 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:27,034 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:27,240 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:27,241 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:27,242 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:27,242 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:27,243 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:28,035 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:29,035 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:29,068 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:30,735 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:30,737 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:30,737 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:30,738 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:30,739 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:31,037 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:31,037 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:32,019 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:32,192 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:33,038 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:33,670 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:33,671 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:33,672 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:33,673 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:33,673 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:34,039 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:34,971 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:35,040 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:35,890 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:48:35,891 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:48:36,868 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:36,869 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:36,869 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:36,869 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:36,870 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:37,041 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:37,041 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:37,429 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:39,042 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:39,101 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:40,520 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:40,522 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:40,522 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:40,523 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:40,523 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:41,044 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:41,044 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:42,634 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:42,656 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:43,045 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:43,595 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:43,597 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:43,597 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:43,598 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:43,599 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:44,046 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:44,103 DEBUG   SenderThread:6790 [sender.py:send():378] send: stats
+2024-05-17 16:48:45,047 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:46,303 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:47,049 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:47,679 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:48,209 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:48,211 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:48,212 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:48,212 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:48,213 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:49,050 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:49,051 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:50,490 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:50,964 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:48:51,052 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:51,072 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:48:52,254 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:52,255 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:52,256 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:52,256 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:52,257 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:52,933 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:53,053 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:53,053 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:54,054 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:54,525 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:55,054 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:56,055 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:56,574 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:56,575 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:56,576 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:48:56,576 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:48:56,577 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:48:57,056 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:48:57,056 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:58,056 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:48:58,655 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:48:58,714 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:48:59,057 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:00,058 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:00,857 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:00,859 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:00,859 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:00,860 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:00,861 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:01,058 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:01,058 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:02,059 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:03,305 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:03,909 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:49:04,060 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:05,061 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:05,141 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:05,143 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:05,143 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:05,144 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:05,145 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:05,959 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:49:05,960 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:49:06,061 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:06,061 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:07,062 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:07,452 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:08,062 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:08,969 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:49:08,969 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:08,971 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:08,971 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:08,972 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:08,972 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:09,063 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:09,063 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:10,064 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:10,970 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:11,064 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:12,065 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:12,773 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:12,775 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:12,775 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:12,776 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:12,777 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:13,066 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:13,066 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:14,000 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:49:14,066 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:14,107 DEBUG   SenderThread:6790 [sender.py:send():378] send: stats
+2024-05-17 16:49:15,072 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:16,067 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:16,899 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:16,900 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:16,901 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:16,902 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:16,902 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:17,068 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:17,068 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:18,069 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:19,157 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:49:19,288 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:20,070 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:20,960 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:49:20,961 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:49:21,055 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:21,057 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:21,070 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:21,177 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:21,178 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:21,178 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:22,071 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:22,072 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:22,817 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:24,072 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:24,160 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:49:24,585 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:24,587 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:24,587 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:24,588 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:24,589 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:25,073 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:25,073 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:26,073 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:26,925 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:28,075 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:28,626 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:28,627 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:28,628 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:28,628 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:28,629 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:29,075 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:29,076 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:29,322 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:49:30,076 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:31,093 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:32,077 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:32,686 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:32,687 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:32,687 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:32,688 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:32,689 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:33,078 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:33,078 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:34,079 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:34,609 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:49:34,617 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:35,079 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:35,960 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:49:35,960 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:49:36,080 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:36,120 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:36,121 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:36,151 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:36,152 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:36,153 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:37,081 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:37,081 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:38,081 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:38,709 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:39,081 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:39,730 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:49:40,082 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:40,507 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:40,508 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:40,509 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:40,510 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:40,510 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:41,083 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:41,083 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:42,083 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:42,901 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:43,084 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:44,085 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:44,110 DEBUG   SenderThread:6790 [sender.py:send():378] send: stats
+2024-05-17 16:49:44,676 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:44,677 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:44,678 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:44,679 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:44,679 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:44,822 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:49:45,085 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:45,086 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:46,086 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:47,005 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:48,087 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:48,240 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:48,241 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:48,242 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:48,243 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:48,243 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:49,088 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:49,088 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:50,088 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:50,537 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:49:50,548 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:51,089 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:51,178 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:49:51,179 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:49:52,090 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:52,448 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:52,449 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:52,450 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:52,451 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:52,451 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:53,090 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:53,091 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:54,091 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:54,393 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:55,091 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:55,567 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:49:55,924 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:55,925 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:55,926 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:55,926 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:55,927 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:49:56,092 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:49:56,093 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:57,093 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:57,973 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:58,093 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:59,094 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:49:59,483 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:59,484 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:49:59,485 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:49:59,486 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:49:59,487 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:00,095 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:00,095 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:01,008 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:01,095 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:02,096 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:02,107 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:03,097 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:04,060 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:04,061 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:04,062 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:04,062 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:04,063 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:04,097 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:04,098 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:05,098 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:06,098 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:06,175 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:50:06,176 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:50:06,305 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:06,425 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:07,099 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:07,824 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:07,825 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:07,826 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:07,826 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:07,827 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:08,100 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:08,100 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:09,100 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:09,843 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:10,101 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:11,101 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:11,434 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:11,582 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:11,583 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:11,584 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:11,585 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:11,586 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:12,102 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:12,102 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:13,103 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:13,940 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:14,103 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:14,114 DEBUG   SenderThread:6790 [sender.py:send():378] send: stats
+2024-05-17 16:50:15,104 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:15,807 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:15,808 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:15,809 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:15,809 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:15,810 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:16,105 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:16,105 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:16,856 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:17,105 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:17,858 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:18,106 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:19,107 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:19,566 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:19,567 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:19,568 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:19,568 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:19,569 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:20,108 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:20,108 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:21,108 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:21,233 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:50:21,234 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:50:21,660 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:22,109 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:22,142 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:23,109 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:23,400 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:23,402 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:23,402 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:23,403 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:23,404 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:24,110 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:24,110 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:25,111 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:25,780 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:26,111 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:27,112 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:27,169 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:27,628 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:27,629 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:27,630 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:27,631 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:27,631 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:28,112 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:28,113 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:29,113 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:30,054 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:30,114 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:31,114 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:31,521 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:31,522 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:31,523 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:31,523 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:31,524 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:32,115 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:32,116 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:32,510 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:33,116 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:33,573 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:34,116 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:35,117 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:35,289 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:35,290 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:35,291 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:35,291 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:35,292 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:36,118 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:36,118 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:36,201 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:50:36,202 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:50:37,118 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:37,669 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:37,671 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:38,119 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:39,120 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:39,589 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:39,591 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:39,591 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:39,592 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:39,593 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:40,120 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:40,121 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:41,121 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:41,893 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:42,121 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:42,994 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:43,122 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:43,640 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:43,641 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:43,642 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:43,643 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:43,643 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:44,118 DEBUG   SenderThread:6790 [sender.py:send():378] send: stats
+2024-05-17 16:50:44,123 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:44,123 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:45,123 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:45,954 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:46,124 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:47,125 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:47,180 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:47,181 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:47,181 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:47,182 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:47,183 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:48,125 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:48,126 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:48,441 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:49,126 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:49,503 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:50,127 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:51,127 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:51,201 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:50:51,202 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:50:51,366 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:51,367 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:51,392 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:51,392 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:51,393 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:52,128 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:52,128 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:53,128 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:53,702 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:53,713 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:54,129 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:55,130 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:55,540 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:55,542 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:55,542 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:50:55,543 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:50:55,544 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:50:56,130 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:50:56,131 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:57,131 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:58,132 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:50:58,300 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:50:58,889 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:50:59,132 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:00,133 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:00,286 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:51:00,287 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:51:00,287 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:51:00,288 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:51:00,288 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:51:01,134 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:51:01,134 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:02,134 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:02,488 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:51:03,135 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:04,135 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:04,166 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:51:04,505 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:51:04,506 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:51:04,506 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:51:04,507 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:51:04,508 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:51:05,136 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:51:05,136 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:06,137 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:06,201 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: stop_status
+2024-05-17 16:51:06,202 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: stop_status
+2024-05-17 16:51:07,728 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:51:08,138 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:09,139 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:09,222 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:51:09,299 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:51:09,300 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: partial_history
+2024-05-17 16:51:09,301 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:51:09,301 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:51:09,302 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:51:10,139 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:51:10,139 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:11,140 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:11,698 DEBUG   SenderThread:6790 [sender.py:send():378] send: exit
+2024-05-17 16:51:11,698 INFO    SenderThread:6790 [sender.py:send_exit():585] handling exit code: 255
+2024-05-17 16:51:11,698 INFO    SenderThread:6790 [sender.py:send_exit():587] handling runtime: 327
+2024-05-17 16:51:11,699 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:51:11,699 INFO    SenderThread:6790 [sender.py:send_exit():593] send defer
+2024-05-17 16:51:11,700 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:11,700 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 0
+2024-05-17 16:51:11,700 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:11,701 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 0
+2024-05-17 16:51:11,701 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 1
+2024-05-17 16:51:11,701 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:11,701 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 1
+2024-05-17 16:51:11,701 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:11,701 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 1
+2024-05-17 16:51:11,701 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 2
+2024-05-17 16:51:11,701 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:11,702 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 2
+2024-05-17 16:51:11,702 INFO    HandlerThread:6790 [system_monitor.py:finish():203] Stopping system monitor
+2024-05-17 16:51:11,702 DEBUG   SystemMonitor:6790 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-05-17 16:51:11,703 INFO    HandlerThread:6790 [interfaces.py:finish():200] Joined cpu monitor
+2024-05-17 16:51:11,703 DEBUG   SystemMonitor:6790 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-05-17 16:51:11,704 INFO    HandlerThread:6790 [interfaces.py:finish():200] Joined disk monitor
+2024-05-17 16:51:11,749 INFO    HandlerThread:6790 [interfaces.py:finish():200] Joined gpu monitor
+2024-05-17 16:51:11,749 INFO    HandlerThread:6790 [interfaces.py:finish():200] Joined memory monitor
+2024-05-17 16:51:11,749 INFO    HandlerThread:6790 [interfaces.py:finish():200] Joined network monitor
+2024-05-17 16:51:11,750 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:11,751 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 2
+2024-05-17 16:51:11,751 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 3
+2024-05-17 16:51:11,751 DEBUG   SenderThread:6790 [sender.py:send():378] send: stats
+2024-05-17 16:51:11,751 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:11,753 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 3
+2024-05-17 16:51:11,754 DEBUG   SenderThread:6790 [sender.py:send():378] send: history
+2024-05-17 16:51:11,754 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: summary_record
+2024-05-17 16:51:11,755 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:51:11,755 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:11,756 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 3
+2024-05-17 16:51:11,756 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 4
+2024-05-17 16:51:11,756 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:11,756 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 4
+2024-05-17 16:51:11,756 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:11,756 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 4
+2024-05-17 16:51:11,756 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 5
+2024-05-17 16:51:11,757 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:11,757 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 5
+2024-05-17 16:51:11,758 DEBUG   SenderThread:6790 [sender.py:send():378] send: summary
+2024-05-17 16:51:11,758 INFO    SenderThread:6790 [sender.py:_save_file():1389] saving file wandb-summary.json with policy end
+2024-05-17 16:51:11,759 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:11,759 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 5
+2024-05-17 16:51:11,759 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 6
+2024-05-17 16:51:11,759 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:11,759 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 6
+2024-05-17 16:51:11,759 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:11,760 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 6
+2024-05-17 16:51:11,760 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 7
+2024-05-17 16:51:11,760 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: status_report
+2024-05-17 16:51:11,760 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:11,760 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 7
+2024-05-17 16:51:11,760 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:11,761 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 7
+2024-05-17 16:51:12,140 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:51:12,141 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:12,698 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-17 16:51:13,141 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:13,401 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 8
+2024-05-17 16:51:13,402 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: poll_exit
+2024-05-17 16:51:13,402 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:13,402 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 8
+2024-05-17 16:51:13,403 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:13,404 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 8
+2024-05-17 16:51:13,404 INFO    SenderThread:6790 [job_builder.py:build():432] Attempting to build job artifact
+2024-05-17 16:51:13,405 INFO    SenderThread:6790 [job_builder.py:_get_source_type():576] no source found
+2024-05-17 16:51:13,405 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 9
+2024-05-17 16:51:13,406 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:13,406 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 9
+2024-05-17 16:51:13,406 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:13,406 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 9
+2024-05-17 16:51:13,406 INFO    SenderThread:6790 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-05-17 16:51:13,699 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-17 16:51:14,142 INFO    Thread-12 :6790 [dir_watcher.py:_on_file_modified():288] file/dir modified: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:14,143 INFO    SenderThread:6790 [dir_watcher.py:finish():388] scan: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files
+2024-05-17 16:51:14,143 INFO    SenderThread:6790 [dir_watcher.py:finish():402] scan save: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/requirements.txt requirements.txt
+2024-05-17 16:51:14,143 INFO    SenderThread:6790 [dir_watcher.py:finish():402] scan save: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log output.log
+2024-05-17 16:51:14,144 INFO    SenderThread:6790 [dir_watcher.py:finish():402] scan save: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/config.yaml config.yaml
+2024-05-17 16:51:14,152 INFO    SenderThread:6790 [dir_watcher.py:finish():402] scan save: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json wandb-summary.json
+2024-05-17 16:51:14,153 INFO    SenderThread:6790 [dir_watcher.py:finish():402] scan save: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-metadata.json wandb-metadata.json
+2024-05-17 16:51:14,153 INFO    SenderThread:6790 [dir_watcher.py:finish():402] scan save: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/conda-environment.yaml conda-environment.yaml
+2024-05-17 16:51:14,160 INFO    SenderThread:6790 [dir_watcher.py:finish():402] scan save: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/media/images/train_batch2_1_d1322a08c27d18e30779.jpg media/images/train_batch2_1_d1322a08c27d18e30779.jpg
+2024-05-17 16:51:14,160 INFO    SenderThread:6790 [dir_watcher.py:finish():402] scan save: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/media/images/train_batch1_1_00b1b74524aa790ce124.jpg media/images/train_batch1_1_00b1b74524aa790ce124.jpg
+2024-05-17 16:51:14,160 INFO    SenderThread:6790 [dir_watcher.py:finish():402] scan save: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/media/images/train_batch0_1_3d817b7c594161550885.jpg media/images/train_batch0_1_3d817b7c594161550885.jpg
+2024-05-17 16:51:14,160 INFO    SenderThread:6790 [dir_watcher.py:finish():402] scan save: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/media/images/labels_1_b94aa2bdf1c3d1821791.jpg media/images/labels_1_b94aa2bdf1c3d1821791.jpg
+2024-05-17 16:51:14,160 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 10
+2024-05-17 16:51:14,160 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: poll_exit
+2024-05-17 16:51:14,170 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:14,170 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 10
+2024-05-17 16:51:14,171 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:14,171 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 10
+2024-05-17 16:51:14,172 INFO    SenderThread:6790 [file_pusher.py:finish():169] shutting down file pusher
+2024-05-17 16:51:14,701 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-17 16:51:14,702 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: poll_exit
+2024-05-17 16:51:14,819 INFO    wandb-upload_3:6790 [upload_job.py:push():130] Uploaded file /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/wandb-summary.json
+2024-05-17 16:51:14,823 INFO    wandb-upload_0:6790 [upload_job.py:push():130] Uploaded file /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/requirements.txt
+2024-05-17 16:51:14,825 INFO    wandb-upload_2:6790 [upload_job.py:push():130] Uploaded file /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/config.yaml
+2024-05-17 16:51:14,861 INFO    wandb-upload_4:6790 [upload_job.py:push():130] Uploaded file /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/conda-environment.yaml
+2024-05-17 16:51:14,868 INFO    wandb-upload_1:6790 [upload_job.py:push():130] Uploaded file /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/files/output.log
+2024-05-17 16:51:15,069 INFO    Thread-11 (_thread_body):6790 [sender.py:transition_state():613] send defer: 11
+2024-05-17 16:51:15,069 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:15,069 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 11
+2024-05-17 16:51:15,070 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:15,070 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 11
+2024-05-17 16:51:15,070 INFO    SenderThread:6790 [file_pusher.py:join():175] waiting for file pusher
+2024-05-17 16:51:15,072 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 12
+2024-05-17 16:51:15,072 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:15,073 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 12
+2024-05-17 16:51:15,073 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:15,073 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 12
+2024-05-17 16:51:15,073 INFO    SenderThread:6790 [file_stream.py:finish():601] file stream finish called
+2024-05-17 16:51:15,211 INFO    SenderThread:6790 [file_stream.py:finish():605] file stream finish is done
+2024-05-17 16:51:15,212 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 13
+2024-05-17 16:51:15,212 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:15,212 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 13
+2024-05-17 16:51:15,213 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:15,213 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 13
+2024-05-17 16:51:15,213 INFO    SenderThread:6790 [sender.py:transition_state():613] send defer: 14
+2024-05-17 16:51:15,214 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: defer
+2024-05-17 16:51:15,214 DEBUG   SenderThread:6790 [sender.py:send():378] send: final
+2024-05-17 16:51:15,214 INFO    HandlerThread:6790 [handler.py:handle_request_defer():184] handle defer: 14
+2024-05-17 16:51:15,214 DEBUG   SenderThread:6790 [sender.py:send():378] send: footer
+2024-05-17 16:51:15,215 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: defer
+2024-05-17 16:51:15,215 INFO    SenderThread:6790 [sender.py:send_request_defer():609] handle sender defer: 14
+2024-05-17 16:51:15,216 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-17 16:51:15,216 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: poll_exit
+2024-05-17 16:51:15,217 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: poll_exit
+2024-05-17 16:51:15,218 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: poll_exit
+2024-05-17 16:51:15,218 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: server_info
+2024-05-17 16:51:15,219 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: get_summary
+2024-05-17 16:51:15,220 DEBUG   SenderThread:6790 [sender.py:send_request():405] send_request: server_info
+2024-05-17 16:51:15,223 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: sampled_history
+2024-05-17 16:51:15,227 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: internal_messages
+2024-05-17 16:51:15,364 INFO    MainThread:6790 [wandb_run.py:_footer_history_summary_info():3994] rendering history
+2024-05-17 16:51:15,366 INFO    MainThread:6790 [wandb_run.py:_footer_history_summary_info():4026] rendering summary
+2024-05-17 16:51:15,367 INFO    MainThread:6790 [wandb_run.py:_footer_sync_info():3953] logging synced files
+2024-05-17 16:51:15,367 DEBUG   HandlerThread:6790 [handler.py:handle_request():158] handle_request: shutdown
+2024-05-17 16:51:15,367 INFO    HandlerThread:6790 [handler.py:finish():882] shutting down handler
+2024-05-17 16:51:16,219 INFO    WriterThread:6790 [datastore.py:close():296] close: /workspace/Yolov8/wandb/run-20240517_164543-scymvmt5/run-scymvmt5.wandb
+2024-05-17 16:51:16,363 INFO    SenderThread:6790 [sender.py:finish():1545] shutting down sender
+2024-05-17 16:51:16,364 INFO    SenderThread:6790 [file_pusher.py:finish():169] shutting down file pusher
+2024-05-17 16:51:16,364 INFO    SenderThread:6790 [file_pusher.py:join():175] waiting for file pusher

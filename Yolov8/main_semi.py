@@ -1,7 +1,18 @@
+import wandb
+wandb.init(
+    # set the wandb project where this run will be logged
+    project="Masterarbeit_semisupervised",
+)
+
 from ultralytics import YOLO
 import os
 import glob
 import torch
+import shutil as sh
+
+# Lösche Train-Ordner
+if os.path.exists('/workspace/Yolov8/results'):
+    sh.rmtree('/workspace/Yolov8/results')
 
 # GPU-Check und Geräteauswahl
 num_cuda_devices = torch.cuda.device_count()
@@ -18,20 +29,21 @@ for i in range(1,10):
         # Initialisieren des YOLO-Modells und Verschieben auf GPU
         model = YOLO('/workspace/main_folder/models/yolov8m-obb.pt').to(device)
     else:
-        model = YOLO(f'/workspace/Yolov8/results/train/train_{i}/weights/best.pt')
+        model = YOLO('/workspace/main_folder/models/yolov8m-obb.pt').to(device)
+        model = YOLO(f'/workspace/Yolov8/results/train_{i-1}/weights/best.pt').to(device)
         
     # Trainieren des Modells
     model.train(
         data='Roewaplan_semi.yaml',
         dropout=0.3,
-        epochs=15,
+        epochs=20,
         batch=1,
         imgsz=1280,
         patience=150,
         save=True,
         pretrained=True,
         optimizer='auto',
-        project='/workspace/Yolov8/results/train',
+        project='results',
         device=device,
         hsv_h=0.015,
         hsv_s=0.7,
@@ -54,18 +66,18 @@ for i in range(1,10):
     )
 
     # Modell validieren und exportieren
-    model.val()
     model.export(format='onnx')
-    for i in range(1,5):
+    for k in range(1,5):
         print('PRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINT')
-    print(f"Modell saved as" + f'train_{i}')
-    print(f"Using Modell" + f'/workspace/Yolov8/results/train/train_{i}/weights/best.pt')
+    print(f"Modell saved as " + f'train_{i}')
+    print(f"Using Modell " + f'/workspace/Yolov8/results/train_{i}/weights/best.pt')
     # Verwenden des trainierten Modells
-    model = YOLO(f'/workspace/Yolov8/results/train/train_{i}/weights/best.pt')
+    model = YOLO('/workspace/main_folder/models/yolov8m-obb.pt').to(device)
+    model = YOLO(f'/workspace/Yolov8/results/train_{i}/weights/best.pt')
 
     # Ergebnisse speichern
     for image in image_files:
-        results = model.predict([image], conf=0.5)
+        results = model.predict([image], conf=0.1)
         for result in results:
             base_filename = os.path.basename(image)
             name, ext = os.path.splitext(base_filename)
@@ -73,5 +85,34 @@ for i in range(1,10):
             new_filename_txt = f"{name}.txt"
             folder_txt_train_semi = os.path.join('/workspace/datasets/Roewaplan_semi/labels/train_semi')
             txt_path_full = os.path.join(folder_txt_train_semi, new_filename_txt)
+            print(txt_path_full)
             result.save_txt(txt_path_full)
+
+    # Pfade definieren
+    label_dir = '/workspace/datasets/Roewaplan_semi/labels/train_semi'
+    image_src_dir = '/workspace/datasets/Roewaplan_semi/images/test'
+    image_dst_dir = '/workspace/datasets/Roewaplan_semi/images/train_semi'
+
+    # Sicherstellen, dass das Zielverzeichnis existiert
+    if not os.path.exists(image_dst_dir):
+        os.makedirs(image_dst_dir)
+
+    # Alle Labeldateien im Labelordner finden
+    label_files = [f for f in os.listdir(label_dir) if f.endswith('.txt')]
+
+    # Namen der Labeldateien ohne Erweiterung extrahieren
+    label_names = [os.path.splitext(f)[0] for f in label_files]
+
+    # Über alle Labelnamen iterieren und entsprechende Bilder verschieben
+    for label_name in label_names:
+        image_name = label_name + '.jpg'
+        print(image_name)
+        image_src_path = os.path.join(image_src_dir, image_name)
+        image_dst_path = os.path.join(image_dst_dir, image_name)
+
+        if os.path.exists(image_src_path):
+            sh.copy(image_src_path, image_dst_path)
+            print(f"Verschiebe {image_src_path} nach {image_dst_path}")
+        else:
+            print(f"Bild {image_src_path} nicht gefunden")
 
