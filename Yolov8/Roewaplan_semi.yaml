@@ -1,6 +1,8 @@
 # Paths
 path: /workspace/datasets/Roewaplan_semi
-train: images/train
+train: 
+- images/train
+- images/train_semi
 val: images/val
 test: images/test
 
