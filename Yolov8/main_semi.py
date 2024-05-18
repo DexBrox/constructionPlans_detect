@@ -1,9 +1,4 @@
 import wandb
-wandb.init(
-    # set the wandb project where this run will be logged
-    project="Masterarbeit_semisupervised",
-)
-
 from ultralytics import YOLO
 import os
 import glob
@@ -11,8 +6,8 @@ import torch
 import shutil as sh
 
 # Lösche Train-Ordner
-if os.path.exists('/workspace/Yolov8/results'):
-    sh.rmtree('/workspace/Yolov8/results')
+if os.path.exists('/workspace/Yolov8/results_3'):
+    sh.rmtree('/workspace/Yolov8/results_3')
 
 # GPU-Check und Geräteauswahl
 num_cuda_devices = torch.cuda.device_count()
@@ -23,27 +18,30 @@ device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
 # Abrufen der Testbilder
 image_files = glob.glob('/workspace/datasets/Roewaplan/images/test/*.jpg')
 
-for i in range(1,10):
+for i in range(1,15):
+    wandb.init(
+    project="Masterarbeit_semisupervised_3",
+    )
     print(f'i-Number: {i}')
     if i == 1:
         # Initialisieren des YOLO-Modells und Verschieben auf GPU
-        model = YOLO('/workspace/main_folder/models/yolov8m-obb.pt').to(device)
+        model = YOLO('/workspace/main_folder/models/yolov8x-obb.pt').to(device)
     else:
-        model = YOLO('/workspace/main_folder/models/yolov8m-obb.pt').to(device)
-        model = YOLO(f'/workspace/Yolov8/results/train_{i-1}/weights/best.pt').to(device)
+        model = YOLO('/workspace/main_folder/models/yolov8x-obb.pt').to(device)
+        #model = YOLO(f'/workspace/Yolov8/results/train_{i-1}/weights/best.pt').to(device)
         
     # Trainieren des Modells
     model.train(
         data='Roewaplan_semi.yaml',
         dropout=0.3,
-        epochs=20,
+        epochs=300,
         batch=1,
         imgsz=1280,
-        patience=150,
+        patience=1000,
         save=True,
         pretrained=True,
         optimizer='auto',
-        project='results',
+        project='results_3',
         device=device,
         hsv_h=0.015,
         hsv_s=0.7,
@@ -71,13 +69,14 @@ for i in range(1,10):
         print('PRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINTPRINT')
     print(f"Modell saved as " + f'train_{i}')
     print(f"Using Modell " + f'/workspace/Yolov8/results/train_{i}/weights/best.pt')
+
     # Verwenden des trainierten Modells
-    model = YOLO('/workspace/main_folder/models/yolov8m-obb.pt').to(device)
-    model = YOLO(f'/workspace/Yolov8/results/train_{i}/weights/best.pt')
+    model = YOLO('/workspace/main_folder/models/yolov8x-obb.pt').to(device)
+    #model = YOLO(f'/workspace/Yolov8/results/train_{i}/weights/best.pt')
 
     # Ergebnisse speichern
     for image in image_files:
-        results = model.predict([image], conf=0.1)
+        results = model.predict([image], conf=0.5)
         for result in results:
             base_filename = os.path.basename(image)
             name, ext = os.path.splitext(base_filename)
@@ -112,7 +111,9 @@ for i in range(1,10):
 
         if os.path.exists(image_src_path):
             sh.copy(image_src_path, image_dst_path)
-            print(f"Verschiebe {image_src_path} nach {image_dst_path}")
+            print(f"Kopiere {image_src_path} nach {image_dst_path}")
         else:
             print(f"Bild {image_src_path} nicht gefunden")
+
+    wandb.finish()
 
