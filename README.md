@@ -1,9 +1,7 @@
 # Masterarbeit zum Thema: KI-basierte Erkennung von Bauteilen und Textbeschriftungen in Bauplänen
 
-## Dataset
-
-## Pipeline 
-
+## OCR
+## Pipeline
 ## Yolov8
-
+## datasets
 ## tests
