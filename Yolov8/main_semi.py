@@ -20,7 +20,7 @@ image_files = glob.glob('/workspace/datasets/Roewaplan/images/test/*.jpg')
 
 for i in range(1,15):
     wandb.init(
-    project="Masterarbeit_semisupervised_3",
+    project="Masterarbeit_semisupervised_3_model_x_train_noniterativ",
     )
     print(f'i-Number: {i}')
     if i == 1:
@@ -34,15 +34,17 @@ for i in range(1,15):
     model.train(
         data='Roewaplan_semi.yaml',
         dropout=0.3,
-        epochs=300,
-        batch=1,
-        imgsz=1280,
+        batch=4,
+        epochs=500,
+        imgsz=640,
         patience=1000,
         save=True,
         pretrained=True,
         optimizer='auto',
         project='results_3',
         device=device,
+
+        lr0=0.01,
         hsv_h=0.015,
         hsv_s=0.7,
         hsv_v=0.4,
@@ -60,7 +62,10 @@ for i in range(1,15):
         auto_augment='randaugment',
         erasing=0.4,
         crop_fraction=1.0,
-        name=f'train_{i}'
+        name=f'train_{i}',
+
+        cache = False,
+        workers = 8,
     )
 
     # Modell validieren und exportieren
