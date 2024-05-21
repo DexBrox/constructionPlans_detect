@@ -5,9 +5,24 @@ import glob
 import torch
 import shutil as sh
 
+# Pfade
+# Ordner zum speichern der Trainingsdaten
+folder_save_train = '/workspace/Yolov8/results_3'
+# Ordner zum laden der Testbilder
+folder_get_images_test = '/workspace/datasets/Roewaplan_semi/images/test/*.jpg' 
+# Pfad zum laden des Modells
+path_get_model_yolo = '/workspace/main_folder/models/yolov8x-obb.pt'
+# Projektname für wandb
+name_project_wandb = 'Masterarbeit_semisupervised_3_model_x_train_noniterativ'
+
+# Pfade definieren
+label_dir = '/workspace/datasets/Roewaplan_semi/labels/train_semi'
+image_src_dir = '/workspace/datasets/Roewaplan_semi/images/test'
+image_dst_dir = '/workspace/datasets/Roewaplan_semi/images/train_semi'
+
 # Lösche Train-Ordner
-if os.path.exists('/workspace/Yolov8/results_3'):
-    sh.rmtree('/workspace/Yolov8/results_3')
+if os.path.exists(folder_save_train):
+    sh.rmtree(folder_save_train)
 
 # GPU-Check und Geräteauswahl
 num_cuda_devices = torch.cuda.device_count()
@@ -16,18 +31,18 @@ print(torch.cuda.is_available())
 device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
 
 # Abrufen der Testbilder
-image_files = glob.glob('/workspace/datasets/Roewaplan/images/test/*.jpg')
+image_files = glob.glob(folder_get_images_test)
 
 for i in range(1,15):
     wandb.init(
-    project="Masterarbeit_semisupervised_3_model_x_train_noniterativ",
+    project=name_project_wandb,
     )
     print(f'i-Number: {i}')
     if i == 1:
         # Initialisieren des YOLO-Modells und Verschieben auf GPU
-        model = YOLO('/workspace/main_folder/models/yolov8x-obb.pt').to(device)
+        model = YOLO(path_get_model_yolo).to(device)
     else:
-        model = YOLO('/workspace/main_folder/models/yolov8x-obb.pt').to(device)
+        model = YOLO(path_get_model_yolo).to(device)
         #model = YOLO(f'/workspace/Yolov8/results/train_{i-1}/weights/best.pt').to(device)
         
     # Trainieren des Modells
@@ -76,8 +91,10 @@ for i in range(1,15):
     print(f"Using Modell " + f'/workspace/Yolov8/results/train_{i}/weights/best.pt')
 
     # Verwenden des trainierten Modells
-    model = YOLO('/workspace/main_folder/models/yolov8x-obb.pt').to(device)
+    model = YOLO(path_get_model_yolo).to(device)
     #model = YOLO(f'/workspace/Yolov8/results/train_{i}/weights/best.pt')
+
+    print(image_files)
 
     # Ergebnisse speichern
     for image in image_files:
@@ -87,15 +104,10 @@ for i in range(1,15):
             name, ext = os.path.splitext(base_filename)
             new_filename = f"{name}_d{ext}"
             new_filename_txt = f"{name}.txt"
-            folder_txt_train_semi = os.path.join('/workspace/datasets/Roewaplan_semi/labels/train_semi')
+            folder_txt_train_semi = os.path.join(label_dir)
             txt_path_full = os.path.join(folder_txt_train_semi, new_filename_txt)
             print(txt_path_full)
             result.save_txt(txt_path_full)
-
-    # Pfade definieren
-    label_dir = '/workspace/datasets/Roewaplan_semi/labels/train_semi'
-    image_src_dir = '/workspace/datasets/Roewaplan_semi/images/test'
-    image_dst_dir = '/workspace/datasets/Roewaplan_semi/images/train_semi'
 
     # Sicherstellen, dass das Zielverzeichnis existiert
     if not os.path.exists(image_dst_dir):
@@ -115,7 +127,7 @@ for i in range(1,15):
         image_dst_path = os.path.join(image_dst_dir, image_name)
 
         if os.path.exists(image_src_path):
-            sh.copy(image_src_path, image_dst_path)
+            sh.move(image_src_path, image_dst_path) # move or copy
             print(f"Kopiere {image_src_path} nach {image_dst_path}")
         else:
             print(f"Bild {image_src_path} nicht gefunden")
