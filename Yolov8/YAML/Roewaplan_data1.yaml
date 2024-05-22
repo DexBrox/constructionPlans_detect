@@ -1,0 +1,27 @@
+# Paths
+path: /workspace/datasets/subsets/Roewaplan_1
+train: images/train
+val: images/val
+test: images/test
+
+# Classes
+names:
+  0: Rohbau
+  1: Kunststoff
+  2: Dämmung
+  3: Dübel
+  4: Schraube
+  5: Alublech
+  6: Stahlblech
+  7: Beschriftung
+  8: Folie
+  9: PfostenRiegel
+  10: Konsole
+  11: Edelstahl
+  12: Glas
+  13: Dichtung
+  14: Holz
+  15: Systemprofil
+
+
+  

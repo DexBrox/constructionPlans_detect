@@ -30,9 +30,6 @@ print("Anzahl der verfügbaren CUDA-GPUs:", num_cuda_devices)
 print(torch.cuda.is_available())
 device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
 
-# Abrufen der Testbilder
-image_files = glob.glob(folder_get_images_test)
-
 for i in range(1,15):
     wandb.init(
     project=name_project_wandb,
@@ -94,11 +91,14 @@ for i in range(1,15):
     model = YOLO(path_get_model_yolo).to(device)
     #model = YOLO(f'/workspace/Yolov8/results/train_{i}/weights/best.pt')
 
+    # Abrufen der Testbilder
+    image_files = glob.glob(folder_get_images_test)
+
     print(image_files)
 
     # Ergebnisse speichern
     for image in image_files:
-        results = model.predict([image], conf=0.5)
+        results = model.predict([image], conf=0.1)
         for result in results:
             base_filename = os.path.basename(image)
             name, ext = os.path.splitext(base_filename)
@@ -106,7 +106,7 @@ for i in range(1,15):
             new_filename_txt = f"{name}.txt"
             folder_txt_train_semi = os.path.join(label_dir)
             txt_path_full = os.path.join(folder_txt_train_semi, new_filename_txt)
-            print(txt_path_full)
+            print(f'Textpath:' +txt_path_full)
             result.save_txt(txt_path_full)
 
     # Sicherstellen, dass das Zielverzeichnis existiert
@@ -122,7 +122,7 @@ for i in range(1,15):
     # Über alle Labelnamen iterieren und entsprechende Bilder verschieben
     for label_name in label_names:
         image_name = label_name + '.jpg'
-        print(image_name)
+        print(f'Image_name' +image_name)
         image_src_path = os.path.join(image_src_dir, image_name)
         image_dst_path = os.path.join(image_dst_dir, image_name)
 
