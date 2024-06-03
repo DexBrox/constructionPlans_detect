@@ -1,0 +1,69 @@
+name: 'my-sweep'
+method: grid
+parameters:
+  dropout:
+    values: [0.1, 0.2, 0.3, 0.4, 0.5]
+  batch:
+    values: [2, 4, 8, 16]
+  lr0:
+    values: [0.001, 0.005, 0.01]
+  hsv_h:
+    values: [0.01, 0.02, 0.03, 0.04, 0.05]
+  hsv_s:
+    values: [0.1, 0.2, 0.3, 0.4, 0.5]
+  hsv_v:
+    values: [0.1, 0.2, 0.3, 0.4, 0.5]
+  imgsz:
+    values: [416, 512, 608, 640, 704, 768, 832, 896, 960, 1024, 1088, 1152, 1216, 1280]
+  lrf:
+    values: [0.001, 0.005, 0.01, 0.05, 0.1]
+  momentum:
+    values: [0.9, 0.92, 0.94, 0.96, 0.98]
+  weight_decay:
+    values: [0.0001, 0.0005, 0.001, 0.005]
+  warmup_epochs:
+    values: [1, 2, 3, 4, 5]
+  warmup_momentum:
+    values: [0.6, 0.7, 0.8, 0.9]
+  warmup_bias_lr:
+    values: [0.05, 0.1, 0.2, 0.3]
+  box:
+    values: [5.0, 7.5, 10.0, 12.5, 15.0]
+  cls:
+    values: [0.3, 0.5, 0.7, 0.9]
+  dfl:
+    values: [1.0, 1.5, 2.0, 2.5]
+  pose:
+    values: [8.0, 10.0, 12.0, 14.0]
+  kobj:
+    values: [0.8, 1.0, 1.2, 1.4]
+  label_smoothing:
+    values: [0.0, 0.1, 0.2, 0.3]
+  nbs:
+    values: [16, 32, 64, 128]
+  degrees:
+    values: [0, 15, 30, 45, 60]
+  translate:
+    values: [0.1, 0.2, 0.3, 0.4, 0.5]
+  scale:
+    values: [0.5, 0.75, 1.0, 1.25, 1.5]
+  shear:
+    values: [0, 10, 20, 30, 40]
+  perspective:
+    values: [0, 0.1, 0.2, 0.3, 0.4]
+  flipud:
+    values: [0, 0.25, 0.5, 0.75, 1.0]
+  fliplr:
+    values: [0, 0.25, 0.5, 0.75, 1.0]
+  mosaic:
+    values: [0, 0.25, 0.5, 0.75, 1.0]
+  mixup:
+    values: [0, 0.25, 0.5, 0.75, 1.0]
+  copy_paste:
+    values: [0, 0.25, 0.5, 0.75, 1.0]
+  auto_augment:
+    values: [randaugment, autoaugment]
+  erasing:
+    values: [0.0, 0.1, 0.2, 0.3, 0.4]
+  crop_fraction:
+    values: [0.5, 0.75, 1.0]
