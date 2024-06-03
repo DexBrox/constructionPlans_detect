@@ -1,0 +1,233 @@
+[33mcommit 595c406c11d2d68d9926bf9fc78a089ba407e514[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Merge: 6ce9412 edf788d
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Mon Jun 3 18:15:59 2024 +0200
+
+    Konflikte gelöst und beide Versionen behalten
+
+[33mcommit edf788d642127c56ec40d76022663cf35e2d8b3c[m[33m ([m[1;32mtemp-branch[m[33m)[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Mon Jun 3 18:07:08 2024 +0200
+
+    update
+
+[33mcommit 65be303ee4c544519fd579210cbe07edadcdfa71[m
+Merge: 9ede2ce adf83b4
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Mon Jun 3 17:54:09 2024 +0200
+
+    Merge branch 'main' of
+    github.com:DexBrox/constructionPlans_detect into
+    temp-branch
+
+[33mcommit 9ede2ce1a9e89569907488bff1ae379871db8bb5[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Mon Jun 3 17:51:44 2024 +0200
+
+    update
+
+[33mcommit 6ce941286363c797aaf805fa4ac039f9bb5023b8[m
+Merge: ff9d174 adf83b4
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Mon Jun 3 15:46:32 2024 +0200
+
+    Lokal gelöschte Dateien entfernt
+
+[33mcommit ff9d1747089d53fe3a53086d43e9039f187a0204[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Mon Jun 3 15:41:19 2024 +0200
+
+    update
+
+[33mcommit adf83b48165eef865e51607a5df3b6ba4567a16a[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Wed May 22 14:42:29 2024 +0200
+
+    added Theo dataset
+
+[33mcommit ea1add8514e83be337546c3b258306142ba9d1ec[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Wed May 22 14:17:50 2024 +0200
+
+    update and addition
+
+[33mcommit 1cd76a7d48abffb387774c77ce4b2826a2c99b15[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Tue May 21 11:15:55 2024 +0200
+
+    update
+
+[33mcommit 7381db81b04479aca937f6bbc80b45fca73f2d5d[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Tue May 21 10:19:32 2024 +0200
+
+    update
+
+[33mcommit 5d60e4d27a96b201cdcf522290b398ad5e1c7abc[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Sat May 18 13:46:02 2024 +0200
+
+    update
+
+[33mcommit 703c2dd0dbbe5578a101a6c46638c07d347e4945[m
+Merge: f425dcb 85a1061
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Sat May 18 13:45:38 2024 +0200
+
+    Merge branch 'main' of github.com:DexBrox/constructionPlans_detect into main
+
+[33mcommit f425dcb3099391f0dd2c74a0ded0ae125a12a1ee[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Sat May 18 11:58:29 2024 +0200
+
+    update
+
+[33mcommit 251f4f07c996fbbef3de16ba208b0e717fed6f18[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Sat May 18 11:19:12 2024 +0200
+
+    update
+
+[33mcommit 85a1061a0ffdea4a00f35a40f4345b51426d0c90[m
+Author: Valentin Jung <139447140+DexBrox@users.noreply.github.com>
+Date:   Sat May 18 11:17:36 2024 +0200
+
+    Update README.md
+
+[33mcommit e14f083a21055f7b8af0683e18240cae6650c64d[m
+Author: Valentin Jung <139447140+DexBrox@users.noreply.github.com>
+Date:   Sat May 18 10:49:28 2024 +0200
+
+    Create README.md
+
+[33mcommit 116e5272e1d053fb81a56736185f67d786c67e08[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 17 19:11:14 2024 +0200
+
+    update semi-supervised
+
+[33mcommit 831f7f2dd91c4da52b0fe315e6758de6347acb9f[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 17 17:35:45 2024 +0200
+
+    update semi-supervised
+
+[33mcommit 93f4aebee066ae3e1494bede5698279dcb81bacc[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 17 16:12:39 2024 +0200
+
+    pushed dataset
+
+[33mcommit 5ab3f9da934b7d780712ff24ac2b84f071cb0166[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 17 15:57:04 2024 +0200
+
+    added semi-supervised
+
+[33mcommit 26e9210ff948f38e15843fda9932caadb4df54f7[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Thu May 16 11:00:16 2024 +0200
+
+    update
+
+[33mcommit 7b413709ee033733be6156b0a2a41a52509ee821[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Mon May 13 17:19:03 2024 +0200
+
+    small changes
+
+[33mcommit 3f7b6503d7cf8376f3540aee10f33c617ee45e91[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Mon May 13 16:21:55 2024 +0200
+
+    added wandb
+
+[33mcommit 30b67bf7465defa40f5465e6cd8a31a4d48d0326[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Mon May 13 16:21:25 2024 +0200
+
+    added wandb
+
+[33mcommit d47e9fd1978e9f0f1e3623e5adb6cb91f115158a[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Sat May 11 16:09:19 2024 +0200
+
+    updated
+
+[33mcommit e15025f69f04df9059417d34361c9801681543df[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Tue May 7 14:46:09 2024 +0200
+
+    adjustments
+
+[33mcommit e0ed816438c8ff0b03583e83094f73e449fcf2c6[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Sat May 4 13:32:29 2024 +0200
+
+    finished Pipeline
+
+[33mcommit 8590a9200121ef871f7f6b3ad34b9b7607ac93fa[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 3 18:24:31 2024 +0200
+
+    extending pipeline
+
+[33mcommit 1f0b1112eb7140f694a2ed1bf6a69d412c84db67[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 3 18:20:20 2024 +0200
+
+    extending pipeline
+
+[33mcommit a5fd4b3efdd50609d4b98db421fe7243d715f551[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 3 17:45:19 2024 +0200
+
+    extending pipeline
+
+[33mcommit e3fcfcd088147fd61c7da9180995631e8990d5f1[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 3 17:44:26 2024 +0200
+
+    extending pipeline
+
+[33mcommit d3686960b6e17cec1528eb7f0a33dd72d62f8041[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 3 14:55:40 2024 +0200
+
+    renaming
+
+[33mcommit de4bcd050d1ab6a851b1f6e4d7bd7c8b19a2e4bc[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 3 14:50:20 2024 +0200
+
+    expand pipeline
+
+[33mcommit cd3af2fb19678850f22e1207def20196883e4dd4[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 3 14:06:54 2024 +0200
+
+    restructerd
+
+[33mcommit fcd164a25373b8ca2f4d94e9091d103decf8b3f7[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 3 10:59:34 2024 +0200
+
+    restructerd
+
+[33mcommit 0858c8e9421946ff37f87999d9ce1efeacc302bc[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri May 3 10:58:29 2024 +0200
+
+    restructerd
+
+[33mcommit 5e56578ab8fd7b4b88b04477e7542fa23bcb2c7a[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri Apr 26 15:04:38 2024 +0200
+
+    Initial commit
+
+[33mcommit a150c5e12acd5124a46b700d0ae9ba6922867a26[m
+Author: DexBrox <jung.valentin98@gmail.com>
+Date:   Fri Apr 26 14:03:16 2024 +0200
+
+    Initial comit
