@@ -13,14 +13,12 @@ def write_labels_to_file(labels, output_file_path):
 
 
 def change_class(labels):
-    for label in labels:
-        #print first entry from labe
-        label = label.split()
-        print (label[0])
-        #replace first entry wth 7
-        label[0] = '7'
-        print (label[0])
     print(labels)
+    for i in range(len(labels)):
+        label = labels[i].split()
+        label[0] = '7'
+        labels[i] = ' '.join(label) + '\n'
+        print(labels[i])
     return labels
 
 def combine_labels(input_folder1, input_folder2, output_folder):

@@ -10,15 +10,18 @@ model_name = 'yolov8x-obb.pt'
 data_name = 'Theo.yaml'
 project_name = 'standard'
 config_yaml_name = 'config_best.yaml'
-device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
+device = 'cuda:3' if torch.cuda.is_available() else 'cpu'
 
-main_folder = '/workspace/main_folder'
+main_folder = '/workspace/main_folder/'
 configuration = {
-    'data': main_folder + data_name,
-    'project': main_folder + project_name,
+    'data': main_folder + 'YAMLs/' + data_name,
+    'project': main_folder + 'RESULTs/' + project_name,
 }
-model = main_folder + model_name
-config_yaml = main_folder + config_yaml_name
+model = main_folder + 'MODELs/' + model_name
+config_yaml = main_folder + 'CONFIGs/' + config_yaml_name
+
+if not os.path.exists(config_yaml):
+    os.makedirs(config_yaml)
 
 # Load configuration file
 with open(config_yaml, 'r') as file:
