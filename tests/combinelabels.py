@@ -11,6 +11,18 @@ def write_labels_to_file(labels, output_file_path):
     with open(output_file_path, 'w') as file:
         file.writelines(labels)
 
+
+def change_class(labels):
+    for label in labels:
+        #print first entry from labe
+        label = label.split()
+        print (label[0])
+        #replace first entry wth 7
+        label[0] = '7'
+        print (label[0])
+    print(labels)
+    return labels
+
 def combine_labels(input_folder1, input_folder2, output_folder):
     """Kombiniert Labels aus zwei Ordnern und speichert sie unter demselben Namen in einem neuen Ordner."""
     # Sicherstellen, dass der Ausgabeordner existiert
@@ -28,7 +40,8 @@ def combine_labels(input_folder1, input_folder2, output_folder):
         
         # Lesen und Kombinieren der Labels, falls die Datei in beiden Ordnern existiert
         if os.path.exists(file_path2):
-            labels1 = read_labels_from_file(file_path1)
+            labels1_f = read_labels_from_file(file_path1)
+            labels1 = change_class(labels1_f)
             labels2 = read_labels_from_file(file_path2)
             combined_labels.extend(labels1)
             combined_labels.extend(labels2)
