@@ -19,7 +19,7 @@ num_generated_images = 100
 
 # Ordnerpfade
 backgrounds_folder = '/workspace/image_generator/backgrounds/*.jpg'
-objects_folder = '/workspace/image_generator/objekte/*.png'
+objects_folder = '/workspace/image_generator/objekte_white/*.png'
 
 # Sicherstellen, dass die Ausgabeordner existieren
 background_files = glob.glob(backgrounds_folder)
@@ -35,7 +35,7 @@ parameter_combinations = list(itertools.product(rotation_values, scale_values, b
 # Liste zum Speichern der Einstellungen
 settings_list = []
 
-for idx, combo in enumerate(parameter_combinations, start=1):
+for idx, combo in tqdm(enumerate(parameter_combinations, start=1)):
     rotation_range, scale_range, use_backgrounds, allow_overlap = combo
     name = f'{name_base}{idx}'
     
@@ -45,7 +45,7 @@ for idx, combo in enumerate(parameter_combinations, start=1):
     os.makedirs(output_folder_images, exist_ok=True)
     os.makedirs(output_folder_labels, exist_ok=True)
 
-    for i in tqdm(range(num_generated_images)):
+    for i in range(num_generated_images):
         generated_image, labels = place_objects_in_image(background_files, object_files, image_height, image_width, num_objects, class_percentages, rotation_range, scale_range, allow_overlap, use_backgrounds)
         output_file = os.path.join(output_folder_images, f"generated_image_{i+1}.png")
         label_file = os.path.join(output_folder_labels, f"generated_image_{i+1}.txt")

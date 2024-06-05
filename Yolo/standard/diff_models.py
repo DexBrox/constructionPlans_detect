@@ -9,7 +9,7 @@ import yaml
 os.environ['WANDB_SILENT'] = 'true'
 
 # Model and configuration setup
-model_names = [#'yolov10x.pt',
+model_names = ['yolov10n.pt',
                'yolov9e.pt',
                'yolov8x-obb.pt'] 
 data_name = 'Roewaplan.yaml'
