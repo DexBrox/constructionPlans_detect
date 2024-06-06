@@ -114,20 +114,8 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
     labels = []
     placed_objects = []
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-    #print(class_percentages)
-
-    #class_counts = {class_id: int(num_objects * (percentage / 100)) for class_id, percentage in class_percentages.items()}
+    total_objects = sum(class_percentages.values())
     class_counts = {class_id: max(1, int(num_objects * (percentage / 100) * random.uniform(0.5, 1.5))) for class_id, percentage in class_percentages.items()}
-=======
-    total_objects = sum(class_percentages.values())
-    class_counts = {class_id: int(num_objects * (percentage / 100)) for class_id, percentage in class_percentages.items()}
->>>>>>> 0ddc52f8b9adb2d9d83c78d657418bf738466c4c
-=======
-    total_objects = sum(class_percentages.values())
-    class_counts = {class_id: int(num_objects * (percentage / 100)) for class_id, percentage in class_percentages.items()}
->>>>>>> 0ddc52f8b9adb2d9d83c78d657418bf738466c4c
 
     for class_id, count in class_counts.items():
         available_objects = [obj for obj in objects if int(os.path.basename(obj).split('_')[0]) == int(class_id)]
@@ -141,6 +129,7 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
             obj = cv2.imread(obj_path, cv2.IMREAD_UNCHANGED)
             
             if obj is None:
+                print(f"Error: Unable to read object image {obj_path}")
                 continue
             
             obj_height, obj_width = obj.shape[:2]
@@ -180,6 +169,7 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
                 break
             else:
                 # Wenn keine geeignete Position gefunden wurde, brechen wir die Schleife ab
+                print(f"Error: Unable to place object {obj_name} after {max_attempts} attempts")
                 continue
 
             for c in range(3):
@@ -250,22 +240,9 @@ def read_num_objects(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
         for line in lines:
-<<<<<<< HEAD
-<<<<<<< HEAD
-            if "Mittelwert:" in line:
-                parts = line.split()
-                num_objects = float(parts[1]) 
-                return num_objects
-=======
-=======
->>>>>>> 0ddc52f8b9adb2d9d83c78d657418bf738466c4c
             if "Anzahl der Objekte" in line:
                 parts = line.split()
                 if len(parts) >= 4:
                     num_objects = int(parts[3])
                     return num_objects
-<<<<<<< HEAD
->>>>>>> 0ddc52f8b9adb2d9d83c78d657418bf738466c4c
-=======
->>>>>>> 0ddc52f8b9adb2d9d83c78d657418bf738466c4c
     return 95  # Fallback-Wert, falls nichts gefunden wird
