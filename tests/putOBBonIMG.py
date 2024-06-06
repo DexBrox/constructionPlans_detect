@@ -2,6 +2,7 @@ import cv2
 import os
 import glob
 import numpy as np
+from tqdm import tqdm
 
 def draw_bounding_boxes(image, texts, points_list, output_folder, base_name):
     height, width = image.shape[:2]
@@ -18,8 +19,8 @@ def draw_bounding_boxes(image, texts, points_list, output_folder, base_name):
     output_path = os.path.join(output_folder, f"{base_name}_obb.jpg")
     cv2.imwrite(output_path, image)
 
-image_folder = '/workspace/datasets/Roewaplan/images/train'
-label_folder = '/workspace/datasets/Roewaplan/labels/train'
+image_folder = '/workspace/datasets/test/synthetisch/synth_v9/images/train'
+label_folder = '/workspace/datasets/test/synthetisch/synth_v9/labels/train'
 output_folder = 'output'
 
 # Stelle sicher, dass der Ausgabeordner existiert
@@ -27,7 +28,7 @@ if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
 # Iteriere über alle Bilddateien
-for image_path in glob.glob(os.path.join(image_folder, '*.jpg')):
+for image_path in tqdm(glob.glob(os.path.join(image_folder, '*.png'))):
     base_name = os.path.basename(image_path)
     name, _ = os.path.splitext(base_name)
     label_path = os.path.join(label_folder, f'{name}.txt')
@@ -41,5 +42,3 @@ for image_path in glob.glob(os.path.join(image_folder, '*.jpg')):
         points_list = [' '.join(line.split()[1:]) for line in lines]
 
         draw_bounding_boxes(image, texts, points_list, output_folder, name)
-
-        print('one img done')
