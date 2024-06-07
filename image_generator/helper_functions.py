@@ -114,8 +114,8 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
     labels = []
     placed_objects = []
 
-    total_objects = sum(class_percentages.values())
-    class_counts = {class_id: max(1, int(num_objects * (percentage / 100) * random.uniform(0.5, 1.5))) for class_id, percentage in class_percentages.items()}
+    total_percentage = sum(class_percentages.values())
+    class_counts = {class_id: max(0, int(num_objects * (percentage / total_percentage) * random.uniform(0.5, 2.5))) for class_id, percentage in class_percentages.items()}
 
     for class_id, count in class_counts.items():
         available_objects = [obj for obj in objects if int(os.path.basename(obj).split('_')[0]) == int(class_id)]
@@ -240,9 +240,9 @@ def read_num_objects(file_path):
     with open(file_path, 'r') as file:
         lines = file.readlines()
         for line in lines:
-            if "Anzahl der Objekte" in line:
+            if "Mittelwert:" in line:
                 parts = line.split()
-                if len(parts) >= 4:
-                    num_objects = int(parts[3])
-                    return num_objects
+                num_objects = float(parts[1])
+                print(num_objects)
+                return num_objects
     return 95  # Fallback-Wert, falls nichts gefunden wird

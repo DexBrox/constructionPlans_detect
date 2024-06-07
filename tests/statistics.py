@@ -92,6 +92,6 @@ class_percentages, object_stats, class_position_stats = format_output(class_coun
 output_file = '/workspace/tests/statistic'
 if not os.path.exists(output_file):
     os.makedirs(output_file)
-save_results(f'{output_file}/analysis_results_synth_test2.txt', class_percentages, object_stats, class_position_stats)
+save_results(f'{output_file}/analysis_results_synth_test3.txt', class_percentages, object_stats, class_position_stats)
 
 print(f"Analyse abgeschlossen und Ergebnisse in '{output_file}' gespeichert.")
