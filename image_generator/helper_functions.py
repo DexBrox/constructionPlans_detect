@@ -100,7 +100,7 @@ def place_objects_in_image(background_files, objects, image_height, image_width,
 
     return image, labels
 
-def place_objects_in_image_ft(background_files, objects, image_height, image_width, num_objects, class_percentages, rotation_range, scale_range, allow_overlap, use_backgrounds):
+def place_objects_in_image_ft(background_files, objects, image_height, image_width, num_objects, num_objects_std, class_percentages, rotation_range, scale_range, allow_overlap, use_backgrounds):
     if use_backgrounds:
         background_path = random.choice(background_files)
         image = cv2.imread(background_path)
@@ -113,12 +113,13 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
     
     labels = []
     placed_objects = []
-
+    
     total_percentage = sum(class_percentages.values())
     random_percentage = random.uniform(0.1, 5.0)
-    class_counts = {class_id: max(0, int(num_objects * (percentage / total_percentage) * random_percentage)) for class_id, percentage in class_percentages.items()}
+    target_count = int(np.random.normal(num_objects, num_objects_std))
+    class_counts = {class_id: max(0, int(target_count * (percentage / total_percentage) * random_percentage)) for class_id, percentage in class_percentages.items()}
+    class_counts = {class_id: int(round(count / random_percentage)) for class_id, count in class_counts.items()}
     print(class_counts)
-    class_counts = class_counts/random_percentage #normalize
 
     for class_id, count in class_counts.items():
         available_objects = [obj for obj in objects if int(os.path.basename(obj).split('_')[0]) == int(class_id)]
@@ -249,3 +250,14 @@ def read_num_objects(file_path):
                 print(num_objects)
                 return num_objects
     return 95  # Fallback-Wert, falls nichts gefunden wird
+
+def read_num_objects_std(file_path):
+    with open(file_path, 'r') as file:
+        lines = file.readlines()
+        for line in lines:
+            if "Standardabweichung:" in line:
+                parts = line.split()
+                num_objects = float(parts[1])
+                print(num_objects)
+                return num_objects
+    return 12  # Fallback-Wert, falls nichts gefunden wird

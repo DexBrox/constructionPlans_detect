@@ -1,52 +1,48 @@
 Verteilung der Klassen:
-Klasse 0: 522 Mal gefunden, 2.57% der Gesamtheit
-Klasse 1: 273 Mal gefunden, 1.35% der Gesamtheit
-Klasse 2: 2413 Mal gefunden, 11.89% der Gesamtheit
-Klasse 3: 342 Mal gefunden, 1.68% der Gesamtheit
-Klasse 4: 3177 Mal gefunden, 15.65% der Gesamtheit
-Klasse 6: 45 Mal gefunden, 0.22% der Gesamtheit
-Klasse 7: 10394 Mal gefunden, 51.21% der Gesamtheit
-Klasse 9: 451 Mal gefunden, 2.22% der Gesamtheit
-Klasse 12: 610 Mal gefunden, 3.01% der Gesamtheit
-Klasse 13: 1296 Mal gefunden, 6.39% der Gesamtheit
-Klasse 15: 774 Mal gefunden, 3.81% der Gesamtheit
+Klasse 0: 219 Mal gefunden, 2.95% der Gesamtheit
+Klasse 1: 103 Mal gefunden, 1.39% der Gesamtheit
+Klasse 2: 838 Mal gefunden, 11.31% der Gesamtheit
+Klasse 3: 146 Mal gefunden, 1.97% der Gesamtheit
+Klasse 4: 1090 Mal gefunden, 14.71% der Gesamtheit
+Klasse 7: 3848 Mal gefunden, 51.92% der Gesamtheit
+Klasse 9: 160 Mal gefunden, 2.16% der Gesamtheit
+Klasse 12: 219 Mal gefunden, 2.95% der Gesamtheit
+Klasse 13: 501 Mal gefunden, 6.76% der Gesamtheit
+Klasse 15: 288 Mal gefunden, 3.89% der Gesamtheit
 
 Objekte pro Bild Statistik:
-Mittelwert: 93.53
-Median: 92.00
-Standardabweichung: 27.35
+Mittelwert: 36.33
+Median: 35.00
+Standardabweichung: 12.19
 
 Durchschnittliche Positionen und Standardabweichungen pro Klasse:
 Klasse 0:
-  Durchschnittliche Position: (0.48, 0.52)
-  Standardabweichung: (0.24, 0.23)
+  Durchschnittliche Position: (0.51, 0.50)
+  Standardabweichung: (0.23, 0.23)
 Klasse 1:
-  Durchschnittliche Position: (0.48, 0.52)
-  Standardabweichung: (0.27, 0.28)
+  Durchschnittliche Position: (0.49, 0.55)
+  Standardabweichung: (0.28, 0.28)
 Klasse 2:
-  Durchschnittliche Position: (0.51, 0.49)
-  Standardabweichung: (0.27, 0.26)
+  Durchschnittliche Position: (0.50, 0.50)
+  Standardabweichung: (0.27, 0.25)
 Klasse 3:
-  Durchschnittliche Position: (0.50, 0.49)
-  Standardabweichung: (0.27, 0.28)
+  Durchschnittliche Position: (0.51, 0.51)
+  Standardabweichung: (0.28, 0.27)
 Klasse 4:
-  Durchschnittliche Position: (0.49, 0.50)
-  Standardabweichung: (0.28, 0.29)
-Klasse 6:
-  Durchschnittliche Position: (0.55, 0.48)
-  Standardabweichung: (0.26, 0.28)
+  Durchschnittliche Position: (0.51, 0.50)
+  Standardabweichung: (0.28, 0.28)
 Klasse 7:
-  Durchschnittliche Position: (0.49, 0.50)
+  Durchschnittliche Position: (0.51, 0.49)
   Standardabweichung: (0.27, 0.28)
 Klasse 9:
-  Durchschnittliche Position: (0.49, 0.49)
-  Standardabweichung: (0.26, 0.27)
+  Durchschnittliche Position: (0.52, 0.46)
+  Standardabweichung: (0.25, 0.24)
 Klasse 12:
-  Durchschnittliche Position: (0.49, 0.50)
-  Standardabweichung: (0.26, 0.26)
+  Durchschnittliche Position: (0.52, 0.51)
+  Standardabweichung: (0.26, 0.28)
 Klasse 13:
-  Durchschnittliche Position: (0.50, 0.50)
-  Standardabweichung: (0.28, 0.28)
+  Durchschnittliche Position: (0.50, 0.49)
+  Standardabweichung: (0.28, 0.29)
 Klasse 15:
-  Durchschnittliche Position: (0.50, 0.48)
-  Standardabweichung: (0.27, 0.27)
+  Durchschnittliche Position: (0.49, 0.52)
+  Standardabweichung: (0.26, 0.26)

@@ -28,7 +28,9 @@ object_files = glob.glob(objects_folder)
 statistics_file = '/workspace/tests/statistic/analysis_results.txt'
 class_percentages, class_positions = read_statistics(statistics_file)
 num_objects = read_num_objects(statistics_file)
+num_objects_std = read_num_objects_std(statistics_file)
 print(num_objects)
+print(num_objects_std)
 
 # Erstellen aller möglichen Kombinationen der Parameter
 parameter_combinations = list(itertools.product(rotation_values, scale_values, background_values, overlap_values))
@@ -48,7 +50,7 @@ for idx, combo in tqdm(enumerate(parameter_combinations, start=1), desc="Paramet
 
     for i in tqdm(range(num_generated_images), desc=f"Generating images for {name}"):
         generated_image, labels = place_objects_in_image_ft(
-            background_files, object_files, image_height, image_width, num_objects, class_percentages,
+            background_files, object_files, image_height, image_width, num_objects, num_objects_std, class_percentages,
             rotation_range, scale_range, allow_overlap, use_backgrounds
         )
         output_file = os.path.join(output_folder_images, f"generated_image_{i+1}.png")
