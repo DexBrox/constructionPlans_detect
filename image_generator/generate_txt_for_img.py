@@ -78,15 +78,3 @@ def verify_class_distribution(file_path, class_percentages, mean, std_dev, num_l
     for class_id, expected_percentage in class_percentages.items():
         actual_percentage = (cumulative_distribution[class_id] / total_objects) * 100
         print(f"Class {class_id}: {actual_percentage:.2f}% (Expected: {expected_percentage:.2f}%)")
-
-# Beispielaufruf der Funktion
-input_file = '/workspace/tests/statistic/analysis_results.txt'
-output_file = 'class_distribution.txt'
-num_lines = 1000
-mean_objects = 39
-std_dev_objects = 12
-
-class_percentages = read_statistics(input_file)
-generate_class_distribution_file(class_percentages, num_lines, output_file, mean_objects, std_dev_objects)
-print(f"Class distribution file generated: {output_file}")
-verify_class_distribution(output_file, class_percentages, mean_objects, std_dev_objects, num_lines)

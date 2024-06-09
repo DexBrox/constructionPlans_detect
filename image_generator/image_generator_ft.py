@@ -1,6 +1,8 @@
 import os
 import glob
 import cv2
+import numpy as np
+import random
 from tqdm import tqdm
 import shutil as sh
 import itertools
@@ -26,11 +28,17 @@ object_files = glob.glob(objects_folder)
 
 # Funktionen zum Einlesen der Statistiken und Anpassen der Verteilung
 statistics_file = '/workspace/tests/statistic/analysis_results.txt'
-class_percentages, class_positions = read_statistics(statistics_file)
+class_percentages = read_statistics(statistics_file)
 num_objects = read_num_objects(statistics_file)
 num_objects_std = read_num_objects_std(statistics_file)
 print(num_objects)
 print(num_objects_std)
+
+# Generierung der Datei mit den n Zeilen
+distribution_output_file = 'class_distribution.txt'
+num_lines = 1000
+generate_class_distribution_file(class_percentages, num_lines, distribution_output_file, num_objects, num_objects_std)
+verify_class_distribution(distribution_output_file, class_percentages, num_objects, num_objects_std, num_lines)
 
 # Erstellen aller möglichen Kombinationen der Parameter
 parameter_combinations = list(itertools.product(rotation_values, scale_values, background_values, overlap_values))
