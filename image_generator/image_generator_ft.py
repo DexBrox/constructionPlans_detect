@@ -28,6 +28,7 @@ object_files = glob.glob(objects_folder)
 statistics_file = '/workspace/tests/statistic/analysis_results.txt'
 class_percentages, class_positions = read_statistics(statistics_file)
 num_objects = read_num_objects(statistics_file)
+print(num_objects)
 
 # Erstellen aller möglichen Kombinationen der Parameter
 parameter_combinations = list(itertools.product(rotation_values, scale_values, background_values, overlap_values))

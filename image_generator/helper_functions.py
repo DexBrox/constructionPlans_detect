@@ -115,7 +115,10 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
     placed_objects = []
 
     total_percentage = sum(class_percentages.values())
-    class_counts = {class_id: max(0, int(num_objects * (percentage / total_percentage) * random.uniform(0.5, 2.5))) for class_id, percentage in class_percentages.items()}
+    random_percentage = random.uniform(0.1, 5.0)
+    class_counts = {class_id: max(0, int(num_objects * (percentage / total_percentage) * random_percentage)) for class_id, percentage in class_percentages.items()}
+    print(class_counts)
+    class_counts = class_counts/random_percentage #normalize
 
     for class_id, count in class_counts.items():
         available_objects = [obj for obj in objects if int(os.path.basename(obj).split('_')[0]) == int(class_id)]
