@@ -16,7 +16,7 @@ background_values = [True, False]
 overlap_values = [True, False]
 image_height = 2500
 image_width = 3500
-num_generated_images = 1000
+num_generated_images = 100000
 
 # Ordnerpfade
 backgrounds_folder = '/workspace/image_generator/backgrounds/*.jpg'
@@ -31,12 +31,12 @@ statistics_file = '/workspace/tests/statistic/analysis_results.txt'
 class_percentages = read_statistics(statistics_file)
 num_objects = read_num_objects(statistics_file)
 num_objects_std = read_num_objects_std(statistics_file)
-print(num_objects)
-print(num_objects_std)
 
 # Generierung der Datei mit den n Zeilen
 distribution_output_file = 'class_distribution.txt'
-num_lines = 1000
+if os.path.exists(distribution_output_file):
+    os.remove(distribution_output_file)
+num_lines = num_generated_images
 generate_class_distribution_file(class_percentages, num_lines, distribution_output_file, num_objects, num_objects_std)
 verify_class_distribution(distribution_output_file, class_percentages, num_objects, num_objects_std, num_lines)
 
@@ -50,7 +50,7 @@ for idx, combo in tqdm(enumerate(parameter_combinations, start=1), desc="Paramet
     rotation_range, scale_range, use_backgrounds, allow_overlap = combo
     name = f'{name_base}{idx}'
     
-    output_folder_images = f'/workspace/datasets/test2/{name}/images/train'
+    output_folder_images = f'/workspace/datasets/synth_ft/{name}/images/train'
     output_folder_labels = output_folder_images.replace('images', 'labels')
 
     os.makedirs(output_folder_images, exist_ok=True)

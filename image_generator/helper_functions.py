@@ -195,12 +195,15 @@ def verify_class_distribution(file_path, class_percentages, mean, std_dev, num_l
             total_objects += total_count
 
     avg_objects = total_objects / total_lines if total_lines > 0 else 0
+    print('-----------------------------------------------------------------------------------------------------')
     print(f"Verification completed. Average objects per line: {avg_objects:.2f} (Expected: {mean} ± {std_dev})")
 
     # Verify the overall distribution
     for class_id, expected_percentage in class_percentages.items():
         actual_percentage = (cumulative_distribution[class_id] / total_objects) * 100
+        print("Distribution of classes:")
         print(f"Class {class_id}: {actual_percentage:.2f}% (Expected: {expected_percentage:.2f}%)")
+    print('-----------------------------------------------------------------------------------------------------')
 
 def read_num_objects(file_path):
     with open(file_path, 'r') as file:
@@ -209,7 +212,6 @@ def read_num_objects(file_path):
             if "Mittelwert:" in line:
                 parts = line.split()
                 num_objects = float(parts[1])
-                print(num_objects)
                 return num_objects
     return 95  # Fallback-Wert, falls nichts gefunden wird
 
@@ -220,6 +222,5 @@ def read_num_objects_std(file_path):
             if "Standardabweichung:" in line:
                 parts = line.split()
                 num_objects = float(parts[1])
-                print(num_objects)
                 return num_objects
     return 12  # Fallback-Wert, falls nichts gefunden wird
