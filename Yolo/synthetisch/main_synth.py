@@ -8,9 +8,9 @@ import yaml
 # Model and configuration setup
 model_name = 'yolov8x-obb.pt'
 data_name = 'TRAIN_synth_VAL_rp_5k.yaml'
-project_name = 'synthetisch'
+project_name = 'synth_ft'
 config_yaml_name = 'config_best.yaml'
-device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+device = 'cuda:3' if torch.cuda.is_available() else 'cpu'
 #device = [0,3]
 
 main_folder = '/workspace/main_folder/'
