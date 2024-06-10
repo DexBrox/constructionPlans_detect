@@ -46,7 +46,7 @@ parameter_combinations = list(itertools.product(rotation_values, scale_values, b
 # Liste zum Speichern der Einstellungen
 settings_list = []
 
-for idx, combo in tqdm(enumerate(parameter_combinations, start=1), desc="Parameter combinations"):
+for idx, combo in tqdm(enumerate(parameter_combinations, start=6), desc="Parameter combinations"):
     rotation_range, scale_range, use_backgrounds, allow_overlap = combo
     name = f'{name_base}{idx}'
     

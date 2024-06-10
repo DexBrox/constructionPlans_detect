@@ -7,10 +7,10 @@ import yaml
 
 # Model and configuration setup
 model_name = 'yolov8x-obb.pt'
-data_name = 'Theo.yaml'
-project_name = 'standard'
+data_name = 'Roewaplan.yaml'
+project_name = 'synth_ft'
 config_yaml_name = 'config_best.yaml'
-device = 'cuda:3' if torch.cuda.is_available() else 'cpu'
+device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
 main_folder = '/workspace/main_folder/'
 configuration = {
