@@ -7,7 +7,7 @@ import yaml
 
 # Model and configuration setup
 model_name = 'yolov8x-obb.pt'
-data_name = 'TRAIN_synth_VAL_rp_64k.yaml'
+data_name = 'TRAIN_synthv6_VAL_rp_100k.yaml'
 project_name = 'synth_ft'
 config_yaml_name = 'config_best.yaml'
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu'

@@ -12,9 +12,9 @@ os.environ['WANDB_SILENT'] = 'true'
 model_names = ['yolov10n.pt',
                'yolov9e.pt',
                'yolov8x-obb.pt'] 
-data_name = 'Roewaplan.yaml'
+data_name = 'Roewaplan_v2.yaml'
 project_name = 'different_models'
-config_yaml_name = 'config_best.yaml'
+config_yaml_name = 'config_min.yaml'
 device = 'cuda:3' if torch.cuda.is_available() else 'cpu'
 
 # Code-Start
