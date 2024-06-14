@@ -76,8 +76,8 @@ def save_results(output_file, class_percentages, object_stats, class_position_st
             file.write(f"  Standardabweichung: ({std_x:.2f}, {std_y:.2f})\n")
 
 # Pfade zu den Verzeichnissen, wo die Label-Dateien gespeichert sind
-label_folder1 = '/workspace/datasets/test2/synth_v1/labels/train'
-#label_folder2 = label_folder1.replace('val', 'train')
+label_folder1 = '/workspace/datasets/standard/Roewaplan_v2/labels/train'
+label_folder2 = label_folder1.replace('val', 'train')
 
 #label_folder1 = '/workspace/datasets/standard/Roewaplan_org/labels/train'
 #label_folder2 = label_folder1.replace('val', 'train')
@@ -92,6 +92,6 @@ class_percentages, object_stats, class_position_stats = format_output(class_coun
 output_file = '/workspace/tests/statistic'
 if not os.path.exists(output_file):
     os.makedirs(output_file)
-save_results(f'{output_file}/analysis_results_synth_test3.txt', class_percentages, object_stats, class_position_stats)
+save_results(f'{output_file}/analysis_results_rp_v2.txt', class_percentages, object_stats, class_position_stats)
 
 print(f"Analyse abgeschlossen und Ergebnisse in '{output_file}' gespeichert.")
