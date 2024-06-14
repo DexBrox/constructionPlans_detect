@@ -19,8 +19,8 @@ def draw_bounding_boxes(image, texts, points_list, output_folder, base_name):
     output_path = os.path.join(output_folder, f"{base_name}_obb.jpg")
     cv2.imwrite(output_path, image)
 
-image_folder = '/workspace/datasets/test/synthetisch/synth_v9/images/train'
-label_folder = '/workspace/datasets/test/synthetisch/synth_v9/labels/train'
+image_folder = 'rp_v2'
+label_folder = 'label'
 output_folder = 'output'
 
 # Stelle sicher, dass der Ausgabeordner existiert
