@@ -2,12 +2,13 @@ import os
 import glob
 import cv2
 import numpy as np
+from tqdm import tqdm
 
 # Ordnerpfade
 image_type = '.png'
-folder_get_images_train = f'/workspace/datasets/standard/Roewaplan_org/images/train/*{image_type}'
-folder_get_images_val = f'/workspace/datasets/standard/Roewaplan_org/images/val/*{image_type}'
-output_folder = '/workspace/image_generator/objekte_white/'
+folder_get_images_train = f'/workspace/datasets/standard/Roewaplan_v2/images/train/*{image_type}'
+folder_get_images_val = f'/workspace/datasets/standard/Roewaplan_v2/images/val/*{image_type}'
+output_folder = '/workspace/image_generator/objects_rp_v2/'
 
 # Sicherstellen, dass der Ausgabeordner existiert
 os.makedirs(output_folder, exist_ok=True)
@@ -56,7 +57,8 @@ def remove_white_background(image):
 class_counters = {}
 
 def process_images_and_labels(image_folder):
-    for image_file in glob.glob(image_folder):
+    image_files = glob.glob(image_folder)
+    for image_file in tqdm(image_files, desc=f"Processing {os.path.basename(image_folder)}"):
         image = cv2.imread(image_file)
         if image is None:
             print(f"Skipping {image_file} as it could not be read")

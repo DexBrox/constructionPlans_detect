@@ -1,17 +1,18 @@
 Verteilung der Klassen:
-Klasse 0: 136782 Mal gefunden, 3.55% der Gesamtheit
-Klasse 1: 63306 Mal gefunden, 1.64% der Gesamtheit
-Klasse 2: 429255 Mal gefunden, 11.14% der Gesamtheit
-Klasse 3: 78463 Mal gefunden, 2.04% der Gesamtheit
-Klasse 4: 551625 Mal gefunden, 14.31% der Gesamtheit
-Klasse 6: 56914 Mal gefunden, 1.48% der Gesamtheit
-Klasse 7: 1872562 Mal gefunden, 48.59% der Gesamtheit
-Klasse 9: 98009 Mal gefunden, 2.54% der Gesamtheit
-Klasse 12: 136782 Mal gefunden, 3.55% der Gesamtheit
-Klasse 13: 265755 Mal gefunden, 6.90% der Gesamtheit
-Klasse 15: 164660 Mal gefunden, 4.27% der Gesamtheit
+Klasse 0: 47147 Mal gefunden, 4.60% der Gesamtheit
+Klasse 1: 45956 Mal gefunden, 4.48% der Gesamtheit
+Klasse 2: 64074 Mal gefunden, 6.25% der Gesamtheit
+Klasse 3: 47151 Mal gefunden, 4.60% der Gesamtheit
+Klasse 4: 148938 Mal gefunden, 14.53% der Gesamtheit
+Klasse 6: 46829 Mal gefunden, 4.57% der Gesamtheit
+Klasse 7: 356553 Mal gefunden, 34.79% der Gesamtheit
+Klasse 9: 47205 Mal gefunden, 4.61% der Gesamtheit
+Klasse 10: 47033 Mal gefunden, 4.59% der Gesamtheit
+Klasse 12: 46747 Mal gefunden, 4.56% der Gesamtheit
+Klasse 13: 80163 Mal gefunden, 7.82% der Gesamtheit
+Klasse 15: 47060 Mal gefunden, 4.59% der Gesamtheit
 
 Objekte pro Bild Statistik:
-Mittelwert: 38.54
-Median: 38.00
-Standardabweichung: 13.01
+Mittelwert: 10.25
+Median: 10.00
+Standardabweichung: 3.68

@@ -52,7 +52,7 @@ def generate_statistics_report(file_path, output_file):
         file.write(f"Standardabweichung: {std_dev_objects_per_line:.2f}\n")
 
 # Beispielaufruf der Funktion
-input_file = 'class_distribution.txt'
+input_file = 'class_distribution_rp_v2.txt'
 output_file = 'class_distribution_statistics.txt'
 
 generate_statistics_report(input_file, output_file)

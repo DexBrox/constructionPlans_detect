@@ -1,9 +1,13 @@
 import os
 import random
 import numpy as np
+from tqdm import tqdm
 
 def read_statistics(file_path):
     class_percentages = {}
+    mean_objects = 0
+    std_dev_objects = 0
+
     with open(file_path, 'r') as file:
         lines = file.readlines()
         for line in lines:
@@ -13,15 +17,20 @@ def read_statistics(file_path):
                     class_id = int(parts[1][:-1])
                     percentage = float(parts[-3].strip('%').replace(',', '.'))
                     class_percentages[class_id] = percentage
-    return class_percentages
+            elif "Mittelwert" in line:
+                mean_objects = float(line.split(':')[1].strip())
+            elif "Standardabweichung" in line:
+                std_dev_objects = float(line.split(':')[1].strip())
 
-def generate_class_distribution_file(class_percentages, num_lines, output_file, mean, std_dev):
+    return class_percentages, mean_objects, std_dev_objects
+
+def generate_class_distribution_file(class_percentages, num_lines, output_file, mean_objects, std_dev_objects):
     total_percentage = sum(class_percentages.values())
     lines = []
 
-    for _ in range(num_lines):
+    for _ in tqdm(range(num_lines), desc="Generating class distribution"):
         line_distribution = {}
-        num_objects = max(1, int(np.random.normal(mean, std_dev)))
+        num_objects = max(1, int(np.random.normal(mean_objects, std_dev_objects)))
         remaining_objects = num_objects
         
         # Berechnung der Grundverteilung basierend auf den Prozentsätzen
@@ -50,31 +59,52 @@ def generate_class_distribution_file(class_percentages, num_lines, output_file, 
             line = " ".join([f"Klasse {class_id}: {count}" for class_id, count in line_distribution.items()])
             file.write(line + "\n")
 
-def verify_class_distribution(file_path, class_percentages, mean, std_dev, num_lines):
+def verify_class_distribution(file_path, class_percentages, mean_objects, std_dev_objects, num_lines):
     total_lines = 0
     total_objects = 0
     cumulative_distribution = {class_id: 0 for class_id in class_percentages}
-    
+    positions = {class_id: [] for class_id in class_percentages}
+
     with open(file_path, 'r') as file:
         lines = file.readlines()
-        for line in lines:
-            line_distribution = {}
+        for line in tqdm(lines, desc="Verifying lines"):
             parts = line.split()
             total_count = 0
             for i in range(0, len(parts), 3):
                 class_id = int(parts[i+1][:-1])
                 count = int(parts[i+2])
-                line_distribution[class_id] = count
                 total_count += count
                 cumulative_distribution[class_id] += count
+                positions[class_id].append((random.random(), random.random()))  # Simulierte Positionen
 
             total_lines += 1
             total_objects += total_count
 
     avg_objects = total_objects / total_lines if total_lines > 0 else 0
-    print(f"Verification completed. Average objects per line: {avg_objects:.2f} (Expected: {mean} ± {std_dev})")
+    print(f"Verification completed. Average objects per line: {avg_objects:.2f} (Expected: {mean_objects} ± {std_dev_objects})")
 
     # Verify the overall distribution
     for class_id, expected_percentage in class_percentages.items():
         actual_percentage = (cumulative_distribution[class_id] / total_objects) * 100
         print(f"Class {class_id}: {actual_percentage:.2f}% (Expected: {expected_percentage:.2f}%)")
+
+    # Calculate mean and standard deviation of positions
+    for class_id, pos_list in positions.items():
+        if pos_list:
+            mean_x = np.mean([pos[0] for pos in pos_list])
+            mean_y = np.mean([pos[1] for pos in pos_list])
+            std_dev_x = np.std([pos[0] for pos in pos_list])
+            std_dev_y = np.std([pos[1] for pos in pos_list])
+            print(f"Klasse {class_id}:\n  Durchschnittliche Position: ({mean_x:.2f}, {mean_y:.2f})\n  Standardabweichung: ({std_dev_x:.2f}, {std_dev_y:.2f})")
+
+# Beispielaufruf der Funktion
+input_file = 'analysis_results_rp_v2.txt'
+output_file = 'class_distribution_rp_v2.txt'
+
+# Lesen der Statistik und Generieren der Verteilungsdatei
+class_percentages, mean_objects, std_dev_objects = read_statistics(input_file)
+generate_class_distribution_file(class_percentages, 10000, output_file, mean_objects, std_dev_objects)
+
+# Überprüfung der generierten Verteilung
+verify_class_distribution(output_file, class_percentages, mean_objects, std_dev_objects, 100)
+print(f"Statistics report generated: {output_file}")

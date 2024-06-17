@@ -73,7 +73,7 @@ def save_results(output_file, class_percentages, object_stats, class_position_st
             std_x, std_y = stats['std_position']
             file.write(f"Klasse {class_name}:\n")
             file.write(f"  Durchschnittliche Position: ({mean_x:.2f}, {mean_y:.2f})\n")
-            file.write(f"  Standardabweichung: ({std_x:.2f}, {std_y:.2f})\n")
+            file.write(f"  Klasse Stabw: ({std_x:.2f}, {std_y:.2f})\n")
 
 # Pfade zu den Verzeichnissen, wo die Label-Dateien gespeichert sind
 label_folder1 = '/workspace/datasets/standard/Roewaplan_v2/labels/train'
