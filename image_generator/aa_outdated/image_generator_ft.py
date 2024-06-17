@@ -27,7 +27,7 @@ background_files = glob.glob(backgrounds_folder)
 object_files = glob.glob(objects_folder)
 
 # Funktionen zum Einlesen der Statistiken und Anpassen der Verteilung
-statistics_file = '/workspace/tests/statistic/analysis_results.txt'
+statistics_file = '/workspace/tests/statistic/analysis_results_rp_v2.txt'
 class_percentages = read_statistics(statistics_file)
 num_objects = read_num_objects(statistics_file)
 num_objects_std = read_num_objects_std(statistics_file)
