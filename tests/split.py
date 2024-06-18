@@ -49,5 +49,5 @@ def split_dataset(base_folder, train_ratio=0.7):
     print(f'Verschoben {len(val_images)} Bilder nach {val_image_folder}')
 
 # Beispielaufruf
-base_folder = '/workspace/datasets/standard/Roewaplan_v2_2'  # Setze den Pfad zum Hauptordner
+base_folder = '/workspace/datasets/standard/Roewaplan_v2'  # Setze den Pfad zum Hauptordner
 split_dataset(base_folder)

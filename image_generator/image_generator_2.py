@@ -17,9 +17,9 @@ def read_class_distribution(file_path):
 # Einstellungen - Definiere hier deine gewünschten Parameter
 rotation_range = (0, 360)
 scale_range = (0.5, 1.5)
-use_backgrounds = True
-allow_overlap = True
-name = 'synth_v_custom'
+use_backgrounds = False
+allow_overlap = False
+name = 'synth_v_test1'
 
 image_height = 2500
 image_width = 3500
@@ -36,14 +36,14 @@ object_files = glob.glob(objects_folder)
 distribution_file = 'class_distribution_rp_v2.txt'
 class_distribution = read_class_distribution(distribution_file)
 
-output_folder_images = f'/workspace/datasets/synth_ft/{name}/images/train'
+output_folder_images = f'/workspace/datasets/synth_test/{name}/images/train'
 output_folder_labels = output_folder_images.replace('images', 'labels')
 
 os.makedirs(output_folder_images, exist_ok=True)
 os.makedirs(output_folder_labels, exist_ok=True)
 
 # Bildgenerierung basierend auf den Klassenverteilungen
-for i, distribution in tqdm(enumerate(class_distribution, desc=f"Generating images for {name}")):
+for i, distribution in tqdm(enumerate(class_distribution), desc=f"Generating images for {name}"):
     generated_image, labels = place_objects_in_image_ft(
         background_files, object_files, image_height, image_width, distribution,
         rotation_range, scale_range, allow_overlap, use_backgrounds

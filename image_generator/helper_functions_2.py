@@ -1,3 +1,8 @@
+import numpy as np
+import cv2
+import random
+import os
+
 # Helferfunktionen für die Bildgenerierung
 def do_overlap(x1, y1, w1, h1, x2, y2, w2, h2):
     if (x1 < x2 + w2 and x1 + w1 > x2 and y1 < y2 + h2 and y1 + h1 > y2):
@@ -23,7 +28,8 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
     for class_id, count in class_counts.items():
         available_objects = [obj for obj in objects if int(os.path.basename(obj).split('_')[0]) == int(class_id)]
         if not available_objects:
-            print(f"Warning: No objects found for class_id {class_id}")
+            if class_id != 8 or 11:
+                print(f"Warning: No objects found for class_id {class_id}")
             continue
 
         for _ in range(count):

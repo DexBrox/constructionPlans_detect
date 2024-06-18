@@ -37,7 +37,7 @@ for model_var in model_names:
         base_config = config['base_config']
 
     # Initialize wandb
-    wandb.init(project=f"Masterarbeit_{project_name}_{os.path.splitext(data_name)[0]}", name=os.path.splitext(model_var)[0])
+    wandb.init(project=f"FINAL_Masterarbeit_{project_name}_{os.path.splitext(data_name)[0]}", name=os.path.splitext(model_var)[0])
 
     # Load YOLO model
     model = YOLO(model_path).to(device)
