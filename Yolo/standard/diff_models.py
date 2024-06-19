@@ -9,13 +9,14 @@ import yaml
 os.environ['WANDB_SILENT'] = 'true'
 
 # Model and configuration setup
-model_names = ['yolov10n.pt',
-               'yolov9e.pt',
-               'yolov8x-obb.pt'] 
+model_names = [
+    #'yolov9t.pt', 'yolov9s.pt', 'yolov9m.pt', 'yolov9c.pt', 'yolov9e.pt',
+    'yolov8n-obb.pt', 'yolov8s-obb.pt', 'yolov8m-obb.pt', 'yolov8l-obb.pt', 'yolov8x-obb.pt'
+]
 data_name = 'Roewaplan_v2.yaml'
 project_name = 'different_models'
-config_yaml_name = 'config_min.yaml'
-device = 'cuda:3' if torch.cuda.is_available() else 'cpu'
+config_yaml_name = 'config_best.yaml'
+device = 'cuda:2' if torch.cuda.is_available() else 'cpu'
 
 # Code-Start
 main_folder = '/workspace/main_folder/'

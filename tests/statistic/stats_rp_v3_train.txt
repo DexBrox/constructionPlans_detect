@@ -1,0 +1,57 @@
+Verteilung der Klassen:
+Klasse 0: 26 Mal gefunden, 3.20% der Gesamtheit
+Klasse 1: 25 Mal gefunden, 3.08% der Gesamtheit
+Klasse 2: 89 Mal gefunden, 10.95% der Gesamtheit
+Klasse 3: 24 Mal gefunden, 2.95% der Gesamtheit
+Klasse 4: 105 Mal gefunden, 12.92% der Gesamtheit
+Klasse 6: 4 Mal gefunden, 0.49% der Gesamtheit
+Klasse 7: 388 Mal gefunden, 47.72% der Gesamtheit
+Klasse 9: 14 Mal gefunden, 1.72% der Gesamtheit
+Klasse 10: 6 Mal gefunden, 0.74% der Gesamtheit
+Klasse 12: 26 Mal gefunden, 3.20% der Gesamtheit
+Klasse 13: 67 Mal gefunden, 8.24% der Gesamtheit
+Klasse 15: 39 Mal gefunden, 4.80% der Gesamtheit
+
+Objekte pro Bild Statistik:
+Mittelwert: 31.27
+Median: 26.00
+Standardabweichung: 16.53
+Anzahl der Bilder: 26
+
+Durchschnittliche Positionen und Standardabweichungen pro Klasse:
+Klasse 0:
+  Durchschnittliche Position: (0.49, 0.49)
+  Klasse Stabw: (0.20, 0.21)
+Klasse 1:
+  Durchschnittliche Position: (0.47, 0.48)
+  Klasse Stabw: (0.16, 0.16)
+Klasse 2:
+  Durchschnittliche Position: (0.43, 0.52)
+  Klasse Stabw: (0.14, 0.15)
+Klasse 3:
+  Durchschnittliche Position: (0.45, 0.52)
+  Klasse Stabw: (0.17, 0.23)
+Klasse 4:
+  Durchschnittliche Position: (0.48, 0.54)
+  Klasse Stabw: (0.11, 0.15)
+Klasse 6:
+  Durchschnittliche Position: (0.40, 0.58)
+  Klasse Stabw: (0.10, 0.05)
+Klasse 7:
+  Durchschnittliche Position: (0.48, 0.51)
+  Klasse Stabw: (0.18, 0.19)
+Klasse 9:
+  Durchschnittliche Position: (0.47, 0.47)
+  Klasse Stabw: (0.09, 0.10)
+Klasse 10:
+  Durchschnittliche Position: (0.53, 0.70)
+  Klasse Stabw: (0.11, 0.21)
+Klasse 12:
+  Durchschnittliche Position: (0.50, 0.54)
+  Klasse Stabw: (0.15, 0.16)
+Klasse 13:
+  Durchschnittliche Position: (0.44, 0.51)
+  Klasse Stabw: (0.11, 0.13)
+Klasse 15:
+  Durchschnittliche Position: (0.49, 0.52)
+  Klasse Stabw: (0.11, 0.11)

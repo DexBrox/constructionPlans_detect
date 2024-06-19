@@ -31,14 +31,13 @@ with open(config_yaml, 'r') as file:
 # Define hyperparameter variations from smallest to largest
 variations = {
     'imgsz': [320, 640, 960, 1280, 1600, 1920, 2040],
-    'batch_size': [1, 2, 4, 8, 16],
-    'learning_rate': [1e-5, 1e-4, 1e-3, 1e-2, 1e-1],
+    'batch': [1, 2, 4, 8, 16],
+    'lr0': [1e-5, 1e-4, 1e-3, 1e-2, 1e-1],
     'optimizer': ['SGD', 'Adam', 'RMSprop'],
     'warmup_epochs': [0, 3, 5, 10, 20],
     'momentum': [0.85, 0.9, 0.95, 0.99],
     'weight_decay': [0, 1e-5, 1e-4, 1e-3],
-    'dropout': [0.2, 0.3, 0.4, 0.5],
-    'augmentation': [False, True]
+    'dropout': [0.2, 0.3, 0.4, 0.5]
 }
 
 # Function to train with a single hyperparameter variation
