@@ -104,15 +104,3 @@ def verify_class_distribution(file_path, class_percentages, mean_objects, std_de
             print(f"Klasse {class_id}:\n  Durchschnittliche Position: ({mean_x:.2f}, {mean_y:.2f})\n  Standardabweichung: ({std_dev_x:.2f}, {std_dev_y:.2f})")
     '''
             
-# Beispielaufruf der Funktion
-input_file = '/workspace/tests/statistic/stats_rp_v3_gesamt.txt'
-output_file = 'class_distribution_rp_v3.txt'
-
-# Lesen der Statistik und Generieren der Verteilungsdatei
-class_percentages, mean_objects, std_dev_objects = read_statistics(input_file)
-generate_class_distribution_file(class_percentages, 1000, output_file, mean_objects, std_dev_objects)
-
-# Überprüfung der generierten Verteilung
-verify_class_distribution(output_file, class_percentages, mean_objects, std_dev_objects, 100)
-print(f"-- Statistics report generated: {output_file}")
-print("----------------------------------------------------------------------------------------------------")

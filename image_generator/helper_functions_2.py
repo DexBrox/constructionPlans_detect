@@ -78,7 +78,7 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
                 break
             else:
                 # Wenn keine geeignete Position gefunden wurde, brechen wir die Schleife ab
-                print(f"Error: Unable to place object {obj_name} after {max_attempts} attempts")
+                #print(f"Error: Unable to place object {obj_name} after {max_attempts} attempts")
                 continue
 
             for c in range(3):
