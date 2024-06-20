@@ -6,7 +6,7 @@ import random
 from tqdm import tqdm
 import shutil as sh
 import itertools
-from helper_functions import *
+from image_generator.aa_outdated.helper_functions import *
 
 # Einstellungen
 name_base = 'synth_v'

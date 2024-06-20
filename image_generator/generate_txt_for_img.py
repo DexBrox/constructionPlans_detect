@@ -105,8 +105,8 @@ def verify_class_distribution(file_path, class_percentages, mean_objects, std_de
     '''
             
 # Beispielaufruf der Funktion
-input_file = 'analysis_results_rp_v2.txt'
-output_file = 'class_distribution_rp_v2.txt'
+input_file = '/workspace/tests/statistic/stats_rp_v3_gesamt.txt'
+output_file = 'class_distribution_rp_v3.txt'
 
 # Lesen der Statistik und Generieren der Verteilungsdatei
 class_percentages, mean_objects, std_dev_objects = read_statistics(input_file)

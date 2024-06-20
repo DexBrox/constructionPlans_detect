@@ -19,24 +19,24 @@ rotation_range = (0, 360)
 scale_range = (0.5, 1.5)
 use_backgrounds = False
 allow_overlap = False
-name = 'synth_v_test1'
+name = 'synth_v3_rt_st_bf_of'
 
 image_height = 2500
 image_width = 3500
 
 # Ordnerpfade
-backgrounds_folder = '/workspace/image_generator/backgrounds_rp_v2/*.jpg'
-objects_folder = '/workspace/image_generator/objects_rp_v2/*.png'
+backgrounds_folder = '/workspace/image_generator/backgrounds_rp_v3/*.jpg'
+objects_folder = '/workspace/image_generator/objects_rp_v3/*.png'
+distribution_file = 'class_distribution_rp_v3.txt'
 
 # Sicherstellen, dass die Ausgabeordner existieren
 background_files = glob.glob(backgrounds_folder)
 object_files = glob.glob(objects_folder)
 
 # Klassenverteilung einlesen
-distribution_file = 'class_distribution_rp_v2.txt'
 class_distribution = read_class_distribution(distribution_file)
 
-output_folder_images = f'/workspace/datasets/synth_test/{name}/images/train'
+output_folder_images = f'/workspace/datasets/synth/{name}/images/train'
 output_folder_labels = output_folder_images.replace('images', 'labels')
 
 os.makedirs(output_folder_images, exist_ok=True)
@@ -62,7 +62,7 @@ for i, distribution in tqdm(enumerate(class_distribution), desc=f"Generating ima
 print(f"Bilder und Labels für {name} wurden erfolgreich erzeugt und gespeichert.")
 
 # Einstellungen speichern
-settings_file = '/workspace/datasets/synthetisch_ft/settings.txt'
+settings_file = output_folder_images.repalce('images/train', f'settings_{name}.txt')
 with open(settings_file, 'w') as sf:
     sf.write(f"Rotation={rotation_range}, Scale={scale_range}, Background={use_backgrounds}, Overlap={allow_overlap}\n")
 

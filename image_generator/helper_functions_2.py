@@ -28,7 +28,7 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
     for class_id, count in class_counts.items():
         available_objects = [obj for obj in objects if int(os.path.basename(obj).split('_')[0]) == int(class_id)]
         if not available_objects:
-            if class_id != 8 or 11:
+            if class_id not in [5, 8, 11]:
                 print(f"Warning: No objects found for class_id {class_id}")
             continue
 
@@ -61,7 +61,7 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
             # Apply the transformation to the object
             rotated_obj = cv2.warpAffine(obj, M, (new_width, new_height), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(0, 0, 0, 0))
 
-            max_attempts = 100
+            max_attempts = 10000
             for attempt in range(max_attempts):
                 x_offset = random.randint(0, image_width - new_width)
                 y_offset = random.randint(0, image_height - new_height)

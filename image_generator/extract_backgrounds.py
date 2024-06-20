@@ -6,9 +6,10 @@ from tqdm import tqdm
 
 # Ordnerpfade
 image_type = '.png'
-folder_get_images_train = f'/workspace/datasets/standard/Roewaplan_v2/images/train/*{image_type}'
-folder_get_images_val = f'/workspace/datasets/standard/Roewaplan_v2/images/val/*{image_type}'
-output_folder = '/workspace/image_generator/background_rp_v2/'
+folder_get_images_train = f'/workspace/datasets/standard/Roewaplan_v3/images/train/*{image_type}'
+folder_get_images_val = f'/workspace/datasets/standard/Roewaplan_v3/images/val/*{image_type}'
+folder_get_images_test= f'/workspace/datasets/standard/Roewaplan_v3/images/test/*{image_type}'
+output_folder = '/workspace/image_generator/background_rp_v3/'
 
 # Sicherstellen, dass der Ausgabeordner existiert
 os.makedirs(output_folder, exist_ok=True)
@@ -71,5 +72,7 @@ print("Processing training images for background...")
 process_images_for_background(folder_get_images_train)
 print("Processing validation images for background...")
 process_images_for_background(folder_get_images_val)
+print("Processing testing images for background...")
+process_images_for_background(folder_get_images_test)
 
 print("Hintergründe wurden erfolgreich bereinigt und gespeichert.")

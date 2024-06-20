@@ -1,11 +1,11 @@
 Bildgröße Statistik:
-Weite Mittelwert: 2616.03
+Weite Mittelwert: 2634.24
 Weite Median: 3308.00
-Weite Standardabweichung: 857.66
+Weite Standardabweichung: 853.52
 Weite Kleinste: 752
 Weite Größte: 3308
-Höhe Mittelwert: 2103.38
+Höhe Mittelwert: 2109.58
 Höhe Median: 2339.00
-Höhe Standardabweichung: 597.71
+Höhe Standardabweichung: 590.99
 Höhe Kleinste: 815
 Höhe Größte: 3308

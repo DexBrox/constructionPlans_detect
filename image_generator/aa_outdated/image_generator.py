@@ -4,7 +4,7 @@ import cv2
 from tqdm import tqdm
 import shutil as sh
 import itertools
-from helper_functions import place_objects_in_image, calculate_class_percentages
+from image_generator.aa_outdated.helper_functions import place_objects_in_image, calculate_class_percentages
 
 # Einstellungen
 name_base = 'synth_v'

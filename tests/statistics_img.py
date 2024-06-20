@@ -47,7 +47,7 @@ def save_size_statistics(output_file, width_stats, height_stats):
         file.write(f"Höhe Größte: {height_stats['max']}\n")
 
 if __name__ == "__main__":
-    img_folder1 = '/workspace/datasets/standard/Roewaplan_v2/images/train'
+    img_folder1 = '/workspace/datasets/standard/Roewaplan_v3/images/train'
     img_folder2 = img_folder1.replace('train', 'val')
     img_folder3 = img_folder1.replace('train', 'test')
     
