@@ -23,7 +23,7 @@ count_images = 1000
 # Ordnerpfade
 input_file = '/workspace/tests/statistic/stats_rp_v3_gesamt.txt'
 output_file = 'class_distribution_rp_v3.txt'
-backgrounds_folder = '/workspace/image_generator/backgrounds_rp_v3/*.jpg'
+backgrounds_folder = '/workspace/image_generator/background_rp_v3/*.png'
 objects_folder = '/workspace/image_generator/objects_rp_v3/*.png'
 
 # Txt erzeugen
@@ -45,6 +45,9 @@ all_settings_file = f'/workspace/datasets/synth/{name}_all_settings.txt'
 
 # Durchlaufe jede Kombination der Einstellungen
 for settings_index, (rotation_range, scale_range, use_backgrounds, allow_overlap) in enumerate(settings_combinations):
+    if settings_index < 2:
+        continue  # Überspringe die ersten beiden Kombinationen
+    
     current_name = f"{name}_{settings_index+1}"
     output_folder_images = f'/workspace/datasets/synth/{current_name}/images/train'
     output_folder_labels = output_folder_images.replace('images', 'labels')
