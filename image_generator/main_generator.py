@@ -45,8 +45,6 @@ all_settings_file = f'/workspace/datasets/synth/{name}_all_settings.txt'
 
 # Durchlaufe jede Kombination der Einstellungen
 for settings_index, (rotation_range, scale_range, use_backgrounds, allow_overlap) in enumerate(settings_combinations):
-    if settings_index < 2:
-        continue  # Überspringe die ersten beiden Kombinationen
     
     current_name = f"{name}_{settings_index+1}"
     output_folder_images = f'/workspace/datasets/synth/{current_name}/images/train'
