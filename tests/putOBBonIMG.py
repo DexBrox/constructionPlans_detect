@@ -4,6 +4,26 @@ import glob
 import numpy as np
 from tqdm import tqdm
 
+# Definiere Farben für die verschiedenen Klassen (0 bis 15) in BGR
+class_colors = {
+    '0': (56, 56, 255),    # Blau
+    '1': (158, 163, 255),  # Hellblau
+    '2': (52, 126, 255),   # Orange
+    '3': (42, 182, 255),   
+    '4': (67, 214, 211),   # Gelb
+    '5': (255, 0, 255),    # Pink
+    '6': (255, 0, 255),    # Pink
+    '7': (146, 222, 81),   # Hellgrün
+    '8': (22, 255, 255),   # Pink
+    '9': (255, 115, 100),    
+    '10': (49, 155, 170),  # Türkis
+    '11': (255, 0, 255),   # Pink
+    '12': (147, 69, 52),   
+    '13': (255, 115, 100),   
+    '14': (255, 0, 255),   # Pink
+    '15': (255, 56, 132)    
+}
+
 def draw_bounding_boxes(image, texts, points_list, output_folder, base_name):
     height, width = image.shape[:2]
 
@@ -13,15 +33,19 @@ def draw_bounding_boxes(image, texts, points_list, output_folder, base_name):
         # Konvertieren normierter Koordinaten in Pixelkoordinaten
         points = np.array([(x * width, y * height) for x, y in zip(points_float[::2], points_float[1::2])], np.int32)
         
-        cv2.polylines(image, [points], isClosed=True, color=(0, 255, 0), thickness=2)  # Helles Grün für Linien
-        cv2.putText(image, text, tuple(points[0]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)  # Helles Rot für Text
+        # Bestimme die Farbe basierend auf der Klasse
+        color = class_colors.get(text, (255, 255, 255))  # Standardfarbe ist Weiß, falls Klasse nicht definiert
+
+        cv2.polylines(image, [points], isClosed=True, color=color, thickness=5)  # Verwende die Farbe für die Linien
+        cv2.putText(image, text, tuple(points[0]), cv2.FONT_HERSHEY_SIMPLEX, 2, color, 4)  # Verwende die Farbe für den Text
 
     output_path = os.path.join(output_folder, f"{base_name}_obb.jpg")
     cv2.imwrite(output_path, image)
 
-image_folder = '/workspace/datasets/standard/Roewaplan_v2/images/test'
+image_folder = '/workspace/datasets/synth/synth_v3_1/images/train'
+#image_folder = 'new_labels_13_06/images'
 label_folder = image_folder.replace('images', 'labels')
-output_folder = 'output_Roewaplan_v2_test'
+output_folder = 'synth/synth_v3_1_train_vis'
 
 # Stelle sicher, dass der Ausgabeordner existiert
 if not os.path.exists(output_folder):

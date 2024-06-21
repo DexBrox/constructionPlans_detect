@@ -1,0 +1,1 @@
+{"dataset": "/workspace/datasets/synth/synth_v3_1", "_timestamp": 1718971344.8859923, "_runtime": 38.946290254592896, "_step": 1, "_wandb": {"runtime": 49}, "train/box_loss": 1.7485, "train/cls_loss": 5.00795, "train/dfl_loss": 3.07925, "lr/pg0": 4.5e-05, "lr/pg1": 4.5e-05, "lr/pg2": 4.5e-05}

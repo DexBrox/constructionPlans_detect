@@ -1,7 +1,7 @@
-# main.py
 import os
 import glob
 import cv2
+import shutil
 from tqdm import tqdm
 from itertools import product
 
@@ -10,21 +10,25 @@ from image_generator_2 import *
 from helper_functions_2 import *
 
 # Einstellungen - Definiere hier deine gewünschten Parameter
-rotation_ranges = [(0, 360)]
-scale_ranges = [(0.5, 1.5)]
+rotation_ranges = [(0, 0), (0, 360)]
+scale_ranges = [(1, 1), (0.5, 1.5)]
 use_backgrounds_options = [False, True]
 allow_overlap_options = [False, True]
 name = 'synth_v3'
 
 image_height = 2500
 image_width = 3500
-count_images = 1000
+count_images = 200
 
 # Ordnerpfade
 input_file = '/workspace/tests/statistic/stats_rp_v3_gesamt.txt'
 output_file = 'class_distribution_rp_v3.txt'
 backgrounds_folder = '/workspace/image_generator/background_rp_v3/*.png'
 objects_folder = '/workspace/image_generator/objects_rp_v3/*.png'
+
+# Pfade zu kopierenden Ordnern
+source_folder_1 = '/workspace/datasets/standard/Roewaplan_v3/images/val'
+source_folder_2 = source_folder_1.replace('images', 'labels')
 
 # Txt erzeugen
 class_percentages, mean_objects, std_dev_objects = read_statistics(input_file)
@@ -39,6 +43,8 @@ class_distribution = read_class_distribution(output_file)
 
 # Generiere alle Kombinationen der Einstellungen
 settings_combinations = list(product(rotation_ranges, scale_ranges, use_backgrounds_options, allow_overlap_options))
+print(f"Es werden {len(settings_combinations)} Kombinationen der Einstellungen generiert.")
+print(f"Die Kobinationen sind: {settings_combinations}")
 
 # Datei, die alle Einstellungen speichert
 all_settings_file = f'/workspace/datasets/synth/{name}_all_settings.txt'
@@ -55,6 +61,7 @@ for settings_index, (rotation_range, scale_range, use_backgrounds, allow_overlap
 
     # Bildgenerierung basierend auf den Klassenverteilungen
     for i, distribution in enumerate(tqdm(class_distribution, desc=f"Generating images for {current_name}")):
+        distribution = [distribution[0], distribution[1], distribution[2], distribution[3], distribution[4], 0, distribution[5], distribution[6], 0, distribution[7], distribution[8], 0, distribution[9], distribution[10], 0, distribution[11]]
         generated_image, labels = place_objects_in_image_ft(
             background_files, object_files, image_height, image_width, distribution,
             rotation_range, scale_range, allow_overlap, use_backgrounds
@@ -77,5 +84,10 @@ for settings_index, (rotation_range, scale_range, use_backgrounds, allow_overlap
         sf.write(f"Settings {settings_index+1}:\n")
         sf.write(f"Rotation Range={rotation_range}, Scale Range={scale_range}, Use Backgrounds={use_backgrounds}, Allow Overlap={allow_overlap}\n")
         sf.write("\n")
+
+    # Kopiere die zusätzlichen Ordner
+    shutil.copytree(source_folder_1, output_folder_images.replace('train', 'val'))
+    shutil.copytree(source_folder_2, output_folder_labels.replace('train', 'val'))
+    print(f"Ordner für {current_name} wurden erfolgreich kopiert.")
 
 print(f"Alle Bilder und Labels wurden erfolgreich erzeugt und die Einstellungen in '{all_settings_file}' gespeichert.")

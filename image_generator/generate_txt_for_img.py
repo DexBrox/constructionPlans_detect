@@ -56,6 +56,7 @@ def generate_class_distribution_file(class_percentages, num_lines, output_file, 
 
         lines.append(line_distribution)
 
+
     with open(output_file, 'w') as file:
         for line_distribution in lines:
             line = " ".join([f"Klasse {class_id}: {count}" for class_id, count in line_distribution.items()])

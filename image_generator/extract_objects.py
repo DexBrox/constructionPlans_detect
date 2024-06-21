@@ -38,21 +38,7 @@ def custom_to_bbox(image_shape, box):
     y3 = int(y3 * height)
     x4 = int(x4 * width)
     y4 = int(y4 * height)
-    # Berechne die Bounding Box, die alle vier Punkte umfasst
-    x_min = max(0, min(x1, x2, x3, x4))
-    y_min = max(0, min(y1, y2, y3, y4))
-    x_max = min(width, max(x1, x2, x3, x4))
-    y_max = min(height, max(y1, y2, y3, y4))
-    return class_id, x_min, y_min, x_max, y_max
-
-# Funktion, um weißen Hintergrund zu entfernen und durch Transparenz zu ersetzen
-def remove_white_background(image):
-    # Umwandeln in ein 4-Kanal-Bild (RGBA)
-    image_rgba = cv2.cvtColor(image, cv2.COLOR_BGR2BGRA)
-    # Alle Pixel im Bereich von 250 bis 255 als transparent (0) setzen
-    white = np.all(image[:, :, :3] >= 256, axis=2)
-    image_rgba[white, 3] = 0
-    return image_rgba
+    return class_id, [(x1, y1), (x2, y2), (x3, y3), (x4, y4)]
 
 # Dictionary, um die Zähler für jede Klasse zu verfolgen
 class_counters = {}
@@ -73,21 +59,35 @@ def process_images_and_labels(image_folder):
         base_name = os.path.basename(image_file).replace(image_type, '')
         
         for box in boxes:
-            class_id, x_min, y_min, x_max, y_max = custom_to_bbox(image_shape, box)
-            cropped_object = image[y_min:y_max, x_min:x_max]
-            # Überprüfen, ob das ausgeschnittene Bild nicht leer ist und nicht das gesamte Bild erfasst
-            if cropped_object.size == 0 or cropped_object.shape[0] == image.shape[0] or cropped_object.shape[1] == image.shape[1]:
-                print(f"Skipping object in {base_name} due to size issues")
-                continue
-            # Entfernen des weißen Hintergrunds
-            cropped_object = remove_white_background(cropped_object)
+            class_id, points = custom_to_bbox(image_shape, box)
+            points = np.array(points, dtype=np.int32)
+            rect = cv2.minAreaRect(points)
+            box_points = cv2.boxPoints(rect)
+            box_points = np.int0(box_points)
+            width = int(rect[1][0])
+            height = int(rect[1][1])
+            
+            src_pts = box_points.astype("float32")
+            dst_pts = np.array([[0, height-1],
+                                [0, 0],
+                                [width-1, 0],
+                                [width-1, height-1]], dtype="float32")
+            M = cv2.getPerspectiveTransform(src_pts, dst_pts)
+            warped = cv2.warpPerspective(image, M, (width, height))
+            
+            # Überprüfen und sicherstellen, dass das Bild 3 Kanäle hat
+            if warped.shape[2] == 4:
+                warped = cv2.cvtColor(warped, cv2.COLOR_BGRA2BGR)
+            elif warped.shape[2] == 1:
+                warped = cv2.cvtColor(warped, cv2.COLOR_GRAY2BGR)
+            
             # Initialisieren oder Erhöhen des Zählers für die aktuelle Klasse
             if class_id not in class_counters:
                 class_counters[class_id] = 0
             class_counters[class_id] += 1
             # Speichern mit class_id und Index als PNG
             output_file = os.path.join(output_folder, f"{int(class_id)}_{class_counters[class_id]}{image_type}")
-            cv2.imwrite(output_file, cropped_object)
+            cv2.imwrite(output_file, warped)
 
 # Verarbeitung von Trainings- und Validierungsordnern
 print("Processing training images and labels...")

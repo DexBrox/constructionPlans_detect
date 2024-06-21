@@ -28,7 +28,7 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
     for class_id, count in class_counts.items():
         available_objects = [obj for obj in objects if int(os.path.basename(obj).split('_')[0]) == int(class_id)]
         if not available_objects:
-            if class_id not in [5, 8, 11]:
+            if class_id not in [5, 8, 11, 14]:
                 print(f"Warning: No objects found for class_id {class_id}")
             continue
 
@@ -41,6 +41,12 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
                 print(f"Error: Unable to read object image {obj_path}")
                 continue
             
+            # Sicherstellen, dass das Bild einen Alpha-Kanal hat
+            if obj.shape[2] == 3:
+                obj = cv2.cvtColor(obj, cv2.COLOR_BGR2BGRA)
+            elif obj.shape[2] == 1:
+                obj = cv2.cvtColor(obj, cv2.COLOR_GRAY2BGRA)
+
             obj_height, obj_width = obj.shape[:2]
             scale = random.uniform(scale_range[0], scale_range[1])
             rotation = random.randint(rotation_range[0], rotation_range[1])
@@ -78,7 +84,6 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
                 break
             else:
                 # Wenn keine geeignete Position gefunden wurde, brechen wir die Schleife ab
-                #print(f"Error: Unable to place object {obj_name} after {max_attempts} attempts")
                 continue
 
             for c in range(3):
