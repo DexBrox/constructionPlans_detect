@@ -24,10 +24,10 @@ with open(config_yaml_path, 'r') as file:
 # List of dataset base paths
 dataset_base_paths = [f'/workspace/datasets/synth/synth_v3_{i}' for i in range(1, 17)]
 
-# Initialize wandb only once
-wandb.init(project=f"Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}")
-
 for i, base_path in enumerate(dataset_base_paths, start=1):
+    # Initialize wandb for each dataset with a unique run name
+    wandb.init(project=f"Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=f"Run_{os.path.basename(base_path)}")
+
     data_yaml_content = {
         'path': base_path,
         'train': 'images/train',
@@ -75,8 +75,8 @@ for i, base_path in enumerate(dataset_base_paths, start=1):
     # Clean up temporary file
     os.remove(temp_yaml_path)
 
+    # Finish wandb session for the current run
+    wandb.finish()
+
 # Export the model to ONNX format
 model.export(format='onnx')
-
-# Finish wandb session
-wandb.finish()
