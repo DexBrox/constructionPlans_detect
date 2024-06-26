@@ -22,11 +22,11 @@ with open(config_yaml_path, 'r') as file:
     base_config = config['base_config']
 
 # List of dataset base paths
-dataset_base_paths = [f'/workspace/datasets/synth/synth_v3_{i}' for i in range(1, 17)]
+dataset_base_paths = [f'/workspace/datasets/synth/synth_v3_{i}' for i in range(14, 17)]
 
 for i, base_path in enumerate(dataset_base_paths, start=1):
     # Initialize wandb for each dataset with a unique run name
-    wandb.init(project=f"Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=f"Run_{os.path.basename(base_path)}")
+    wandb.init(project=f"Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=f"{os.path.basename(base_path)}")
 
     data_yaml_content = {
         'path': base_path,

@@ -14,18 +14,18 @@ rotation_ranges = [(0, 0), (0, 360)]
 scale_ranges = [(1, 1), (0.5, 1.5)]
 use_backgrounds_options = [False, True]
 allow_overlap_options = [False, True]
-name = 'synth_v3'
+name = 'synth_v3_50000'
 
 image_height = 2500
 image_width = 3500
-count_images = 200
+count_images = 50000
 
 # Ordnerpfade
 input_file = '/workspace/tests/statistic/stats_rp_v3_gesamt.txt'
-output_file = 'class_distribution_rp_v3.txt'
 backgrounds_folder = '/workspace/image_generator/background_rp_v3/*.png'
 objects_folder = '/workspace/image_generator/objects_rp_v3/*.png'
 
+output_file = f'class_distribution_{name}.txt'
 # Pfade zu kopierenden Ordnern
 source_folder_1 = '/workspace/datasets/standard/Roewaplan_v3/images/val'
 source_folder_2 = source_folder_1.replace('images', 'labels')

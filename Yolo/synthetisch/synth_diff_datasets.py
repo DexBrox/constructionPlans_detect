@@ -23,7 +23,7 @@ with open(config_yaml_path, 'r') as file:
     base_config = config['base_config']
 
 # List of dataset base paths
-dataset_base_paths = [f'/workspace/datasets/synth/synth_v3_{i}' for i in range(1, 17)]
+dataset_base_paths = [f'/workspace/datasets/synth/synth_v3_{i}' for i in range(6, 17)]
 
 for base_path in dataset_base_paths:
     train_path = os.path.join(base_path, 'images/train')
