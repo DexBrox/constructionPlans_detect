@@ -7,8 +7,8 @@ import yaml
 
 # Model and configuration setup
 model_name = 'yolov8x-obb.pt'
-data_name = 'Roewaplan_v2_2.yaml'
-project_name = 'synth_ft'
+data_name = 'Theo.yaml'
+project_name = 'allforcomparison'
 config_yaml_name = 'config_best.yaml'
 device = 'cuda:3' if torch.cuda.is_available() else 'cpu'
 
@@ -29,7 +29,7 @@ with open(config_yaml, 'r') as file:
     base_config = config['base_config']
 
 # Initialize wandb
-wandb.init(project=f"Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=os.path.splitext(data_name)[0])
+wandb.init(project=f"FINAL_BIG_Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=os.path.splitext(data_name)[0])
 
 # Load YOLO model
 model = YOLO(model).to(device)
