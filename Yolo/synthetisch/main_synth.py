@@ -10,7 +10,7 @@ import tempfile
 model_name = 'yolov8x-obb.pt'
 project_name = 'synth_diff_datasets_v3'
 config_yaml_name = 'config_best_short.yaml'
-device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
 
 main_folder = '/workspace/main_folder/'
 model_path = main_folder + 'MODELs/' + model_name
@@ -22,7 +22,7 @@ with open(config_yaml_path, 'r') as file:
     base_config = config['base_config']
 
 # List of dataset base paths
-dataset_base_paths = [f'/workspace/datasets/synth/synth_v3_{i}' for i in range(14, 17)]
+dataset_base_paths = [f'/workspace/datasets/synth/synth_v3_{i}' for i in range(15, 17)]
 
 for i, base_path in enumerate(dataset_base_paths, start=1):
     # Initialize wandb for each dataset with a unique run name

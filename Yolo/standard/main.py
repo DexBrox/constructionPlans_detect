@@ -7,24 +7,24 @@ import yaml
 
 # Model and configuration setup
 model_name = 'yolov8x-obb.pt'
-data_name = 'Theo.yaml'
+data_name = 'Roewaplan_v3.yaml'
 project_name = 'allforcomparison'
 config_yaml_name = 'config_best.yaml'
 device = 'cuda:3' if torch.cuda.is_available() else 'cpu'
 
 main_folder = '/workspace/main_folder/'
 configuration = {
-    'data': main_folder + 'YAMLs/' + data_name,
-    'project': main_folder + 'RESULTs/' + project_name,
+    'data': os.path.join(main_folder, 'YAMLs', data_name),
+    'project': os.path.join(main_folder, 'RESULTs', project_name),
 }
-model = main_folder + 'MODELs/' + model_name
-config_yaml = main_folder + 'CONFIGs/' + config_yaml_name
+model_path = os.path.join(main_folder, 'MODELs', model_name)
+config_yaml_path = os.path.join(main_folder, 'CONFIGs', config_yaml_name)
 
-if not os.path.exists(config_yaml):
-    os.makedirs(config_yaml)
+if not os.path.exists(os.path.dirname(config_yaml_path)):
+    os.makedirs(os.path.dirname(config_yaml_path))
 
 # Load configuration file
-with open(config_yaml, 'r') as file:
+with open(config_yaml_path, 'r') as file:
     config = yaml.safe_load(file)
     base_config = config['base_config']
 
@@ -32,10 +32,10 @@ with open(config_yaml, 'r') as file:
 wandb.init(project=f"FINAL_BIG_Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=os.path.splitext(data_name)[0])
 
 # Load YOLO model
-model = YOLO(model).to(device)
+model = YOLO(model_path).to(device)
 
 # Train the model
-model.train(**base_config, **configuration, model=model)
+model.train(**base_config, **configuration, model=model_path)
 
 # Export the model to ONNX format
 model.export(format='onnx')

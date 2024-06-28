@@ -75,7 +75,7 @@ def save_results(output_file, class_percentages, object_stats, class_position_st
             file.write(f"  Durchschnittliche Position: ({mean_x:.2f}, {mean_y:.2f})\n")
             file.write(f"  Klasse Stabw: ({std_x:.2f}, {std_y:.2f})\n")
 
-label_folder1 = '/workspace/datasets/synth/synth_v3_1/labels/train'
+label_folder1 = '/workspace/datasets/Theo/labels/train'
 #label_folder2 = label_folder1.replace('train', 'val')
 #label_folder3 = label_folder1.replace('train', 'test')
 
@@ -86,6 +86,6 @@ class_percentages, object_stats, class_position_stats = format_output(class_coun
 output_path = '/workspace/tests/statistic'
 if not os.path.exists(output_path):
     os.makedirs(output_path)
-save_results(f'{output_path}/stats_test1.txt', class_percentages, object_stats, class_position_stats)
+save_results(f'{output_path}/stats_theo.txt', class_percentages, object_stats, class_position_stats)
 
 print(f"Analyse abgeschlossen und Ergebnisse in '{output_path}' gespeichert.")
