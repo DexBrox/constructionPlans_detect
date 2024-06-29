@@ -23,7 +23,7 @@ with open(config_yaml_path, 'r') as file:
     base_config = config['base_config']
 
 # List of dataset base paths
-dataset_base_paths = [f'/workspace/datasets/synth/synth_v3_{i}' for i in range(6, 17)]
+dataset_base_paths = [f'/workspace/datasets/synth/synth_v3_200_{i}' for i in range(1, 16+1)]
 
 for base_path in dataset_base_paths:
     train_path = os.path.join(base_path, 'images/train')
@@ -68,7 +68,7 @@ for base_path in dataset_base_paths:
 
     # Initialize wandb for each dataset
     run_name = os.path.basename(base_path)
-    wandb.init(project=f"Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=run_name)
+    wandb.init(project=f"FINAL_Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=run_name)
 
     # Log the dataset being used
     wandb.log({"dataset": data_yaml_content['path']})

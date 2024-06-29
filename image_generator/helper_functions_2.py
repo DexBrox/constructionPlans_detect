@@ -69,8 +69,13 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
 
             max_attempts = 10000
             for attempt in range(max_attempts):
-                x_offset = random.randint(0, image_width - new_width)
-                y_offset = random.randint(0, image_height - new_height)
+                x_offset, y_offset = 0, 0
+                try:
+                    x_offset = random.randint(0, image_width - new_width)
+                    y_offset = random.randint(0, image_height - new_height)
+                except ValueError:
+                    print(f"Skipping object placement due to size mismatch: image ({image_width}x{image_height}), object ({new_width}x{new_height})")
+                    break
 
                 overlap = False
                 for (px, py, pw, ph, pc, _) in placed_objects:
@@ -84,6 +89,12 @@ def place_objects_in_image_ft(background_files, objects, image_height, image_wid
                 break
             else:
                 # Wenn keine geeignete Position gefunden wurde, brechen wir die Schleife ab
+                continue
+
+            # Überprüfen, ob die Größe der Bildausschnitte übereinstimmt
+            if rotated_obj.shape[0] != image[y_offset:y_offset + new_height, x_offset:x_offset + new_width].shape[0] or \
+               rotated_obj.shape[1] != image[y_offset:y_offset + new_height, x_offset:x_offset + new_width].shape[1]:
+                print(f"Skipping due to shape mismatch: rotated_obj {rotated_obj.shape}, image slice {image[y_offset:y_offset + new_height, x_offset:x_offset + new_width].shape}")
                 continue
 
             for c in range(3):

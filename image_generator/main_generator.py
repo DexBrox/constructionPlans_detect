@@ -3,7 +3,7 @@ import glob
 import cv2
 import shutil
 from tqdm import tqdm
-from itertools import product
+from itertools import product, cycle
 
 from generate_txt_for_img import *
 from image_generator_2 import *
@@ -14,11 +14,16 @@ rotation_ranges = [(0, 0), (0, 360)]
 scale_ranges = [(1, 1), (0.5, 1.5)]
 use_backgrounds_options = [False, True]
 allow_overlap_options = [False, True]
-name = 'synth_v3_50000'
+count_images = 200
+name = f'synth_v3_{count_images}'
 
-image_height = 2500
-image_width = 3500
-count_images = 50000
+image_sizes = [
+    (3308, 2339), (1245, 1410), (3308, 2339), (3308, 2339), (3308, 2339), (3308, 2339),
+    (2339, 3308), (3308, 2339), (3308, 2339), (1654, 2339), (2339, 1654), (2339, 3308), 
+    (3308, 2339), (2339, 3308), (3308, 2339), (3308, 2339), (3308, 2339), (2339, 1654), 
+    (3308, 2339), (3308, 2339), (2339, 1654)
+]
+image_size_cycle = cycle(image_sizes)
 
 # Ordnerpfade
 input_file = '/workspace/tests/statistic/stats_rp_v3_gesamt.txt'
@@ -62,6 +67,10 @@ for settings_index, (rotation_range, scale_range, use_backgrounds, allow_overlap
     # Bildgenerierung basierend auf den Klassenverteilungen
     for i, distribution in enumerate(tqdm(class_distribution, desc=f"Generating images for {current_name}")):
         distribution = [distribution[0], distribution[1], distribution[2], distribution[3], distribution[4], 0, distribution[5], distribution[6], 0, distribution[7], distribution[8], 0, distribution[9], distribution[10], 0, distribution[11]]
+        
+        # Wähle die nächste Bildgröße aus dem zyklischen Iterator
+        image_width, image_height = next(image_size_cycle)
+
         generated_image, labels = place_objects_in_image_ft(
             background_files, object_files, image_height, image_width, distribution,
             rotation_range, scale_range, allow_overlap, use_backgrounds
