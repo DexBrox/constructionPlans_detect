@@ -42,10 +42,10 @@ def draw_bounding_boxes(image, texts, points_list, output_folder, base_name):
     output_path = os.path.join(output_folder, f"{base_name}_obb.png")
     cv2.imwrite(output_path, image)
 
-image_folder = '/workspace/datasets/synth/synth_v3_8/images/train'
+image_folder = '/workspace/datasets/standard/Roewaplan_v3/images/test'
 #image_folder = 'new_labels_13_06/images'
 label_folder = image_folder.replace('images', 'labels')
-output_folder = '/workspace/datasets/synth/synth_v3_8/visualized_train'
+output_folder = '/workspace/datasets/standard/Roewaplan_v3_visualized/test'
 
 # Stelle sicher, dass der Ausgabeordner existiert
 if not os.path.exists(output_folder):

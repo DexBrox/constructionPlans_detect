@@ -14,7 +14,7 @@ rotation_ranges = [(0, 0), (0, 360)]
 scale_ranges = [(1, 1), (0.5, 1.5)]
 use_backgrounds_options = [False, True]
 allow_overlap_options = [False, True]
-count_images = 200
+count_images = 50000
 name = f'synth_v3_{count_images}'
 
 image_sizes = [

@@ -6,11 +6,11 @@ import os
 import yaml
 
 # Model and configuration setup
-model_name = 'yolov8x-obb.pt'
-data_name = 'Roewaplan_v2.yaml'
+model_name = 'yolov9e.pt'
+data_name = 'Roewaplan_v3.yaml'
 project_name = 'hyperparameter_test'
 config_yaml_name = 'config_best.yaml'
-device = 'cuda:3' if torch.cuda.is_available() else 'cpu'
+device = 'cuda:2' if torch.cuda.is_available() else 'cpu'
 
 main_folder = '/workspace/main_folder/'
 configuration = {
