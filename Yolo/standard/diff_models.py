@@ -10,14 +10,14 @@ os.environ['WANDB_SILENT'] = 'true'
 
 # Model and configuration setup
 model_names = [
-    'yolov10n.pt', 
-    'yolov10s.pt', 
-    'yolov10m.pt', 
-    'yolov10b.pt', 
+    #'yolov10n.pt', 
+    #'yolov10s.pt', 
+    #'yolov10m.pt', 
+    #'yolov10b.pt', 
     'yolov10l.pt', 
-    'yolov10x.pt'
+    'yolov10x.pt',
 
-    'yolov9t.pt', 
+    #'yolov9t.pt', 
     #'yolov9s.pt', 
     #'yolov9m.pt', 
     #'yolov9c.pt', 
@@ -31,8 +31,8 @@ model_names = [
 ]
 data_name = 'Roewaplan_v3.yaml'
 project_name = 'different_models'
-config_yaml_name = 'config_diff.yaml'
-device = 'cuda:2' if torch.cuda.is_available() else 'cpu'
+config_yaml_name = 'config_best.yaml'
+device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
 # Code-Start
 main_folder = '/workspace/main_folder/'
@@ -55,7 +55,7 @@ for model_var in model_names:
             base_config = config['base_config']
 
         # Initialize wandb
-        wandb.init(project=f"FINAL2_Masterarbeit_{project_name}_{os.path.splitext(data_name)[0]}", name=os.path.splitext(model_var)[0])
+        wandb.init(project=f"FINAL_Masterarbeit_{project_name}_{os.path.splitext(data_name)[0]}", name=os.path.splitext(model_var)[0])
 
         # Load YOLO model
         model = YOLO(model_path).to(device)

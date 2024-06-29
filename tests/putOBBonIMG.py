@@ -39,20 +39,20 @@ def draw_bounding_boxes(image, texts, points_list, output_folder, base_name):
         cv2.polylines(image, [points], isClosed=True, color=color, thickness=5)  # Verwende die Farbe für die Linien
         cv2.putText(image, text, tuple(points[0]), cv2.FONT_HERSHEY_SIMPLEX, 2, color, 4)  # Verwende die Farbe für den Text
 
-    output_path = os.path.join(output_folder, f"{base_name}_obb.jpg")
+    output_path = os.path.join(output_folder, f"{base_name}_obb.png")
     cv2.imwrite(output_path, image)
 
-image_folder = '/workspace/datasets/Theo/images/train'
+image_folder = '/workspace/datasets/synth/synth_v3_8/images/train'
 #image_folder = 'new_labels_13_06/images'
 label_folder = image_folder.replace('images', 'labels')
-output_folder = 'standard/theo_vis'
+output_folder = '/workspace/datasets/synth/synth_v3_8/visualized_train'
 
 # Stelle sicher, dass der Ausgabeordner existiert
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
 # Iteriere über alle Bilddateien
-for image_path in tqdm(glob.glob(os.path.join(image_folder, '*.jpg'))):
+for image_path in tqdm(glob.glob(os.path.join(image_folder, '*.png'))):
     base_name = os.path.basename(image_path)
     name, _ = os.path.splitext(base_name)
     label_path = os.path.join(label_folder, f'{name}.txt')

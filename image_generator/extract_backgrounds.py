@@ -7,9 +7,9 @@ from tqdm import tqdm
 # Ordnerpfade
 image_type = '.png'
 folder_get_images_train = f'/workspace/datasets/standard/Roewaplan_v3/images/train/*{image_type}'
-folder_get_images_val = f'/workspace/datasets/standard/Roewaplan_v3/images/val/*{image_type}'
-folder_get_images_test= f'/workspace/datasets/standard/Roewaplan_v3/images/test/*{image_type}'
-output_folder = '/workspace/image_generator/background_rp_v3/'
+#folder_get_images_val = f'/workspace/datasets/standard/Roewaplan_v3/images/val/*{image_type}'
+#folder_get_images_test= f'/workspace/datasets/standard/Roewaplan_v3/images/test/*{image_type}'
+output_folder = '/workspace/image_generator/background_rp_v4/'
 
 # Sicherstellen, dass der Ausgabeordner existiert
 os.makedirs(output_folder, exist_ok=True)
