@@ -42,6 +42,6 @@ def print_directory_sizes_and_file_counts(base_directory, output_file):
             f.write(result + "\n")
 
 if __name__ == "__main__":
-    base_directory = "/workspace"  # Basisverzeichnis festlegen
+    base_directory = "/workspace/.cache/pip/http-v2/5/a/a/e/8"  # Basisverzeichnis festlegen
     output_file = "directory_sizes_and_file_counts.txt"  # Ausgabe-Datei festlegen
     print_directory_sizes_and_file_counts(base_directory, output_file)
