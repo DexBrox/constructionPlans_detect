@@ -4,13 +4,18 @@ from ultralytics import YOLO
 import torch
 import os
 import yaml
+import setproctitle
 
 # Model and configuration setup
-model_name = 'yolov10x.pt'
+model_name = 'yolov9e.pt'
 data_name = 'Roewaplan_v3.yaml'
 project_name = 'hyperparameter_test'
 config_yaml_name = 'config_best.yaml'
-device = 'cuda:1' if torch.cuda.is_available() else 'cpu'
+device = 'cuda:2'
+
+
+# Setze den benutzerdefinierten Prozessnamen
+setproctitle.setproctitle('VJ_' + project_name + '_' + os.path.basename(model_name))
 
 main_folder = '/workspace/main_folder/'
 configuration = {
@@ -30,14 +35,26 @@ with open(config_yaml, 'r') as file:
 
 # Define hyperparameter variations from smallest to largest
 variations = {
-    'imgsz': [320, 640, 960, 1280, 1600, 1920, 2040],
-    'batch': [1, 2, 4, 8, 16],
-    'lr0': [1e-5, 1e-4, 1e-3, 1e-2, 1e-1],
-    'optimizer': ['SGD', 'Adam', 'RMSprop'],
+    # 'imgsz': [320, 640, 960, 1280, 1600, 1920, 2040],
+    # 'batch': [1, 2, 4, 8, 16],
+    # 'batch': [4],
+    # 'lr0': [1e-5, 1e-4, 1e-3, 1e-2, 1e-1],
+    'optimizer': ['Adam', 'AdamW', 'NAdam', 'RAdam', 'RMSProp'], #'SGD', 
     'warmup_epochs': [0, 3, 5, 10, 20],
-    'momentum': [0.85, 0.9, 0.95, 0.99],
-    'weight_decay': [0, 1e-5, 1e-4, 1e-3],
-    'dropout': [0.2, 0.3, 0.4, 0.5]
+
+    'dropout': [0.0, 0.2, 0.4, 0.6, 0.8],
+    
+    #'hsv_h': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
+    #'hsv_s': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
+    #'hsv_v': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
+    #'translate': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
+
+    #'scale': [0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
+    #'fliplr': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
+    #'auto_augment': ['randaugment', 'autoaugment', 'augmix'],
+    #'crop_fraction': [0.1, 0.3, 0.55, 0.8, 1.0],
+    #'mosaic': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
+
 }
 
 # Function to train with a single hyperparameter variation
