@@ -7,11 +7,11 @@ import yaml
 import setproctitle
 
 # Model and configuration setup
-model_name = 'yolov9e.pt'
+model_name = 'yolov8x-obb.pt'
 data_name = 'Roewaplan_v3.yaml'
 project_name = 'hyperparameter_test'
 config_yaml_name = 'config_best.yaml'
-device = 'cuda:2'
+device = 'cuda:3'
 
 
 # Setze den benutzerdefinierten Prozessnamen
@@ -39,13 +39,13 @@ variations = {
     # 'batch': [1, 2, 4, 8, 16],
     # 'batch': [4],
     # 'lr0': [1e-5, 1e-4, 1e-3, 1e-2, 1e-1],
-    'optimizer': ['Adam', 'AdamW', 'NAdam', 'RAdam', 'RMSProp'], #'SGD', 
-    'warmup_epochs': [0, 3, 5, 10, 20],
+    #'optimizer': ['Adam', 'AdamW', 'NAdam', 'RAdam', 'RMSProp'], #'SGD', 
+    #'warmup_epochs': [0, 3, 5, 10, 20],
 
-    'dropout': [0.0, 0.2, 0.4, 0.6, 0.8],
+    #'dropout': [0.0, 0.2, 0.4, 0.6, 0.8],
     
-    #'hsv_h': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
-    #'hsv_s': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
+    'hsv_h': [0.2, 0.4, 0.6, 0.8, 1.0], #0.0,
+    'hsv_s': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
     #'hsv_v': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
     #'translate': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
 
