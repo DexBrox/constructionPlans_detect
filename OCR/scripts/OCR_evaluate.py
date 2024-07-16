@@ -173,36 +173,5 @@ def sort_linked_data_by_polygon_and_midpoint_x(linked_data): #old
         return result
 
     sorted_data = custom_sort(sorted_data)
-    save_linked_data_to_csv(sorted_data, 'data_temp2.csv')
     return sorted_data
 
-
-def sum_sentences(sorted_data, i):
-    sum_data = []
-    
-    current_first_part_of_polygon = None
-    collected_text = ""
-
-    for item in sorted_data:
-        first_part_of_polygon, text = item[0][1], item[2] 
-
-        if first_part_of_polygon == current_first_part_of_polygon:
-            collected_text += " " + text
-        else:
-            if current_first_part_of_polygon is not None:
-                sum_data.append((current_first_part_of_polygon, collected_text.strip()))
-
-            current_first_part_of_polygon = first_part_of_polygon
-            collected_text = text
-
-    if current_first_part_of_polygon is not None:
-        sum_data.append((current_first_part_of_polygon, collected_text.strip()))
-
-    csv_file_path = f'../results/sum_data_{i}.csv'
-    df = pd.DataFrame(sum_data, columns=['label', 'predict'])
-    directory, filename = os.path.split(csv_file_path)
-    os.makedirs(directory, exist_ok=True)
-    print (directory)
-    df.to_csv(csv_file_path, index=False)
-
-    return sum_data

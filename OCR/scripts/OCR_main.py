@@ -1,8 +1,12 @@
 import os
 import timeit
 import warnings
+import setproctitle
 
 start = timeit.default_timer()
+
+# Setze den benutzerdefinierten Prozessnamen
+setproctitle.setproctitle('VJ_OCR')
 
 from OCR_text_recognition_eo import process_image_easyocr
 from OCR_text_recognition_tess import process_image_tess
@@ -27,8 +31,8 @@ time_per_image = []
 for image_path in image_paths:
     image_start = timeit.default_timer()  # Startzeit für die Verarbeitung des einzelnen Bildes
 
-    results, image = process_image_easyocr(image_path)
-    #results, image = process_image_tess(image_path)
+    #results, image = process_image_easyocr(image_path)
+    results, image = process_image_tess(image_path)
     base_name = gen_out(image_path, image)
     text, coordinates = save_results(results, output_dir_txt, base_name)
     draw_bounding_boxes(image, text, coordinates, output_dir_img, base_name)
