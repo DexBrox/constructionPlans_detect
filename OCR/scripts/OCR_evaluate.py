@@ -131,27 +131,7 @@ def save_linked_data_to_csv(linked_data, output_file_path):
 # save_linked_data_to_csv(linked_data, 'pfad/zur/datei.csv')
 
 
-
-#def sort_linked_data_by_polygon_and_midpoint_x(linked_data): #falsch
-    """
-    Sortiert die verknüpften Daten zunächst basierend auf den vertikalen Werten der Mittelpunkte und innerhalb jeder vertikalen Gruppe nach den horizontalen Werten.
-    """
-    # Sortieren der Daten basierend auf der vertikalen Mittelpunktkoordinate
-    linked_data.sort(key=lambda x: x[1][1])
-    
-    # Gruppieren nach vertikalem Abstand, hier beispielhaft in 100-Pixel-Schritten
-    from itertools import groupby
-    grouped_data = groupby(linked_data, key=lambda x: x[1][1] // 10)  # Gruppierung der Daten in vertikalen Schritten
-    
-    sorted_linked_data = []
-    for _, group in grouped_data:
-        sorted_group = sorted(group, key=lambda x: x[1][0])  # Sortieren jeder Gruppe nach der horizontalen Mittelpunktkoordinate
-        sorted_linked_data.extend(sorted_group)
-    
-    return sorted_linked_data
-
-
-def sort_linked_data_by_polygon_and_midpoint_x(linked_data): #old
+def sort_linked_data_by_polygon_and_midpoint_x(linked_data): 
     def sort_key(entry):
         polygon, (midpoint_x, midpoint_y), _ = entry[0], entry[1], entry[2]
         return (polygon, midpoint_x, -midpoint_y)  

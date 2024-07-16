@@ -1,30 +1,17 @@
-Polygon,Collected Text
+GT Label,Predicted Text
 "Baukoerperoberflaechen muessen fuer die Verklebung der Folien und fuer Versiegelungen geeignet sein (eben, fest, fettfrei). Die Wahl der Materialien ist ggf. mit den angrenzenden Gewerken abzustimmen.","fuer muessen die Baukoerpereberflaechen Foljeh fuer der und Versiegelungen fest, (ebep/ fettfrei). Die‘Wahl der Materialien ist ggf Gewerken abzustimmen. ngrenzenden"
 Bedienhebel,Bedienhebel
 Anker Fischer FAZ 10/20 A4,Fisetfer FAZ A4 10/20
 Dampfbremse: Folie mit geringer Dampfdurchlaessigkeit z.B. Schueco VapoFlex HR050,Folie mit Dampfbremse; geringer Dampfdurchlaessigkeit zB. Schueco HR) VapoFlex
-Unterfuetterung (Toleranzausgleich),Unterfuetterung
-IK Leibungsblech Decke,IK Decke
-Unterfuetterung (Toleranzausgleich),"{Toleranzausgleich,"
-IK Leibungsblech Decke,Leibungsblech
-LUFTER Leistung angrenzendes Gewerk dargestellt: Sigenia Aubi AEROMAT VT Typ DS Wetterschutz 911 CW mit Lueftungsschlitzen und vorgesetzten Wetterschenkeln,LUEFTER Leistung
+Unterfuetterung (Toleranzausgleich),"Unterfuetterung {Toleranzausgleich,"
+IK Leibungsblech Decke,IK Decke Leibungsblech
+LUFTER Leistung angrenzendes Gewerk dargestellt: Sigenia Aubi AEROMAT VT Typ DS Wetterschutz 911 CW mit Lueftungsschlitzen und vorgesetzten Wetterschenkeln,LUEFTER Leistung Gewerk angrenzendes dargestellt: Aubi Sigenia AEROMAT DS Typ VT Wetterschutz 911CW mit und Lueftungsschlitzen vorgesetzten Wetterschenkeln
 VK Decke / Bruestung,WK Decke / Bruestung
-LUFTER Leistung angrenzendes Gewerk dargestellt: Sigenia Aubi AEROMAT VT Typ DS Wetterschutz 911 CW mit Lueftungsschlitzen und vorgesetzten Wetterschenkeln,Gewerk angrenzendes dargestellt: Aubi Sigenia AEROMAT DS Typ VT Wetterschutz 911CW mit
-"L-Stahl nach Statik, z.B. DIN 1029 L150x90x10 durchgehend","L-Stahl hadh %B. Statik,"
-LUFTER Leistung angrenzendes Gewerk dargestellt: Sigenia Aubi AEROMAT VT Typ DS Wetterschutz 911 CW mit Lueftungsschlitzen und vorgesetzten Wetterschenkeln,und Lueftungsschlitzen
-"L-Stahl nach Statik, z.B. DIN 1029 L150x90x10 durchgehend",DIN 1029 k159x90x10
-LUFTER Leistung angrenzendes Gewerk dargestellt: Sigenia Aubi AEROMAT VT Typ DS Wetterschutz 911 CW mit Lueftungsschlitzen und vorgesetzten Wetterschenkeln,vorgesetzten
-"L-Stahl nach Statik, z.B. DIN 1029 L150x90x10 durchgehend",lurchgehen
-LUFTER Leistung angrenzendes Gewerk dargestellt: Sigenia Aubi AEROMAT VT Typ DS Wetterschutz 911 CW mit Lueftungsschlitzen und vorgesetzten Wetterschenkeln,Wetterschenkeln
+"L-Stahl nach Statik, z.B. DIN 1029 L150x90x10 durchgehend","L-Stahl hadh %B. Statik, DIN 1029 k159x90x10 lurchgehen"
 dampfoffene Dichtungsfolie z.B. Schueco VapoFlex LR 5,dampfoffene Dichtungsfolie zB. Schiico LR 5 VopoFlex
 358260,358260
 358790,358790
 358610,358610
 beluefteter Zwischenraum,beluefteter Zwischenraum
-Bei Ausfuehrung ohne Luefter zugehoeriges Leitdetail: 5 AR DT FAS 47 AF (siehe Plan D102),Bei ohne Luefter Ausfuehrung
-"Luftzufuhr ueber Fusspunkt Blech-VHF seitens der Bauleitung ist zu pruefen, ob der gegebene Querschnitt ausreicht.","Luftzufuhr ueber Blech-VHF, Fusspunkt"
-Bei Ausfuehrung ohne Luefter zugehoeriges Leitdetail: 5 AR DT FAS 47 AF (siehe Plan D102),Leitdetail: Zugehdriges
-"Luftzufuhr ueber Fusspunkt Blech-VHF seitens der Bauleitung ist zu pruefen, ob der gegebene Querschnitt ausreicht.","seitens der ist ob zu Bauleitung pruefen,"
-Bei Ausfuehrung ohne Luefter zugehoeriges Leitdetail: 5 AR DT FAS 47 AF (siehe Plan D102),AR DT FAS 47 AF 5
-"Luftzufuhr ueber Fusspunkt Blech-VHF seitens der Bauleitung ist zu pruefen, ob der gegebene Querschnitt ausreicht.",der Querschnitt ausreicht. gegebene
-Bei Ausfuehrung ohne Luefter zugehoeriges Leitdetail: 5 AR DT FAS 47 AF (siehe Plan D102),Plan (siehe D102)
+Bei Ausfuehrung ohne Luefter zugehoeriges Leitdetail: 5 AR DT FAS 47 AF (siehe Plan D102),Bei ohne Luefter Ausfuehrung Leitdetail: Zugehdriges AR DT FAS 47 AF 5 Plan (siehe D102)
+"Luftzufuhr ueber Fusspunkt Blech-VHF seitens der Bauleitung ist zu pruefen, ob der gegebene Querschnitt ausreicht.","Luftzufuhr ueber Blech-VHF, Fusspunkt seitens der ist ob zu Bauleitung pruefen, der Querschnitt ausreicht. gegebene"

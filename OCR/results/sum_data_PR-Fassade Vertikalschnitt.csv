@@ -1,55 +1,26 @@
-label,predict
+GT Label,Predicted Text
 358610,35860
-358380,358300
+358380,358300 x
 Falzgrund Pfostenprofil,Fdagrund Pfostenprofi
 T-Verbinder nach Tabelle / Gewicht,"T-Verbinder nach Gewicht, / Tabelle"
 325520,zum
-358380,x
 244101,Zu
 358670,353670
-"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",auf Pfostenkinkung Fensterseite bis nur
-"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)",Hinweis fuer
-"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",OKF
-"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)",Bauleitung:
-"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",oder
-gestrichelt: Lage Basisregel Festverglasung,gestrichelt:
-"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden","abdecken, bausetige"
-"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)",Fremdleistungen {hier Dachdeckerarbeiten)
-"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",hier
-gestrichelt: Lage Basisregel Festverglasung,Loge Bosisriegel
-"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",Dochahnen koennen
-"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)","bitte z.B. Folienverlauf, abstimmen;"
-"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",nur bis OKF gefuehrt werden
-gestrichelt: Lage Basisregel Festverglasung,_Festvergasung
-"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)",der Dachdeekerrichtinien Nichteinhaltung OK Sem ueber (Folie Belag}
-"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)",Behindertengerechte Schwellenausbildung Hinweis: Bei FuRbodenauftaus der des Erstellung
+"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden","auf Pfostenkinkung Fensterseite bis nur OKF oder abdecken, bausetige hier Dochahnen koennen nur bis OKF gefuehrt werden"
+"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)","Hinweis fuer Bauleitung: Fremdleistungen {hier Dachdeckerarbeiten) bitte z.B. Folienverlauf, abstimmen; der Dachdeekerrichtinien Nichteinhaltung OK Sem ueber (Folie Belag}"
+gestrichelt: Lage Basisregel Festverglasung,gestrichelt: Loge Bosisriegel _Festvergasung
+"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)","Behindertengerechte Schwellenausbildung Hinweis: Bei FuRbodenauftaus der des Erstellung ist darauf dass achten, im zu dieser |Bereich des Fluegels sorgfaeltig (Toleranzen) wird, da der beim sonst |ausgefuehr Fluegel ueber den oefmen kratzen und diesen Belag kann Luft) Beschaedigen (aemm"
 358870,358670
-"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)","ist darauf dass achten, im zu dieser |Bereich des Fluegels sorgfaeltig (Toleranzen)"
-zugehoeriges Leitdetail 5 AR DT FAS 11 A F,Leiteletail
+zugehoeriges Leitdetail 5 AR DT FAS 11 A F,Leiteletail SARDTFASTIAF
 361480,au
-"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)","wird, da der beim sonst |ausgefuehr Fluegel"
-zugehoeriges Leitdetail 5 AR DT FAS 11 A F,SARDTFASTIAF
-Z01011 Qudratrohr Square hallow section DIN EN 10305-5 20x30x2,201011 Quodratrehr
-"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)",ueber den oefmen kratzen und diesen Belag
-Z01011 Qudratrohr Square hallow section DIN EN 10305-5 20x30x2,hollow section
-"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)",kann Luft)
-Z01011 Qudratrohr Square hallow section DIN EN 10305-5 20x30x2,Square
-"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)",Beschaedigen (aemm
+Z01011 Qudratrohr Square hallow section DIN EN 10305-5 20x30x2,201011 Quodratrehr hollow section Square
 246246,22
-Bodenrinne bauseits,bausetis
-Belastung Schwelle unbekannt Annahme: nur Personenlast max. 100kg,Schwelle unbekannt.
-Bodenrinne bauseits,Badanchng
-Belastung Schwelle unbekannt Annahme: nur Personenlast max. 100kg,Belastung
-Dampfbremse: Folie mit geringer Dampfdurchlaessigkeit z.B. Schueco VapoFlex HR050,a 0
-Belastung Schwelle unbekannt Annahme: nur Personenlast max. 100kg,nur ‚Annahme: Personanlast.
-Dampfbremse: Folie mit geringer Dampfdurchlaessigkeit z.B. Schueco VapoFlex HR050,poten: jee u gejinger Dampfdurchlaessigkel
-Belastung Schwelle unbekannt Annahme: nur Personenlast max. 100kg,100 ” max.
-Dampfbremse: Folie mit geringer Dampfdurchlaessigkeit z.B. Schueco VapoFlex HR050,"Schitco HROSO 2, Vapofler"
+Bodenrinne bauseits,bausetis Badanchng
+Belastung Schwelle unbekannt Annahme: nur Personenlast max. 100kg,Schwelle unbekannt. Belastung nur ‚Annahme: Personanlast. 100 ” max.
+Dampfbremse: Folie mit geringer Dampfdurchlaessigkeit z.B. Schueco VapoFlex HR050,"a 0 poten: jee u gejinger Dampfdurchlaessigkel Schitco HROSO 2, Vapofler"
 "Daemmung, wasserfest","wasserfest Dirmmung,"
-"Stuetzwinkel, o.g.w. fuer Dachabdichtung",fir ogy.
-Befestigungswinkel fuer Basisrohr aus verz. Stahl durchlfd.,fuer Basisrohr Bofestigungswinkel
-"Stuetzwinkel, o.g.w. fuer Dachabdichtung",Dochabdichtung
-Befestigungswinkel fuer Basisrohr aus verz. Stahl durchlfd.,"Stahl, durehid, aus verz,"
+"Stuetzwinkel, o.g.w. fuer Dachabdichtung",fir ogy. Dochabdichtung
+Befestigungswinkel fuer Basisrohr aus verz. Stahl durchlfd.,"fuer Basisrohr Bofestigungswinkel Stahl, durehid, aus verz,"
 Dachabdichtung bauseits,Dochebdichtung bauseit
 gestrichelt: Lage Bodenblech unter Festverglasung,en Bodenblett Loge er Festverg
 "Deckenversprung: Differenz zwischen Schalplan 5TWTSG001gF.dwg Schnitt E-E und Schalplan 5TWTSG0102bF.dwg Schnitt F-F. Annahme: Schaplan 5TWTSG0102bF.dwg Schnitt F-F korrekt, da dieser mit dem Grundriss Decke ueber EG i, Schalplan 5TWTSG001gF.dwg uebereinstimmt.",Deckenversprung: Differanz zwisch Schnitt E-E STWTSGO102bE ung Schalplan deg STWTSGO001 Schalplan uebereinstimmt.
