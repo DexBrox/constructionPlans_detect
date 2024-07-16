@@ -1,31 +1,55 @@
 label,predict
-,uebereinstimmt. Schalplan ung Schnitt E-E Differanz zwisch Deckenversprung: STWTSGO001 Schalplan STWTSGO102bE deg JA
-zugehoeriges Leitdetail 5 AR DT FAS 11 A F,SARDTFASTIAF Leiteletail
-"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)","(Folie bitte Hinweis Sem Nichteinhaltung abstimmen; Fremdleistungen fuer ueber OK der z.B. {hier Bauleitung: Belag} Folienverlauf, Dachdeekerrichtinien Dachdeckerarbeiten)"
-gestrichelt: Lage Bodenblech unter Festverglasung,er Loge en Festverg Bodenblett
-"Daemmung, wasserfest","Dirmmung, wasserfest"
-"Stuetzwinkel, o.g.w. fuer Dachabdichtung",Dochabdichtung ogy. fir
-Dachabdichtung bauseits,bauseit Dochebdichtung
-Bodenrinne bauseits,Badanchng bausetis
-358870,358670
-361480,au
-358380,x
-246246,22
-358670,353670
-325520,zum
-358380,358300
 358610,35860
+358380,358300
+Falzgrund Pfostenprofil,Fdagrund Pfostenprofi
+T-Verbinder nach Tabelle / Gewicht,"T-Verbinder nach Gewicht, / Tabelle"
+325520,zum
+358380,x
 244101,Zu
-,7 ]
-Falzgrund Pfostenprofil,Pfostenprofi Fdagrund
-Befestigungswinkel fuer Basisrohr aus verz. Stahl durchlfd.,"aus verz, Bofestigungswinkel Stahl, durehid, fuer Basisrohr"
-Z01011 Qudratrohr Square hallow section DIN EN 10305-5 20x30x2,Square 201011 hollow Quodratrehr section
-Dampfbremse: Folie mit geringer Dampfdurchlaessigkeit z.B. Schueco VapoFlex HR050,"2, gejinger 0 Schitco poten: Vapofler Dampfdurchlaessigkel jee HROSO u a"
-,+4250 JA
-gestrichelt: Lage Basisregel Festverglasung,_Festvergasung Loge gestrichelt: Bosisriegel
-T-Verbinder nach Tabelle / Gewicht,"Tabelle / T-Verbinder Gewicht, nach"
-"Deckenversprung: Differenz zwischen Schalplan 5TWTSG001gF.dwg Schnitt E-E und Schalplan 5TWTSG0102bF.dwg Schnitt F-F. Annahme: Schaplan 5TWTSG0102bF.dwg Schnitt F-F korrekt, da dieser mit dem Grundriss Decke ueber EG i, Schalplan 5TWTSG001gF.dwg uebereinstimmt.",uebereinstimmt. Schalplan ung Schnitt E-E Differanz zwisch Deckenversprung: STWTSGO001 Schalplan STWTSGO102bE deg
-,"Tabelle / T-Verbinder Gewicht, nach i || a"
-Belastung Schwelle unbekannt Annahme: nur Personenlast max. 100kg,max. ” 100 ‚Annahme: nur Belastung Schwelle Personanlast. unbekannt.
-"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)","Beschaedigen (aemm Luft) kann Belag oefmen kratzen und diesen ueber den |ausgefuehr Fluegel sonst wird, da der beim Fluegels sorgfaeltig (Toleranzen) |Bereich des zu dieser achten, im darauf dass ist Erstellung der des Bei FuRbodenauftaus Hinweis: Schwellenausbildung Behindertengerechte"
-"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden","nur bis OKF Dochahnen abdecken, oder Fensterseite Pfostenkinkung gefuehrt werden koennen hier bausetige OKF nur bis auf"
+358670,353670
+"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",auf Pfostenkinkung Fensterseite bis nur
+"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)",Hinweis fuer
+"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",OKF
+"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)",Bauleitung:
+"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",oder
+gestrichelt: Lage Basisregel Festverglasung,gestrichelt:
+"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden","abdecken, bausetige"
+"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)",Fremdleistungen {hier Dachdeckerarbeiten)
+"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",hier
+gestrichelt: Lage Basisregel Festverglasung,Loge Bosisriegel
+"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",Dochahnen koennen
+"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)","bitte z.B. Folienverlauf, abstimmen;"
+"Pfostenklinkung auf Fensterseite nur bis CKF oder badecken, bauseitige Dachbahnen koennen hier nur bis CKF gefuehrt werden",nur bis OKF gefuehrt werden
+gestrichelt: Lage Basisregel Festverglasung,_Festvergasung
+"Hinweis fuer Bauleitung: Fremdleistung (hier Dachdeckerarbeiten) bitte abstimmen; z.B. Folienverlauf, Nichteinhaltung der Dachdeckerrichtlinien (Folie 5cm ueber OK Belag)",der Dachdeekerrichtinien Nichteinhaltung OK Sem ueber (Folie Belag}
+"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)",Behindertengerechte Schwellenausbildung Hinweis: Bei FuRbodenauftaus der des Erstellung
+358870,358670
+"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)","ist darauf dass achten, im zu dieser |Bereich des Fluegels sorgfaeltig (Toleranzen)"
+zugehoeriges Leitdetail 5 AR DT FAS 11 A F,Leiteletail
+361480,au
+"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)","wird, da der beim sonst |ausgefuehr Fluegel"
+zugehoeriges Leitdetail 5 AR DT FAS 11 A F,SARDTFASTIAF
+Z01011 Qudratrohr Square hallow section DIN EN 10305-5 20x30x2,201011 Quodratrehr
+"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)",ueber den oefmen kratzen und diesen Belag
+Z01011 Qudratrohr Square hallow section DIN EN 10305-5 20x30x2,hollow section
+"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)",kann Luft)
+Z01011 Qudratrohr Square hallow section DIN EN 10305-5 20x30x2,Square
+"Behindertengerechte Schwellenausbildung Hinweis: Bei der Erstellung des Fußbodenaufbaus ist darauf zu achten, dass dieser im Bereich des Fluegels sorgfaeltig (Toleranzen) ausgefuehrt wird, da sonst der Fluegel beim oeffnen ueber den Belag kratzen und diesen Beschaedigen kann (3mm Luft)",Beschaedigen (aemm
+246246,22
+Bodenrinne bauseits,bausetis
+Belastung Schwelle unbekannt Annahme: nur Personenlast max. 100kg,Schwelle unbekannt.
+Bodenrinne bauseits,Badanchng
+Belastung Schwelle unbekannt Annahme: nur Personenlast max. 100kg,Belastung
+Dampfbremse: Folie mit geringer Dampfdurchlaessigkeit z.B. Schueco VapoFlex HR050,a 0
+Belastung Schwelle unbekannt Annahme: nur Personenlast max. 100kg,nur ‚Annahme: Personanlast.
+Dampfbremse: Folie mit geringer Dampfdurchlaessigkeit z.B. Schueco VapoFlex HR050,poten: jee u gejinger Dampfdurchlaessigkel
+Belastung Schwelle unbekannt Annahme: nur Personenlast max. 100kg,100 ” max.
+Dampfbremse: Folie mit geringer Dampfdurchlaessigkeit z.B. Schueco VapoFlex HR050,"Schitco HROSO 2, Vapofler"
+"Daemmung, wasserfest","wasserfest Dirmmung,"
+"Stuetzwinkel, o.g.w. fuer Dachabdichtung",fir ogy.
+Befestigungswinkel fuer Basisrohr aus verz. Stahl durchlfd.,fuer Basisrohr Bofestigungswinkel
+"Stuetzwinkel, o.g.w. fuer Dachabdichtung",Dochabdichtung
+Befestigungswinkel fuer Basisrohr aus verz. Stahl durchlfd.,"Stahl, durehid, aus verz,"
+Dachabdichtung bauseits,Dochebdichtung bauseit
+gestrichelt: Lage Bodenblech unter Festverglasung,en Bodenblett Loge er Festverg
+"Deckenversprung: Differenz zwischen Schalplan 5TWTSG001gF.dwg Schnitt E-E und Schalplan 5TWTSG0102bF.dwg Schnitt F-F. Annahme: Schaplan 5TWTSG0102bF.dwg Schnitt F-F korrekt, da dieser mit dem Grundriss Decke ueber EG i, Schalplan 5TWTSG001gF.dwg uebereinstimmt.",Deckenversprung: Differanz zwisch Schnitt E-E STWTSGO102bE ung Schalplan deg STWTSGO001 Schalplan uebereinstimmt.

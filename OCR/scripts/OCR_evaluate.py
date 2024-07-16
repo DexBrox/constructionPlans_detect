@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import os
+import csv
 
 def load_files(gt_file, pred_file):
     def process_file(file_path):
@@ -89,21 +90,68 @@ def point_in_polygon(points, polygon):
     return all_inside_status
 
 
-def link_polygons_to_midpoints(polygons, poly_only_text, midpoint, midpoints_w_t):
+def link_polygons_to_midpoints(polygons, poly_only_text, midpoints, midpoints_w_t):
     linked_data = []
     df_data = []
 
     for polygon, poly_text in zip(polygons, poly_only_text):
         for midpoint, mid_text in midpoints_w_t:
             if point_in_polygon([midpoint], polygon)[0]:
-
                 linked_data.append(((polygon, poly_text), midpoint, mid_text))
                 df_data.append([str(polygon), poly_text, midpoint[0], midpoint[1], mid_text])
 
-    return linked_data
+    # Filtere alle Zeilen, die keinen Groundtruth-Text haben
+    filtered_linked_data = [data for data in linked_data if data[0][1].strip()]
+
+    save_linked_data_to_csv(filtered_linked_data, 'data_temp.csv')
+
+    return filtered_linked_data
+
+def save_linked_data_to_csv(linked_data, output_file_path):
+    """
+    Speichert die verknüpften Daten in einer CSV-Datei.
+
+    :param linked_data: Die Liste der verknüpften Daten.
+    :param output_file_path: Der Pfad, unter dem die Datei gespeichert werden soll.
+    """
+    # Öffne die Datei im Schreibmodus
+    with open(output_file_path, 'w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        
+        # Schreibe die Kopfzeile
+        writer.writerow(['Polygon', 'Poly Text', 'Midpoint X', 'Midpoint Y', 'Mid Text'])
+        
+        # Schreibe die Datenzeilen
+        for ((polygon, poly_text), (mid_x, mid_y), mid_text) in linked_data:
+            # Konvertiere Polygon-Punkte in einen String, der in CSV geschrieben werden kann
+            polygon_str = ' '.join(f'({x}, {y})' for x, y in polygon)
+            writer.writerow([polygon_str, poly_text, mid_x, mid_y, mid_text])
+
+# Beispiel für den Aufruf der Funktion
+# save_linked_data_to_csv(linked_data, 'pfad/zur/datei.csv')
 
 
-def sort_linked_data_by_polygon_and_midpoint_x(linked_data):
+
+#def sort_linked_data_by_polygon_and_midpoint_x(linked_data): #falsch
+    """
+    Sortiert die verknüpften Daten zunächst basierend auf den vertikalen Werten der Mittelpunkte und innerhalb jeder vertikalen Gruppe nach den horizontalen Werten.
+    """
+    # Sortieren der Daten basierend auf der vertikalen Mittelpunktkoordinate
+    linked_data.sort(key=lambda x: x[1][1])
+    
+    # Gruppieren nach vertikalem Abstand, hier beispielhaft in 100-Pixel-Schritten
+    from itertools import groupby
+    grouped_data = groupby(linked_data, key=lambda x: x[1][1] // 10)  # Gruppierung der Daten in vertikalen Schritten
+    
+    sorted_linked_data = []
+    for _, group in grouped_data:
+        sorted_group = sorted(group, key=lambda x: x[1][0])  # Sortieren jeder Gruppe nach der horizontalen Mittelpunktkoordinate
+        sorted_linked_data.extend(sorted_group)
+    
+    return sorted_linked_data
+
+
+def sort_linked_data_by_polygon_and_midpoint_x(linked_data): #old
     def sort_key(entry):
         polygon, (midpoint_x, midpoint_y), _ = entry[0], entry[1], entry[2]
         return (polygon, midpoint_x, -midpoint_y)  
@@ -125,7 +173,7 @@ def sort_linked_data_by_polygon_and_midpoint_x(linked_data):
         return result
 
     sorted_data = custom_sort(sorted_data)
-
+    save_linked_data_to_csv(sorted_data, 'data_temp2.csv')
     return sorted_data
 
 

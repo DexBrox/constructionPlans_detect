@@ -4,7 +4,7 @@ import warnings
 
 start = timeit.default_timer()
 
-from OCR_pdf_to_image import convert_pdf_to_images
+from OCR.scripts.archiv.OCR_pdf_to_image import convert_pdf_to_images
 from OCR_text_recognition_eo import process_image_easyocr
 from OCR_text_recognition_tess import process_image_tess
 from OCR_text_recognition_hybrid import process_image_hy

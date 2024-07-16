@@ -6,11 +6,10 @@ start = timeit.default_timer()
 
 from OCR_text_recognition_eo import process_image_easyocr
 from OCR_text_recognition_tess import process_image_tess
-from OCR_text_recognition_hybrid import process_image_hy
 from OCR_image_processing import draw_bounding_boxes, gen_out, save_results
 
 warnings.filterwarnings("ignore", message="There is an imbalance between your GPUs.*") 
-os.environ["CUDA_VISIBLE_DEVICES"] = "2"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 # Setzen der Pfade
 input_dir_img = '/workspace/datasets/standard/Roewaplan_v3/images/test'  # Direktordner mit Bildern
@@ -28,8 +27,8 @@ time_per_image = []
 for image_path in image_paths:
     image_start = timeit.default_timer()  # Startzeit für die Verarbeitung des einzelnen Bildes
 
-    #results, image = process_image_easyocr(image_path)
-    results, image = process_image_tess(image_path)
+    results, image = process_image_easyocr(image_path)
+    #results, image = process_image_tess(image_path)
     base_name = gen_out(image_path, image)
     text, coordinates = save_results(results, output_dir_txt, base_name)
     draw_bounding_boxes(image, text, coordinates, output_dir_img, base_name)

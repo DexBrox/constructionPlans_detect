@@ -10,11 +10,11 @@ import setproctitle
 model_name = 'yolov8x-obb.pt'
 data_name = 'Roewaplan_v3.yaml'
 project_name = 'allforcomparison'
-config_yaml_name = 'config_best_v8x-obb.yaml'
-device = 'cuda:3' if torch.cuda.is_available() else 'cpu'
+config_yaml_name = 'final_config_best_v8-obb.yaml'
+device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
 # Setze den benutzerdefinierten Prozessnamen
-setproctitle.setproctitle('VJ_' + project_name + '_' + os.path.basename(model_name) + '_VJ_write_me_if_gpu_needed')
+setproctitle.setproctitle('VJ_' + project_name + '_' + os.path.basename(model_name) + 'write_me_if_GPU_needed_VJ')
 
 main_folder = '/workspace/main_folder/'
 configuration = {
