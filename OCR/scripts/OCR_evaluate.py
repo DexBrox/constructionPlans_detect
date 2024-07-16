@@ -175,3 +175,58 @@ def sort_linked_data_by_polygon_and_midpoint_x(linked_data): #old
     sorted_data = custom_sort(sorted_data)
     return sorted_data
 
+def aggregate_sum_data(sum_data):
+    # Verwende ein Dictionary, um die Texte basierend auf den GT-Zeilen zu konsolidieren
+    aggregated_dict = {}
+    for poly_label, text in sum_data:
+        if poly_label in aggregated_dict:
+            # Füge den aktuellen Text zum vorhandenen Eintrag hinzu
+            aggregated_dict[poly_label] += " " + text
+        else:
+            # Erstelle einen neuen Eintrag im Dictionary für ein neues GT-Label
+            aggregated_dict[poly_label] = text
+    
+    # Konvertiere das Dictionary zurück in eine Liste von Tupeln
+    aggregated_data = [(label, text) for label, text in aggregated_dict.items()]
+    return aggregated_data
+
+def sum_sentences(sorted_data, i):
+    sum_data = []
+    
+    current_first_part_of_polygon = None
+    collected_text = ""
+
+    for item in sorted_data:
+        first_part_of_polygon, text = item[0][1], item[2] 
+
+        if first_part_of_polygon == current_first_part_of_polygon:
+            collected_text += " " + text
+        else:
+            if current_first_part_of_polygon is not None:
+                sum_data.append((current_first_part_of_polygon, collected_text.strip()))
+
+            current_first_part_of_polygon = first_part_of_polygon
+            collected_text = text
+
+    if current_first_part_of_polygon is not None:
+        sum_data.append((current_first_part_of_polygon, collected_text.strip()))
+
+    # Aggregiere Daten, um Duplikate zusammenzufassen
+    final_sum_data = aggregate_sum_data(sum_data)
+
+    csv_file_path = f'../results/sum_data_{i}.csv'
+    df = pd.DataFrame(final_sum_data, columns=['GT Label', 'Predicted Text'])
+    directory, filename = os.path.split(csv_file_path)
+    os.makedirs(directory, exist_ok=True)
+    df.to_csv(csv_file_path, index=False)
+
+    save_sum_data_to_csv(final_sum_data, 'data_temp2.csv')
+
+    return final_sum_data
+
+def save_sum_data_to_csv(sum_data, output_file_path):
+    with open(output_file_path, 'w', newline='', encoding='utf-8') as file:
+        writer = csv.writer(file)
+        writer.writerow(['GT Label', 'Predicted Text'])
+        for label, text in sum_data:
+            writer.writerow([label, text])
