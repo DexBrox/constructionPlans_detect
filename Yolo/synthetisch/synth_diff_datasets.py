@@ -5,13 +5,16 @@ import torch
 import yaml
 import tempfile
 import os
-
+import setproctitle
 
 # Model and configuration setup
 model_name = 'yolov8x-obb.pt'
 project_name = 'synth_diff_datasets_v3'
 config_yaml_name = 'config_best_short.yaml'
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+
+# Setze den benutzerdefinierten Prozessnamen
+setproctitle.setproctitle('VJ_' + project_name + '_' + os.path.basename(model_name))
 
 main_folder = '/workspace/main_folder/'
 model_path = main_folder + 'MODELs/' + model_name
@@ -25,7 +28,7 @@ with open(config_yaml_path, 'r') as file:
 # List of dataset base paths
 dataset_base_paths = [f'/workspace/datasets/synth/synth_v3_200_{i}' for i in range(1, 16+1)]
 
-for base_path in dataset_base_paths:
+for base_path in dataset_base_paths[9:17]:
     train_path = os.path.join(base_path, 'images/train')
     val_path = os.path.join(base_path, 'images/val')
 
@@ -68,7 +71,7 @@ for base_path in dataset_base_paths:
 
     # Initialize wandb for each dataset
     run_name = os.path.basename(base_path)
-    wandb.init(project=f"FINAL_Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=run_name)
+    wandb.init(project=f"FINAL2_Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=run_name)
 
     # Log the dataset being used
     wandb.log({"dataset": data_yaml_content['path']})

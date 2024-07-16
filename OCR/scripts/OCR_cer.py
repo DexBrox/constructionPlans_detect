@@ -26,8 +26,8 @@ def evaluate_cer(gt_path, pred_file_path, i):
     gt_poly, poly_only_text = calculate_polygon(gt)
     pred_mid, pred_mid_w_t = calculate_midpoint(pred)
     linked_data = link_polygons_to_midpoints(gt_poly, poly_only_text, pred_mid, pred_mid_w_t)
-    #sorted_data = sort_linked_data_by_polygon_and_midpoint_x(linked_data)
-    sum_data = sum_sentences(linked_data, i)
+    sorted_data = sort_linked_data_by_polygon_and_midpoint_x(linked_data)
+    sum_data = sum_sentences(sorted_data, i)
 
     cer_results = calculate_cer(sum_data)
 

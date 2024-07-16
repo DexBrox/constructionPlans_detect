@@ -103,38 +103,85 @@ def link_polygons_to_midpoints(polygons, poly_only_text, midpoints, midpoints_w_
     # Filtere alle Zeilen, die keinen Groundtruth-Text haben
     filtered_linked_data = [data for data in linked_data if data[0][1].strip()]
 
-    save_linked_data_to_csv(filtered_linked_data, 'data_temp.csv')
+    #save_linked_data_to_csv(filtered_linked_data, 'data_temp.csv')
 
     return filtered_linked_data
 
-def save_linked_data_to_csv(linked_data, output_file_path):
+def save_linked_data_to_csv(grouped_data, output_file_path):
     """
-    Speichert die verknüpften Daten in einer CSV-Datei.
+    Speichert die verknüpften Daten in einer CSV-Datei. Geht davon aus, dass `grouped_data`
+    eine Liste von Listen ist, wobei jede innere Liste Tupel von Daten enthält.
 
-    :param linked_data: Die Liste der verknüpften Daten.
+    :param grouped_data: Die Liste der verknüpften Daten.
     :param output_file_path: Der Pfad, unter dem die Datei gespeichert werden soll.
     """
-    # Öffne die Datei im Schreibmodus
     with open(output_file_path, 'w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        
         # Schreibe die Kopfzeile
         writer.writerow(['Polygon', 'Poly Text', 'Midpoint X', 'Midpoint Y', 'Mid Text'])
-        
-        # Schreibe die Datenzeilen
-        for ((polygon, poly_text), (mid_x, mid_y), mid_text) in linked_data:
-            # Konvertiere Polygon-Punkte in einen String, der in CSV geschrieben werden kann
-            polygon_str = ' '.join(f'({x}, {y})' for x, y in polygon)
-            writer.writerow([polygon_str, poly_text, mid_x, mid_y, mid_text])
 
-# Beispiel für den Aufruf der Funktion
-# save_linked_data_to_csv(linked_data, 'pfad/zur/datei.csv')
+        for group in grouped_data:  # Gehe durch jede Gruppe in den verknüpften Daten
+            for entry in group:
+                if len(entry) != 3:
+                    print(f"Unerwartete Eintragslänge: {len(entry)} für Eintrag: {entry}")
+                    continue  # Überspringe diesen Eintrag
+
+                try:
+                    # Versucht, jedes Tupel (Polygon, Text), Mittelpunkt, Text zu entpacken
+                    ((polygon, poly_text), (mid_x, mid_y), mid_text) = entry
+                    # Konvertiere Polygon-Punkte in einen String, der in CSV geschrieben werden kann
+                    polygon_str = ' '.join(f'({x}, {y})' for x, y in polygon)
+                    writer.writerow([polygon_str, poly_text, mid_x, mid_y, mid_text])
+                except Exception as e:
+                    print(f"Fehler beim Verarbeiten eines Eintrags: {e}")
 
 
-def sort_linked_data_by_polygon_and_midpoint_x(linked_data): 
+def sort_linked_data_by_polygon_and_midpoint_x(linked_data, y_threshold=0.01):
+    def primary_sort_key(entry):
+        _, midpoint, _ = entry
+        return (midpoint[1], midpoint[0])
+
+    sorted_data = sorted(linked_data, key=primary_sort_key)
+
+    def group_data(sorted_data, y_threshold):
+        result = []
+        current_line = []
+
+        if not sorted_data:
+            return result
+
+        # Startbedingung für die erste Zeile
+        current_y = sorted_data[0][1][1]
+
+        for entry in sorted_data:
+            _, (midpoint_x, midpoint_y), _ = entry
+            # Prüfe, ob ein neuer Zeilenwechsel vorliegt
+            if abs(midpoint_y - current_y) > y_threshold:
+                if current_line:
+                    # Sortiere die aktuelle Zeile nach X-Koordinate vor dem Hinzufügen zum Ergebnis
+                    current_line.sort(key=lambda x: x[1][0])
+                    result.append(current_line)
+                current_line = [entry]
+                current_y = midpoint_y
+            else:
+                current_line.append(entry)
+
+        # Füge die letzte Zeile hinzu und sortiere sie, falls vorhanden
+        if current_line:
+            current_line.sort(key=lambda x: x[1][0])
+            result.append(current_line)
+        return result
+
+    grouped_data = group_data(sorted_data, y_threshold)
+    #save_linked_data_to_csv(grouped_data, 'temp_data_hallo.csv')
+    return grouped_data
+
+#def sort_linked_data_by_polygon_and_midpoint_x(linked_data): #old
     def sort_key(entry):
         polygon, (midpoint_x, midpoint_y), _ = entry[0], entry[1], entry[2]
         return (polygon, midpoint_x, -midpoint_y)  
+    
+    #print(linked_data)
 
     sorted_data = sorted(linked_data, key=sort_key)
 
@@ -153,6 +200,7 @@ def sort_linked_data_by_polygon_and_midpoint_x(linked_data):
         return result
 
     sorted_data = custom_sort(sorted_data)
+    print(sorted_data)
     return sorted_data
 
 def aggregate_sum_data(sum_data):
@@ -172,23 +220,42 @@ def aggregate_sum_data(sum_data):
 
 def sum_sentences(sorted_data, i):
     sum_data = []
-    
     current_first_part_of_polygon = None
     collected_text = ""
 
-    for item in sorted_data:
-        first_part_of_polygon, text = item[0][1], item[2] 
+    # Überprüfe jedes Element in sorted_data für die korrekte Struktur
+    for index, item in enumerate(sorted_data):
+        if not isinstance(item, list) or len(item) < 1:
+            print(f"Fehler bei Index {index}: Element hat nicht die erwartete Struktur {item}")
+            continue  # Überspringe dieses Element
 
-        if first_part_of_polygon == current_first_part_of_polygon:
-            collected_text += " " + text
-        else:
-            if current_first_part_of_polygon is not None:
-                sum_data.append((current_first_part_of_polygon, collected_text.strip()))
+        # Gehe jedes Unter-Tupel in der Liste durch
+        for sub_item in item:
+            if not isinstance(sub_item, tuple) or len(sub_item) < 2 or not isinstance(sub_item[0], tuple):
+                print(f"Fehler bei Index {index}: Unter-Element hat nicht die erwartete Struktur {sub_item}")
+                continue  # Überspringe dieses Unter-Tupel
 
-            current_first_part_of_polygon = first_part_of_polygon
-            collected_text = text
+            # Zugriff auf das Polygon und den Text des Polygons
+            polygon_with_text = sub_item[0]
+            first_part_of_polygon, polygon_text = polygon_with_text[1], sub_item[2]
 
-    if current_first_part_of_polygon is not None:
+            if first_part_of_polygon == current_first_part_of_polygon:
+                # Sicherstellen, dass nur Zeichenketten hinzugefügt werden
+                if isinstance(polygon_text, str):
+                    collected_text += " " + polygon_text
+                else:
+                    print("Warnung: Nicht-String-Wert in 'text' gefunden:", polygon_text)
+            else:
+                if current_first_part_of_polygon is not None:
+                    # Sicherstellen, dass collected_text eine Zeichenkette ist
+                    if isinstance(collected_text, str):
+                        sum_data.append((current_first_part_of_polygon, collected_text.strip()))
+                    else:
+                        print("Warnung: 'collected_text' ist kein String:", collected_text)
+                current_first_part_of_polygon = first_part_of_polygon
+                collected_text = polygon_text if isinstance(polygon_text, str) else str(polygon_text)
+
+    if current_first_part_of_polygon is not None and isinstance(collected_text, str):
         sum_data.append((current_first_part_of_polygon, collected_text.strip()))
 
     # Aggregiere Daten, um Duplikate zusammenzufassen
@@ -203,6 +270,7 @@ def sum_sentences(sorted_data, i):
     save_sum_data_to_csv(final_sum_data, 'data_temp2.csv')
 
     return final_sum_data
+
 
 def save_sum_data_to_csv(sum_data, output_file_path):
     with open(output_file_path, 'w', newline='', encoding='utf-8') as file:
