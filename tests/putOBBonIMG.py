@@ -24,20 +24,19 @@ class_colors = {
     '15': (255, 56, 132)    
 }
 
-def draw_bounding_boxes(image, texts, points_list, output_folder, base_name):
+def draw_bounding_boxes(image, texts, points_list, output_folder, base_name, cls_list):
     height, width = image.shape[:2]
 
-    for text, points_str in zip(texts, points_list):
+    for cls, text, points_str in zip(cls_list, texts, points_list):
         points_float = [float(coord) for coord in points_str.split()]
-        
         # Konvertieren normierter Koordinaten in Pixelkoordinaten
         points = np.array([(x * width, y * height) for x, y in zip(points_float[::2], points_float[1::2])], np.int32)
-        
-        # Bestimme die Farbe basierend auf der Klasse
-        color = class_colors.get(text, (255, 255, 255))  # Standardfarbe ist Weiß, falls Klasse nicht definiert
 
-        cv2.polylines(image, [points], isClosed=True, color=color, thickness=5)  # Verwende die Farbe für die Linien
-        cv2.putText(image, text, tuple(points[0]), cv2.FONT_HERSHEY_SIMPLEX, 2, color, 4)  # Verwende die Farbe für den Text
+        # Bestimme die Farbe basierend auf der Klasse
+        color = class_colors.get(cls, (0, 0, 0))  # Verwende Schwarz als Standardfarbe, falls Klasse nicht definiert
+
+        cv2.polylines(image, [points], isClosed=True, color=color, thickness=1)  # Verwende die Farbe für die Linien
+        cv2.putText(image, text, tuple(points[0]), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)  # Verwende die Farbe für den Text
 
     output_path = os.path.join(output_folder, f"{base_name}_obb.png")
     cv2.imwrite(output_path, image)
@@ -45,7 +44,7 @@ def draw_bounding_boxes(image, texts, points_list, output_folder, base_name):
 image_folder = '/workspace/datasets/standard/Roewaplan_v3/images/test'
 #image_folder = 'new_labels_13_06/images'
 label_folder = image_folder.replace('images', 'labels')
-output_folder = '/workspace/datasets/standard/Roewaplan_v3_visualized/test'
+output_folder = '/workspace/tests/WICHTIG'
 
 # Stelle sicher, dass der Ausgabeordner existiert
 if not os.path.exists(output_folder):
@@ -62,7 +61,8 @@ for image_path in tqdm(glob.glob(os.path.join(image_folder, '*.png'))):
         with open(label_path, 'r') as f:
             lines = f.readlines()
 
-        texts = [line.split()[0] for line in lines]
-        points_list = [' '.join(line.split()[1:]) for line in lines]
-
-        draw_bounding_boxes(image, texts, points_list, output_folder, name)
+        texts = [line.split()[9:] for line in lines]
+        texts = [' '.join(text) for text in texts]
+        points_list = [' '.join(line.split()[1:9]) for line in lines]
+        class_list = [line.split()[0] for line in lines]
+        draw_bounding_boxes(image, texts, points_list, output_folder, name, class_list)

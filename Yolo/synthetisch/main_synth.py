@@ -5,12 +5,16 @@ import torch
 import os
 import yaml
 import tempfile
+import setproctitle
 
 # Model and configuration setup
-model_name = 'yolov8x-obb.pt'
+model_name = 'yolov9e.pt'
 project_name = 'allforcomparison'
 config_yaml_name = 'config_best.yaml'
 device = 'cuda:2' if torch.cuda.is_available() else 'cpu'
+
+# Setze den benutzerdefinierten Prozessnamen
+setproctitle.setproctitle('VJ_' + project_name + '_' + os.path.basename(model_name))
 
 main_folder = '/workspace/main_folder/'
 model_path = main_folder + 'MODELs/' + model_name

@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
+import os
 
-def load_files(gt_file_path, pred_file_path, i):
+def load_files(gt_file, pred_file):
     def process_file(file_path):
         processed_lines = []
 
@@ -9,16 +10,12 @@ def load_files(gt_file_path, pred_file_path, i):
             for line in f:
                 parts = line.strip().split()
                 if len(parts) > 8: 
-                    text = ' '.join(parts[:-8])  
-                    coords = ' '.join(parts[-8:])  
-                    processed_line = f"{text} {coords}"  
+                    text = ' '.join(parts[9:])
+                    coords = ' '.join(parts[1:9])  
+                    processed_line = f"{coords} {text}"  
                     processed_lines.append(processed_line)
 
         return processed_lines
-
-    # Pfade zu den Dateien, die verarbeitet werden sollen
-    gt_file = f"{gt_file_path}/{i}.txt"
-    pred_file = f"{pred_file_path}/{i}.txt"
 
     # Verarbeite jede Datei und lade die Zeilen
     gt_processed = process_file(gt_file)
@@ -26,18 +23,17 @@ def load_files(gt_file_path, pred_file_path, i):
 
     return gt_processed, pred_processed
 
-
 def calculate_polygon(gt_processed):
     polygons = []
     poly_only_text = []
     for line in gt_processed:
         parts = line.split() 
 
-        coordinates = parts[:8]
-        text = ' '.join(parts[8:])  
-
+        text = ' '.join(parts[8:])
+        coordinates = parts[0:8]
+        
         polygon = [(float(coordinates[i]), float(coordinates[i+1])) for i in range(0, len(coordinates), 2)]
-
+       
         polygons.append(polygon)
         poly_only_text.append(text)
 
@@ -45,7 +41,7 @@ def calculate_polygon(gt_processed):
 
 
 def calculate_midpoint(input_lines):
-    print(input_lines)
+    #print(input_lines)
     midpoints = []
     midpoints_w_t = []
 
@@ -53,9 +49,9 @@ def calculate_midpoint(input_lines):
         parts = line.split()
 
         # Nehme die letzten 8 Elemente als Koordinaten
-        coordinates = parts[-8:]
+        coordinates = parts[0:8]
         # Der Rest ist der Text
-        text = ' '.join(parts[:-8])
+        text = ' '.join(parts[8:])
 
         polygon = [(float(coordinates[i]), float(coordinates[i+1])) for i in range(0, len(coordinates), 2)]
 
@@ -156,6 +152,9 @@ def sum_sentences(sorted_data, i):
 
     csv_file_path = f'../results/sum_data_{i}.csv'
     df = pd.DataFrame(sum_data, columns=['label', 'predict'])
+    directory, filename = os.path.split(csv_file_path)
+    os.makedirs(directory, exist_ok=True)
+    print (directory)
     df.to_csv(csv_file_path, index=False)
 
     return sum_data

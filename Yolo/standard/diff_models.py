@@ -14,13 +14,13 @@ model_names = [
     #'yolov10s.pt', 
     #'yolov10m.pt', 
     #'yolov10b.pt', 
-    'yolov10l.pt', 
-    'yolov10x.pt',
+    #'yolov10l.pt', 
+    #'yolov10x.pt',
 
-    #'yolov9t.pt', 
-    #'yolov9s.pt', 
-    #'yolov9m.pt', 
-    #'yolov9c.pt', 
+    'yolov9t.pt', 
+    'yolov9s.pt', 
+    'yolov9m.pt', 
+    'yolov9c.pt', 
     'yolov9e.pt',
 
     #'yolov8n-obb.pt', 
@@ -31,7 +31,7 @@ model_names = [
 ]
 data_name = 'Roewaplan_v3.yaml'
 project_name = 'different_models'
-config_yaml_name = 'config_best.yaml'
+config_yaml_name = 'final_config_best_v9e'
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
 # Code-Start

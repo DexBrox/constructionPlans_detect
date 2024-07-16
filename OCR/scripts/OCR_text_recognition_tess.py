@@ -7,7 +7,7 @@ def process_image_tess(image_path):
 
     conf = 0.0
 
-    config = '--oem 3 --psm 1 -l deu+eng'
+    config = '--oem 3 --psm 1 -l deu+eng+fra'
     boxes = pytesseract.image_to_data(image, config=config, output_type=pytesseract.Output.DICT)
 
     results = []

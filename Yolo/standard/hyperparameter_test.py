@@ -7,15 +7,14 @@ import yaml
 import setproctitle
 
 # Model and configuration setup
-model_name = 'yolov8x-obb.pt'
+model_name = 'yolov10x.pt'
 data_name = 'Roewaplan_v3.yaml'
 project_name = 'hyperparameter_test'
 config_yaml_name = 'config_best.yaml'
-device = 'cuda:3'
-
+device = 'cuda:2'
 
 # Setze den benutzerdefinierten Prozessnamen
-setproctitle.setproctitle('VJ_' + project_name + '_' + os.path.basename(model_name))
+setproctitle.setproctitle('VJ' + project_name + '_' + os.path.basename(model_name))# + '_VJ_write_me_if_gpu_needed')
 
 main_folder = '/workspace/main_folder/'
 configuration = {
@@ -36,17 +35,17 @@ with open(config_yaml, 'r') as file:
 # Define hyperparameter variations from smallest to largest
 variations = {
     # 'imgsz': [320, 640, 960, 1280, 1600, 1920, 2040],
-    # 'batch': [1, 2, 4, 8, 16],
-    # 'batch': [4],
+    #'imgsz': [1600],
+    #'batch': [4, 8, 16],
     # 'lr0': [1e-5, 1e-4, 1e-3, 1e-2, 1e-1],
     #'optimizer': ['Adam', 'AdamW', 'NAdam', 'RAdam', 'RMSProp'], #'SGD', 
-    #'warmup_epochs': [0, 3, 5, 10, 20],
+    #'warmup_epochs': [10, 20], #0, 3, 5,
 
-    #'dropout': [0.0, 0.2, 0.4, 0.6, 0.8],
+    'dropout': [0.0, 0.2, 0.4, 0.6, 0.8],
     
-    'hsv_h': [0.2, 0.4, 0.6, 0.8, 1.0], #0.0,
-    'hsv_s': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
-    #'hsv_v': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
+    #'hsv_h': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
+    #'hsv_s': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
+    #'hsv_v': [0.4, 0.6, 0.8, 1.0],
     #'translate': [0.0, 0.2, 0.4, 0.6, 0.8, 1.0],
 
     #'scale': [0.5, 0.6, 0.7, 0.8, 0.9, 1.0],

@@ -85,7 +85,7 @@ def extract_and_transform_data(xml_file_path, output_directory):
                 file.write(f"{label_index} {x1:.6f} {y1:.6f} {x2:.6f} {y2:.6f} {x3:.6f} {y3:.6f} {x4:.6f} {y4:.6f}\n")
 
 # Pfad zu deiner XML-Datei und Zielverzeichnis
-input_xml_file_path = 'annotations.xml'
-output_directory = 'Theo/labels'
+input_xml_file_path = 'rp_v4/annotations.xml'
+output_directory = 'rp_v4/lbl'
 
 extract_and_transform_data(input_xml_file_path, output_directory)

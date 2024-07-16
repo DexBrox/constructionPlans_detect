@@ -34,7 +34,7 @@ for image_path in tqdm(image_files, desc="Processing Images"):
     # Textdateien filtern und speichern
     data_list_filter = filter_text_files(data_list)
 
-    # Bildverarbeitung für jeden Datenpunkt
+    # Bildverarbeitung für jeden Datenpunkt (OCR)
     image = Image.open(image_path)
     for data in data_list_filter:
         width, height = image.size

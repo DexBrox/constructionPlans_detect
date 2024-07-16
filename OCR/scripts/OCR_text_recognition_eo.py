@@ -3,8 +3,8 @@ import easyocr
 
 def process_image_easyocr(image_path):
     image = cv2.imread(image_path)
-    reader = easyocr.Reader(['de', 'en'], gpu=True)
-    results = reader.readtext(image, rotation_info=[0, 90, 180, 270])
+    reader = easyocr.Reader(['de', 'en', 'fr'], gpu=True)
+    results = reader.readtext(image, rotation_info=[0, 90, 180, 270], text_threshold=0.3)
     
     image_height, image_width = image.shape[:2]
 

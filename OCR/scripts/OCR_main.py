@@ -4,49 +4,48 @@ import warnings
 
 start = timeit.default_timer()
 
-from OCR_pdf_to_image import convert_pdf_to_images
 from OCR_text_recognition_eo import process_image_easyocr
 from OCR_text_recognition_tess import process_image_tess
 from OCR_text_recognition_hybrid import process_image_hy
 from OCR_image_processing import draw_bounding_boxes, gen_out, save_results
 
 warnings.filterwarnings("ignore", message="There is an imbalance between your GPUs.*") 
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "2"
 
-# Setzten der Pfade
-input_dir_img = '../pdf'
-input_dir_gt = '../labels'
+# Setzen der Pfade
+input_dir_img = '/workspace/datasets/standard/Roewaplan_v3/images/test'  # Direktordner mit Bildern
+input_dir_gt = input_dir_img.replace('images', 'labels')  # GT-Ordner
 
-output_dir_img = '../pdf/img'
-output_dir_txt = '../results/txt'
+output_dir_img = '../results_rpv3_test/img/tesseract1'  
+output_dir_txt = '../results_rpv3_test/txt'
 
-
-image_paths = convert_pdf_to_images(input_dir_img, output_dir_img)
+# Bilder im Verzeichnis auflisten
+image_paths = [os.path.join(input_dir_img, file) for file in os.listdir(input_dir_img) if file.lower().endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif'))]
 
 count = 0
+time_per_image = []
+
 for image_path in image_paths:
+    image_start = timeit.default_timer()  # Startzeit für die Verarbeitung des einzelnen Bildes
+
     #results, image = process_image_easyocr(image_path)
     results, image = process_image_tess(image_path)
     base_name = gen_out(image_path, image)
     text, coordinates = save_results(results, output_dir_txt, base_name)
+    draw_bounding_boxes(image, text, coordinates, output_dir_img, base_name)
 
-    draw_bounding_boxes(image, text, coordinates, output_dir_txt, base_name)
+    image_end = timeit.default_timer()  # Endzeit für die Verarbeitung des einzelnen Bildes
+    processing_time = image_end - image_start
+    time_per_image.append(processing_time)  # Speichern der Zeit für jedes Bild
+
+    print(f"Verarbeitungszeit für {os.path.basename(image_path)}: {processing_time} Sekunden")
+
     count += 1
 
 end = timeit.default_timer()
-print(f"Verarbeitungszeit: {(end - start)/count} Sekunden pro Bild")
+if count > 0:
+    print(f"Durchschnittliche Verarbeitungszeit: {(end - start) / count} Sekunden pro Bild")
 
-from cer import evaluate_cer
+from OCR_cer import evaluate_cer_all_txt
 
-i = []
-for i in range(1, 3):
-    start_eva = timeit.default_timer()
-
-    cer_result = evaluate_cer(input_dir_gt, output_dir_txt, i)
-    print(f"CER für {i}: {cer_result}")
-    end_eva = timeit.default_timer()
-
-    print(f"Evaluationszeit für {i}: {end_eva - start_eva} Sekunden")
-
-
-
+evaluate_cer_all_txt(input_dir_gt, output_dir_txt)
