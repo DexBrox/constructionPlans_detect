@@ -2,8 +2,8 @@ import glob
 import os
 
 def process_images(image, model):
-    results = model.predict([image], save_dir='/workspace/Pipeline/results')
-    #print("Evaluationsergebnisse:", results)
+    results = model.val([image])
+    print("Evaluationsergebnisse:", results)
     return results
 
 

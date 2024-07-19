@@ -70,3 +70,10 @@ for image_path in tqdm(image_files, desc="Processing Images"):
 
 print(f"Ergebnisse wurden in {results_path} gespeichert.")
 
+model = YOLO(model_path).to('cuda:0')
+results = model.val(data='/workspace/main_folder/YAMLs/FINAL_eval.yaml', split='test', imgsz=1600, batch=1, plots=True)
+results_map50_95 = results.box.map 
+
+print("Evaluationsergebnisse:", results)
+print("Evaluationsergebnisse:", results_map50_95)
+

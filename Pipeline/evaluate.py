@@ -1,127 +1,88 @@
-import numpy as np
 import os
+import numpy as np
+from sklearn.metrics import precision_score
 
-def read_bboxes_from_file(file_path):
-    bboxes = []
-    with open(file_path, 'r') as f:
-        lines = f.readlines()
-        for line in lines:
+def read_labels(file_path):
+    with open(file_path, 'r') as file:
+        labels = []
+        for line in file:
             parts = line.strip().split()
-            bbox = list(map(float, parts[1:9]))
-            bboxes.append(bbox)
-    return bboxes
+            if len(parts) > 0:
+                label = parts[0]
+                bbox = list(map(float, parts[1:9]))
+                labels.append((label, bbox))
+        return labels
 
-def read_bboxes_from_dir(directory_path):
-    bboxes_dict = {}
-    for filename in os.listdir(directory_path):
-        file_path = os.path.join(directory_path, filename)
-        bboxes = read_bboxes_from_file(file_path)
-        bboxes_dict[filename] = bboxes
-    return bboxes_dict
-
-def bbox_iou(box1, box2):
-    def get_area(box):
-        return (box[2] - box[0]) * (box[5] - box[1])
+def calculate_iou(bbox1, bbox2):
+    xA = max(bbox1[0], bbox2[0])
+    yA = max(bbox1[1], bbox2[1])
+    xB = min(bbox1[2], bbox2[2])
+    yB = min(bbox1[3], bbox2[3])
     
-    x_left = max(box1[0], box2[0])
-    y_top = max(box1[1], box2[1])
-    x_right = min(box1[2], box2[2])
-    y_bottom = min(box1[5], box2[5])
-
-    if x_right < x_left or y_bottom < y_top:
-        return 0.0
-
-    intersection_area = (x_right - x_left) * (y_bottom - y_top)
-    box1_area = get_area(box1)
-    box2_area = get_area(box2)
-    iou = intersection_area / float(box1_area + box2_area - intersection_area)
+    interArea = max(0, xB - xA + 1) * max(0, yB - yA + 1)
+    boxAArea = (bbox1[2] - bbox1[0] + 1) * (bbox1[3] - bbox1[1] + 1)
+    boxBArea = (bbox2[2] - bbox2[0] + 1) * (bbox2[3] - bbox2[1] + 1)
+    
+    iou = interArea / float(boxAArea + boxBArea - interArea)
     return iou
 
-def precision_recall(true_bboxes, pred_bboxes, iou_threshold):
-    true_positives = 0
-    false_positives = 0
-    false_negatives = 0
-    
-    matched = []
-    pairings = []  # Zum Speichern der Paarungen und IoU-Werte
-    for pred_box in pred_bboxes:
-        best_iou = 0
-        best_match = None
-        for i, true_box in enumerate(true_bboxes):
-            if i in matched:
+def match_bboxes(true_labels, pred_labels, iou_threshold=0.95):
+    matched_labels = []
+    used_preds = set()
+    for true_label, true_bbox in true_labels:
+        match_found = False
+        for i, (pred_label, pred_bbox) in enumerate(pred_labels):
+            if i in used_preds:
                 continue
-            iou = bbox_iou(pred_box, true_box)
-            if iou > best_iou:
-                best_iou = iou
-                best_match = i
+            if true_label == pred_label:
+                iou = calculate_iou(true_bbox, pred_bbox)
+                if iou >= iou_threshold:
+                    matched_labels.append(pred_label)
+                    used_preds.add(i)
+                    match_found = True
+                    break
+        if not match_found:
+            matched_labels.append(None)  # Keine Übereinstimmung gefunden
+    return matched_labels
+
+def calculate_precision(true_labels, pred_labels):
+    matched_labels = match_bboxes(true_labels, pred_labels)
+    y_true = [label for label, _ in true_labels]
+    y_pred = [label if label is not None else "None" for label in matched_labels]
+    all_classes = set(y_true + y_pred)
+    precision_dict = {}
+    for cls in all_classes:
+        y_true_binary = [1 if label == cls else 0 for label in y_true]
+        print(y_true_binary)
+        y_pred_binary = [1 if label == cls else 0 for label in y_pred]
+        print(y_pred_binary)
+        precision = precision_score(y_true_binary, y_pred_binary, zero_division=0)
+        precision_dict[cls] = precision
+    return precision_dict
+
+def process_files(true_dir, pred_dir):
+    all_files = os.listdir(true_dir)
+    result = {}
+    for file_name in all_files:
+        print(f"Processing file {file_name}")
+        true_file_path = os.path.join(true_dir, file_name)
+        pred_file_path = os.path.join(pred_dir, file_name)
         
-        if best_iou >= iou_threshold:
-            true_positives += 1
-            matched.append(best_match)
-            pairings.append((pred_box, true_bboxes[best_match], best_iou))  # Paarung hinzufügen
-        else:
-            false_positives += 1
-        
-        # Debugging: IoU-Werte ausgeben
-        print(f'Pred Box: {pred_box}, Best IoU: {best_iou}, Threshold: {iou_threshold}')
+        if os.path.exists(pred_file_path):
+            true_labels = read_labels(true_file_path)
+            pred_labels = read_labels(pred_file_path)
+            precision_dict = calculate_precision(true_labels, pred_labels)
+            result[file_name] = precision_dict
+    return result
 
-    false_negatives = len(true_bboxes) - len(matched)
-    precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0
-    recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0
-    return precision, recall, pairings
+# Ordnerpfade anpassen
+true_labels_dir = "/workspace/datasets/standard/Roewaplan_v3/labels/test"
+predicted_labels_dir = "/workspace/main_folder/PIPELINE_FINAL/results_rp_v3/labels"
 
-def average_precision(precisions, recalls):
-    precisions = np.concatenate([[0], precisions, [0]])
-    recalls = np.concatenate([[0], recalls, [1]])
-    
-    for i in range(len(precisions) - 1, 0, -1):
-        precisions[i - 1] = np.maximum(precisions[i - 1], precisions[i])
-    
-    indices = np.where(recalls[1:] != recalls[:-1])[0]
-    ap = np.sum((recalls[indices + 1] - recalls[indices]) * precisions[indices + 1])
-    return ap
+precision_results = process_files(true_labels_dir, predicted_labels_dir)
 
-def mean_average_precision(true_bboxes, pred_bboxes, iou_thresholds):
-    ap_values = []
-    for iou_threshold in iou_thresholds:
-        precisions = []
-        recalls = []
-        for threshold in np.arange(0.5, 1.0, 0.05):
-            precision, recall, _ = precision_recall(true_bboxes, pred_bboxes, threshold)
-            precisions.append(precision)
-            recalls.append(recall)
-        ap = average_precision(precisions, recalls)
-        ap_values.append(ap)
-    return np.mean(ap_values)
-
-# Dateipfade
-true_bboxes_path = '/workspace/datasets/standard/Roewaplan_v3/labels/test'
-pred_bboxes_path = '/workspace/main_folder/PIPELINE_FINAL/results_rp_v3/labels'
-
-# BBs laden
-true_bboxes_dict = read_bboxes_from_dir(true_bboxes_path)
-pred_bboxes_dict = read_bboxes_from_dir(pred_bboxes_path)
-
-# IoU Schwellen
-iou_thresholds = np.arange(0.5, 1.0, 0.05)
-
-# mAP und Precision pro Bild berechnen und ausgeben
-for filename in true_bboxes_dict:
-    true_bboxes = true_bboxes_dict.get(filename, [])
-    pred_bboxes = pred_bboxes_dict.get(filename, [])
-    
-    # Debugging: Anzahl der Bounding Boxen ausgeben
-    print(f'{filename}: {len(true_bboxes)} Ground Truth BBs, {len(pred_bboxes)} Predicted BBs')
-    
-    if len(true_bboxes) == 0 or len(pred_bboxes) == 0:
-        print(f'{filename}: mAP@0.50:0.95: 0.0 (Keine BBs)')
-        continue
-    
-    mAP = mean_average_precision(true_bboxes, pred_bboxes, iou_thresholds)
-    precision, _, pairings = precision_recall(true_bboxes, pred_bboxes, 0.5)  # Precision bei IoU Schwelle 0.5
-    print(f'{filename}: mAP@0.50:0.95: {mAP}, Precision@0.5: {precision}')
-    
-    # Paarungen und IoU-Werte ausgeben
-    for pred_box, true_box, iou in pairings:
-        print(f'Pred Box: {pred_box} -> True Box: {true_box}, IoU: {iou}')
-        print(f'Zusammengehörige BBs: Pred Box {pred_box}, True Box {true_box}')
+# Ergebnis ausgeben
+for file_name, precision_dict in precision_results.items():
+    print(f"Datei: {file_name}")
+    for cls, precision in precision_dict.items():
+        print(f"  Klasse: {cls}, Präzision: {precision:.4f}")
