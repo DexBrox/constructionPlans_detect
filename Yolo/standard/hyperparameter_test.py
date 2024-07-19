@@ -34,10 +34,10 @@ with open(config_yaml, 'r') as file:
 
 # Define hyperparameter variations from smallest to largest
 variations = {
-    # 'imgsz': [320, 640, 960, 1280, 1600, 1920, 2040],
+    #'imgsz': [320, 640, 960, 1280, 1600, 1920, 2040],
     #'imgsz': [1600],
     #'batch': [4, 8, 16],
-    # 'lr0': [1e-5, 1e-4, 1e-3, 1e-2, 1e-1],
+    #'lr0': [1e-5, 1e-4, 1e-3, 1e-2, 1e-1],
     #'optimizer': ['Adam', 'AdamW', 'NAdam', 'RAdam', 'RMSProp'], #'SGD', 
     #'warmup_epochs': [10, 20], #0, 3, 5,
 

@@ -88,7 +88,7 @@ def save_linked_data_to_csv(grouped_data, output_file_path):
                 polygon_str = ' '.join(f'({x}, {y})' for x, y in polygon)
                 writer.writerow([polygon_str, poly_text, mid_x, mid_y, mid_text])
 
-def sort_linked_data_by_polygon_and_midpoint_x(linked_data, y_threshold=0.001):
+def sort_linked_data_by_polygon_and_midpoint_x(linked_data, y_threshold):
     """Sortiert verknüpfte Daten nach Polygon und Mittelpunkt X-Achse."""
     def primary_sort_key(entry):
         _, midpoint, _ = entry

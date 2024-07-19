@@ -20,22 +20,21 @@ def calculate_cer(sum_data):
     return cer
 
 
-def evaluate_cer(gt_path, pred_file_path, i):
+def evaluate_cer(gt_path, pred_file_path, i, y_threshold):
     
     gt, pred = load_files(gt_path, pred_file_path)
     gt_poly, poly_only_text = calculate_polygon(gt)
     pred_mid, pred_mid_w_t = calculate_midpoint(pred)
     linked_data = link_polygons_to_midpoints(gt_poly, poly_only_text, pred_mid, pred_mid_w_t)
-    sorted_data = sort_linked_data_by_polygon_and_midpoint_x(linked_data)
+    sorted_data = sort_linked_data_by_polygon_and_midpoint_x(linked_data, y_threshold)
     sum_data = sum_sentences(sorted_data, i)
 
     cer_results = calculate_cer(sum_data)
 
     return cer_results
 
-def evaluate_cer_all_txt(input_dir_gt, output_dir_txt):
+def evaluate_cer_all_txt(input_dir_gt, output_dir_txt, y_threshold):
     txt_files = [f for f in os.listdir(output_dir_txt) if f.lower().endswith('.txt')]
-
     for txt_file in txt_files:
         file_id = os.path.splitext(txt_file)[0]  # Dateiname ohne Erweiterung
         gt_path = os.path.join(input_dir_gt, f'{file_id}.txt')
@@ -46,7 +45,8 @@ def evaluate_cer_all_txt(input_dir_gt, output_dir_txt):
             continue
         
         start_eva = timeit.default_timer()
-        cer_result = evaluate_cer(gt_path, pred_file_path, file_id)
+        cer_result = evaluate_cer(gt_path, pred_file_path, file_id, y_threshold)
         end_eva = timeit.default_timer()
-        print(f"CER für {file_id}: {cer_result}")
+        print("CER für {}: {:.4f}".format(file_id, cer_result))
         #print(f"Evaluationszeit für {file_id}: {end_eva - start_eva} Sekunden")
+

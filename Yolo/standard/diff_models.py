@@ -4,24 +4,25 @@ from ultralytics import YOLO
 import torch
 import os
 import yaml
+import setproctitle
 
 # W&B Warnmeldungen unterdrücken
-os.environ['WANDB_SILENT'] = 'true'
+#os.environ['WANDB_SILENT'] = 'true'
 
 # Model and configuration setup
 model_names = [
-    #'yolov10n.pt', 
-    #'yolov10s.pt', 
-    #'yolov10m.pt', 
-    #'yolov10b.pt', 
-    #'yolov10l.pt', 
-    #'yolov10x.pt',
+    'yolov10n.pt', 
+    'yolov10s.pt', 
+    'yolov10m.pt', 
+    'yolov10b.pt', 
+    'yolov10l.pt', 
+    'yolov10x.pt',
 
-    'yolov9t.pt', 
-    'yolov9s.pt', 
-    'yolov9m.pt', 
-    'yolov9c.pt', 
-    'yolov9e.pt',
+    # 'yolov9t.pt', 
+    # 'yolov9s.pt', 
+    # 'yolov9m.pt', 
+    # 'yolov9c.pt', 
+    # 'yolov9e.pt',
 
     #'yolov8n-obb.pt', 
     #'yolov8s-obb.pt', 
@@ -31,8 +32,11 @@ model_names = [
 ]
 data_name = 'Roewaplan_v3.yaml'
 project_name = 'different_models'
-config_yaml_name = 'final_config_best_v9e'
+config_yaml_name = 'final_config_best_v10.yaml'
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
+
+# Setze den benutzerdefinierten Prozessnamen
+setproctitle.setproctitle('VJ_' + project_name + '_Final')
 
 # Code-Start
 main_folder = '/workspace/main_folder/'
@@ -55,7 +59,7 @@ for model_var in model_names:
             base_config = config['base_config']
 
         # Initialize wandb
-        wandb.init(project=f"FINAL_Masterarbeit_{project_name}_{os.path.splitext(data_name)[0]}", name=os.path.splitext(model_var)[0])
+        wandb.init(project=f"FINAL2_Masterarbeit_{project_name}_{os.path.splitext(data_name)[0]}", name=os.path.splitext(model_var)[0])
 
         # Load YOLO model
         model = YOLO(model_path).to(device)

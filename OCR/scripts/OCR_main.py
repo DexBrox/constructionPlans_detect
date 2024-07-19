@@ -2,6 +2,8 @@ import os
 import timeit
 import warnings
 import setproctitle
+import numpy as np
+import pandas as pd
 
 start = timeit.default_timer()
 
@@ -41,7 +43,7 @@ for image_path in image_paths:
     processing_time = image_end - image_start
     time_per_image.append(processing_time)  # Speichern der Zeit für jedes Bild
 
-    print(f"Verarbeitungszeit für {os.path.basename(image_path)}: {processing_time} Sekunden")
+    print(f"Verarbeitungszeit für {os.path.basename(image_path)}: {processing_time:.2f} Sekunden")
 
     count += 1
 
@@ -51,4 +53,21 @@ if count > 0:
 
 from OCR_cer import evaluate_cer_all_txt
 
-evaluate_cer_all_txt(input_dir_gt, output_dir_txt)
+y_threshold = 0.005
+cer_result = evaluate_cer_all_txt(input_dir_gt, output_dir_txt, y_threshold)
+
+'''
+y_thresholds = np.arange(0.001, 0.02, 0.001)
+#y_thresholds = np.arange(0.0005, 0.05, 0.0001)
+cer_results = []
+
+for y_threshold in y_thresholds:
+    cer_result = evaluate_cer_all_txt(input_dir_gt, output_dir_txt, y_threshold)
+    cer_results.append((y_threshold, cer_result))
+
+# Konvertiere Ergebnisse in ein DataFrame
+df_results = pd.DataFrame(cer_results, columns=['y_threshold', 'CER'])
+
+# Speichere die Ergebnisse in eine CSV-Datei
+df_results.to_csv('cer_results.csv', index=False)
+'''

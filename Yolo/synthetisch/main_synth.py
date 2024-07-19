@@ -8,9 +8,9 @@ import tempfile
 import setproctitle
 
 # Model and configuration setup
-model_name = 'yolov9e.pt'
+model_name = 'yolov8x-obb.pt'
 project_name = 'allforcomparison'
-config_yaml_name = 'config_best.yaml'
+config_yaml_name = 'final_config_best_v8-obb_synth.yaml'
 device = 'cuda:2' if torch.cuda.is_available() else 'cpu'
 
 # Setze den benutzerdefinierten Prozessnamen

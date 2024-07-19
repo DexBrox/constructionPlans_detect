@@ -20,13 +20,14 @@ def crop_image(input_path, output_path, crop_coords):
         print(f"Ein Fehler ist aufgetreten: {e}")
 
 # Pfad zum Quellbild
-input_image_path = '/workspace/OCR/results_rpv3_test/img/ALPHATON_Gen-06_QF_Sockel_obb.jpg'
+input_image_path = '/workspace/OCR/results_rpv3_test/img/tesseract1/ALPHATON_Gen-06_QF_Sockel_obb.jpg'
+#input_image_path = '/workspace/datasets/standard/Roewaplan_v3_visualized/test/ALPHATON_Gen-06_QF_Sockel_obb.png'
 
 # Pfad, wo das zugeschnittene Bild gespeichert werden soll
 output_image_path = '/workspace/OCR/zuschnitt/ALPHATON_Gen-06_QF_Sockel_obb_cropped_tesseract.jpg'
 
 # Koordinaten für den Zuschnitt (x1, y1, x2, y2)
-coordinates = (500, 100, 1600, 1200)  # Beispielkoordinaten anpassen links, oben, rechts, unten
+coordinates = (1780, 50, 2330, 500)  # Beispielkoordinaten anpassen links, oben, rechts, unten
 
 # Funktion zum Zuschneiden des Bildes aufrufen
 crop_image(input_image_path, output_image_path, coordinates)

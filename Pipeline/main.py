@@ -12,8 +12,8 @@ from detect_evaluation_functions import *
 # Setup für das Modell und die Verzeichnisse
 logging.getLogger('ultralytics').setLevel(logging.ERROR)
 dataset_path = '/workspace/datasets/standard/Roewaplan_v3/images/test'
-model_path = '/workspace//main_folder/best_picked/different_models/v8x-obb/weights/best.pt'
-results_path = '/workspace/main_folder/PIPELINE/results/diff_datasets'
+model_path = '/workspace/main_folder/best_picked/best_standard_v3/train340/weights/best.pt'
+results_path = '/workspace/main_folder/PIPELINE_FINAL/results_rp_v3'
 
 model = YOLO(model_path).to('cuda:0')
 img_folder = os.path.join(results_path, 'images')
@@ -69,3 +69,4 @@ for image_path in tqdm(image_files, desc="Processing Images"):
                 file.write(f"{data[0]} {data[1][0]} {data[1][1]} {data[2][0]} {data[2][1]} {data[3][0]} {data[3][1]} {data[4][0]} {data[4][1]}\n")
 
 print(f"Ergebnisse wurden in {results_path} gespeichert.")
+
