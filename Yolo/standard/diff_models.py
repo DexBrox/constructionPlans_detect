@@ -11,12 +11,12 @@ import setproctitle
 
 # Model and configuration setup
 model_names = [
-    'yolov10n.pt', 
-    'yolov10s.pt', 
-    'yolov10m.pt', 
-    'yolov10b.pt', 
-    'yolov10l.pt', 
-    'yolov10x.pt',
+    # 'yolov10n.pt', 
+    # 'yolov10s.pt', 
+    # 'yolov10m.pt', 
+    # 'yolov10b.pt', 
+    # 'yolov10l.pt', 
+    # 'yolov10x.pt',
 
     # 'yolov9t.pt', 
     # 'yolov9s.pt', 
@@ -24,15 +24,15 @@ model_names = [
     # 'yolov9c.pt', 
     # 'yolov9e.pt',
 
-    #'yolov8n-obb.pt', 
-    #'yolov8s-obb.pt', 
-    #'yolov8m-obb.pt', 
-    #'yolov8l-obb.pt', 
-    #'yolov8x-obb.pt'
+    'yolov8n-obb.pt', 
+    'yolov8s-obb.pt', 
+    'yolov8m-obb.pt', 
+    'yolov8l-obb.pt', 
+    'yolov8x-obb.pt'
 ]
 data_name = 'Roewaplan_v3.yaml'
 project_name = 'different_models'
-config_yaml_name = 'final_config_best_v10.yaml'
+config_yaml_name = 'final_config_best_v8-obb.yaml'
 device = 'cuda:0' if torch.cuda.is_available() else 'cpu'
 
 # Setze den benutzerdefinierten Prozessnamen

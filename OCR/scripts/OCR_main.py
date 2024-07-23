@@ -19,7 +19,7 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 # Setzen der Pfade
 input_dir_img = '/workspace/datasets/standard/Roewaplan_v3/images/test'  # Direktordner mit Bildern
-input_dir_gt = input_dir_img.replace('images', 'labels')  # GT-Ordner
+input_dir_gt = '/workspace/datasets/standard/Roewaplan_v3/labels/test/mit_text'
 
 output_dir_img = '../results_rpv3_test/img/tesseract1'  
 output_dir_txt = '../results_rpv3_test/txt'
@@ -49,7 +49,7 @@ for image_path in image_paths:
 
 end = timeit.default_timer()
 if count > 0:
-    print(f"Durchschnittliche Verarbeitungszeit: {(end - start) / count} Sekunden pro Bild")
+    print(f"Durchschnittliche Verarbeitungszeit: {((end - start) / count):.2f} Sekunden pro Bild")
 
 from OCR_cer import evaluate_cer_all_txt
 

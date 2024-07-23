@@ -10,8 +10,8 @@ import setproctitle
 # Model and configuration setup
 model_name = 'yolov8x-obb.pt'
 project_name = 'allforcomparison'
-config_yaml_name = 'final_config_best_v8-obb_synth.yaml'
-device = 'cuda:2' if torch.cuda.is_available() else 'cpu'
+config_yaml_name = 'final_config_best_v8-obb_synth_orginal.yaml'
+device = 'cuda:3' if torch.cuda.is_available() else 'cpu'
 
 # Setze den benutzerdefinierten Prozessnamen
 setproctitle.setproctitle('VJ_' + project_name + '_' + os.path.basename(model_name))
@@ -30,7 +30,7 @@ dataset_base_paths = [f'/workspace/datasets/synth/synth_v3_50000_{i}' for i in r
 
 for i, base_path in enumerate(dataset_base_paths, start=1):
     # Initialize wandb for each dataset with a unique run name
-    wandb.init(project=f"FINAL_BIG_Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=f"{os.path.basename(base_path)}")
+    wandb.init(project=f"FINAL_BIG_Masterarbeit_{project_name}_{os.path.splitext(model_name)[0]}", name=f"{os.path.basename(base_path)}_orgconfig")
 
     data_yaml_content = {
         'path': base_path,
