@@ -12,8 +12,8 @@ from detect_evaluation_functions import *
 # Setup für das Modell und die Verzeichnisse
 logging.getLogger('ultralytics').setLevel(logging.ERROR)
 dataset_path = '/workspace/datasets/standard/Roewaplan_v3/images/test'
-model_path = '/workspace/main_folder/best_picked/best_standard_v3/train340/weights/best.pt'
-results_path = '/workspace/main_folder/PIPELINE_FINAL/results_rp_v3'
+model_path = '/workspace/main_folder/best_picked/best_ipf/weights/best.pt'
+results_path = '/workspace/main_folder/PIPELINE_FINAL/results_ipf'
 
 model = YOLO(model_path).to('cuda:0')
 img_folder = os.path.join(results_path, 'images')
@@ -71,7 +71,7 @@ for image_path in tqdm(image_files, desc="Processing Images"):
 print(f"Ergebnisse wurden in {results_path} gespeichert.")
 
 model = YOLO(model_path).to('cuda:0')
-results = model.val(data='/workspace/main_folder/YAMLs/FINAL_eval.yaml', split='test', imgsz=1600, batch=1, plots=True, save_dir='/home/valentinjung/Pipeline/results')
+results = model.val(data='/workspace/main_folder/YAMLs/FINAL_eval.yaml', split='test', imgsz=1600, batch=1, plots=True, save_dir='/workspace/Pipeline/results')
 results_map50_95 = results.box.map 
 
 print("Evaluationsergebnisse:", results)

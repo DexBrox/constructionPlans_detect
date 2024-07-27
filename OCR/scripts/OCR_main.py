@@ -15,14 +15,14 @@ from OCR_text_recognition_tess import process_image_tess
 from OCR_image_processing import draw_bounding_boxes, gen_out, save_results
 
 warnings.filterwarnings("ignore", message="There is an imbalance between your GPUs.*") 
-os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ["CUDA_VISIBLE_DEVICES"] = "3"
 
 # Setzen der Pfade
 input_dir_img = '/workspace/datasets/standard/Roewaplan_v3/images/test'  # Direktordner mit Bildern
 input_dir_gt = '/workspace/datasets/standard/Roewaplan_v3/labels/test/mit_text'
 
-output_dir_img = '../results_rpv3_test/img/tesseract1'  
-output_dir_txt = '../results_rpv3_test/txt'
+output_dir_img = '../results_rpv3/img/tesseract1'  
+output_dir_txt = '../results_rpv3/txt/tesseract1'
 
 # Bilder im Verzeichnis auflisten
 image_paths = [os.path.join(input_dir_img, file) for file in os.listdir(input_dir_img) if file.lower().endswith(('.png', '.jpg', '.jpeg', '.tiff', '.bmp', '.gif'))]

@@ -147,7 +147,7 @@ def sum_sentences(sorted_data, i):
     if current_first_part_of_polygon is not None and isinstance(collected_text, str):
         sum_data.append((current_first_part_of_polygon, collected_text.strip()))
     final_sum_data = aggregate_sum_data(sum_data)
-    csv_file_path = f'../results/sum_data_{i}.csv'
+    csv_file_path = f'../results/tesseract1/sum_data_{i}.csv'
     df = pd.DataFrame(final_sum_data, columns=['GT Label', 'Predicted Text'])
     directory, filename = os.path.split(csv_file_path)
     os.makedirs(directory, exist_ok=True)

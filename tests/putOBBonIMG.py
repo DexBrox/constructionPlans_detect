@@ -35,23 +35,23 @@ def draw_bounding_boxes(image, texts, points_list, output_folder, base_name, cls
         # Bestimme die Farbe basierend auf der Klasse
         color = class_colors.get(cls, (0, 0, 0))  # Verwende Schwarz als Standardfarbe, falls Klasse nicht definiert
 
-        cv2.polylines(image, [points], isClosed=True, color=color, thickness=1)  # Verwende die Farbe für die Linien
+        cv2.polylines(image, [points], isClosed=True, color=color, thickness=5)  # Verwende die Farbe für die Linien
         cv2.putText(image, text, tuple(points[0]), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)  # Verwende die Farbe für den Text
 
     output_path = os.path.join(output_folder, f"{base_name}_obb.png")
     cv2.imwrite(output_path, image)
 
 
-image_folder = '/workspace/tests/temp_img'
-label_folder = image_folder.replace('temp_img', 'temp_label')
-output_folder = '/workspace/tests/temp_output'
+image_folder = '/workspace/datasets/synth/synth_v3_50000_8/images/train'
+label_folder = image_folder.replace('images', 'labels')
+output_folder = '/workspace/tests/temp_output_synth'
 
 # Stelle sicher, dass der Ausgabeordner existiert
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
 # Iteriere über alle Bilddateien
-for image_path in tqdm(glob.glob(os.path.join(image_folder, '*.jpg'))):
+for image_path in tqdm(glob.glob(os.path.join(image_folder, '*.png'))):
     base_name = os.path.basename(image_path)
     name, _ = os.path.splitext(base_name)
     label_path = os.path.join(label_folder, f'{name}.txt')
